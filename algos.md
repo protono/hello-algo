@@ -32,7 +32,7 @@ The main contents of this book include:
 - **Data structure**: basic data types, classification methods of data structures. Definition, advantages and disadvantages, common operations, common types, typical applications, implementation methods, etc. of data structures such as arrays, linked lists, stacks, queues, hash tables, trees, heaps, and graphs.
 - **Algorithms**: Definitions, advantages and disadvantages, efficiency, application scenarios, problem-solving steps, sample questions, etc. of algorithms such as search, sorting, divide-and-conquer, backtracking, dynamic programming, and greedy.
 
-![Fig. Hello 算法内容结构](./algos/0.1.2.0.png)
+![Fig. Hello 算法内容结构](./pictures/0.1.2.0.png)
 
 0.1.3. thank you
 
@@ -153,7 +153,7 @@ Before discussing algorithms formally, there is an interesting fact worth sharin
 2. Since `r` is located after `m` in the alphabet, the first half of the dictionary is excluded, and the search range is narrowed to the second half.
 3. Repeat steps `1.` and `2.` until you find the page number whose first letter is *r*.
 
-![Step 1](./algos/1.1.1-1.png)![Step 2](./algos/1.1.1-2.png)![Step 3](./algos/1.1.1-3.png)![Step 4](./algos/1.1.1-4.png)![Step 5](./algos/1.1.1-5.png)
+![Step 1](./pictures/1.1.1-1.png)![Step 2](./pictures/1.1.1-2.png)![Step 3](./pictures/1.1.1-3.png)![Step 4](./pictures/1.1.1-4.png)![Step 5](./pictures/1.1.1-5.png)
 
 Looking up a dictionary, an essential skill for elementary school students, is actually the famous "binary search". From the perspective of data structure, we can regard the dictionary as a sorted "array"; from the perspective of algorithm, we can regard the above series of operations of looking up the dictionary as a "binary search" algorithm.
 
@@ -163,7 +163,7 @@ Looking up a dictionary, an essential skill for elementary school students, is a
 2. Draw a playing card from the unordered part and insert it into the correct position of the ordered part; after completion, the leftmost 2 cards are already in order.
 3. Continuously loop step `2.` , each round insert a playing card from the unordered part to the ordered part, until all the playing cards are in order.
 
-![Fig. 扑克排序步骤](./algos/1.1.2.png)
+![Fig. 扑克排序步骤](./pictures/1.1.2.png)
 
 The above method of sorting playing cards is essentially an "insertion sort" algorithm, which is very efficient when dealing with small data sets. Insertion sort exists in the sorting library functions of many programming languages.
 
@@ -175,7 +175,7 @@ The above method of sorting playing cards is essentially an "insertion sort" alg
 4. Take the largest 1 euros from the remaining options, and the remaining is 1 - 1 = 0 euros.
 5. Complete the change, the solution is 20 + 10 + 1 = 31 euros.
 
-![Fig. 货币找零过程](./algos/1.1.3.png)
+![Fig. 货币找零过程](./pictures/1.1.3.png)
 
 In the above steps, we take the best option available (use as large a denomination currency as possible) at each step, and finally get a change solution. From the perspective of data structure and algorithm, this method is essentially a "greedy algorithm".
 
@@ -312,7 +312,7 @@ The following function implements the summation $1 + 2 +...+ n$ based on the for
 
 The follwoing picture shows a block diagram of the summation function.
 
-![图 2-1   求和函数的流程框图](./algos/2.2.1.1.png)
+![图 2-1   求和函数的流程框图](./pictures/2.2.1.1.png)
 
 The number of operations of this summation function is proportional, or "linear", to the input data size $n$. In fact, time complexity describes this as "linear relationship". Related content will be introduced in detail in the next section.
 
@@ -346,7 +346,7 @@ We can nest another loop structure inside a loop structure, taking the `for` loo
 
 The following picture shows the block diagram of the nested loop.
 
-![图 2-2   嵌套循环的流程框图](./algos/2.2.1.3.png)
+![图 2-2   嵌套循环的流程框图](./pictures/2.2.1.3.png)
 
 In this case, the number of operations of the function is proportional to $n^2$, or the running time of the algorithm is "squared" with the size of the input data $n$.
 
@@ -371,7 +371,7 @@ Observe the following code, we simply call the function `recur(n)` to complete t
 [class]{}-[func]{recur}
 ```
 
-![图 2-3   求和函数的递归过程](./algos/2.2.2.0.png)
+![图 2-3   求和函数的递归过程](./pictures/2.2.2.0.png)
 
 Although computationally, iteration and recursion can achieve the same results, **they represent two completely different paradigms for thinking and solving problems**.
 
@@ -392,7 +392,7 @@ Every time a recursive function calls itself, the system will allocate memory fo
 
 As shown in the follwoing picture, before the termination condition is triggered, there are $n$ recursive functions that do not return at the same time, and the recursion depth is $n$.
 
-![图 2-4   递归调用深度](./algos/2.2.2.1.png)
+![图 2-4   递归调用深度](./pictures/2.2.2.1.png)
 
 In practice, the depth of recursion allowed by a programming language is usually limited, and too deep recursion may cause a stack overflow error.
 
@@ -414,7 +414,7 @@ A comparison of the two recursive processes is shown in the following picture.
 - **Ordinary recursion**: The summation operation is performed during the "return" process, and the summation operation must be performed again after each layer returns.
 - **Tail recursion**: The summation operation is performed in the "recursive" process, and the "recursive" process only needs to return layer by layer.
 
-![图 2-5   尾递归过程](./algos/2.2.2.2.png)
+![图 2-5   尾递归过程](./pictures/2.2.2.2.png)
 
 Note that many compilers or interpreters do not support tail recursion optimization. For example, Python does not support tail-recursive optimization by default, so even if the function is tail-recursive, it is still possible to encounter stack overflow problems.
 
@@ -441,7 +441,7 @@ Looking at the above code, we recursively call two functions inside the function
 - From an algorithmic point of view, many important algorithmic strategies such as search, sorting, backtracking, divide and conquer, and dynamic programming directly or indirectly apply this way of thinking.
 - From the perspective of data structure, recursion is naturally suitable for dealing with problems related to linked lists, trees and graphs, because they are very suitable for analysis with the idea of ​​divide and conquer.
 
-![图 2-6   斐波那契数列的递归树 ](./algos/2.2.2.3.png)
+![图 2-6   斐波那契数列的递归树 ](./pictures/2.2.2.3.png)
 
 In essence, recursion embodies the thinking paradigm of "decomposing a problem into smaller sub-problems", and this divide-and-conquer strategy is crucial.
 
@@ -479,7 +479,7 @@ The following picture shows the time complexity of the above three algorithmic f
 - The print operation in algorithm `B` needs to loop $n$ times, and the running time of the algorithm increases linearly as $n$ increases. The time complexity of this algorithm is called "linear order".
 - The print operation in algorithm `C` needs to loop $1000000$ times, although the running time is very long, it is independent of the input data size $n$. Therefore, the time complexity of `C` is the same as that of `A`, which is still "constant order".
 
-![图 2-7   算法 A 、B 和 C 的时间增长趋势](./algos/2.3.1.png)
+![图 2-7   算法 A 、B 和 C 的时间增长趋势](./pictures/2.3.1.png)
 
 Compared with directly counting the running time of algorithms, what are the characteristics of time complexity analysis?
 
@@ -509,7 +509,7 @@ Time complexity analysis is essential to calculate the asymptotic upper bound of
 
 As shown in the following picture, calculating the asymptotic upper bound is to find a function $f(n)$, so that when $n$ tends to infinity, $T(n)$ and $f(n)$ are at the same growth level, only differing by a constant term multiple of $c$.
 
-![Fig. 函数的渐近上界](./algos/2.3.2.png)
+![Fig. 函数的渐近上界](./pictures/2.3.2.png)
 
 2.3.3. Calculation method
 
@@ -557,7 +557,7 @@ Assuming that the input data size is n, common time complexity types include (ar
 $$O(1)<O(log\,n)<O(n)<O(n\,log\,n)<O(n^2)<O(2^n)<O(n!)$$
 $$\text{constant order}<\text{logarithmic order}<\text{linear order}<\text{linear logarithmic order}<\text{square order}<\text{exponential order}<\text{factorial order}$$
 
-![Fig. 时间复杂度的常见类型](./algos/2.3.4.0.png)
+![Fig. 时间复杂度的常见类型](./pictures/2.3.4.0.png)
 
 >**Tip**
 >Some sample codes require some prior knowledge, including arrays, recursion, and more. If you encounter a part that you don't understand, you can review it after studying the following chapters. At this stage, please focus on understanding the meaning and calculation method of time complexity.
@@ -636,7 +636,7 @@ fn quadratic(n: i32) i32 {
 
 The follwoing picture compares the three time complexities of constant order, linear order and square order.
 
-![Fig. 常数阶、线性阶、平方阶的时间复杂度](./algos/2.3.4.3.png)
+![Fig. 常数阶、线性阶、平方阶的时间复杂度](./pictures/2.3.4.3.png)
 
 Taking "bubble sort" as an example, the outer loop executes $n-1$ times, and the inner loop executes $n-1,n-2,...,2,1$ times, with an average of $n/2$ times, so the time complexity is $O((n-1)n/2)=O(n^2)$.
 
@@ -688,7 +688,7 @@ fn exponential(n: i32) i32 {
 }
 ```
 
-![Fig. 指数阶的时间复杂度](./algos/2.3.4.4.png)
+![Fig. 指数阶的时间复杂度](./pictures/2.3.4.4.png)
 
 In practical algorithms, exponential order often appears in recursive functions. For example, in the following code, which recursively splits in two and stops after $n$ splits.
 
@@ -722,7 +722,7 @@ fn logarithmic(n: f32) i32 {
 }
 ```
 
-![Fig. 对数阶的时间复杂度](./algos/2.3.4.5.png)
+![Fig. 对数阶的时间复杂度](./pictures/2.3.4.5.png)
 
 Similar to exponential order, logarithmic order is also commonly found in recursive functions. The following code forms a recursive tree of height $log_2\,n$.
 
@@ -761,7 +761,7 @@ fn linearLogRecur(n: f32) i32 {
 
 The following picture shows how the linear-logarithmic order is generated. The total number of operations on each layer of the binary tree is $n$, and the tree has a total of layers $log_2\,n+1$, so the time complexity is $O(n\,log\,n)$.
 
-![Fig. 线性对数阶的时间复杂度](./algos/2.3.4.6.png)
+![Fig. 线性对数阶的时间复杂度](./pictures/2.3.4.6.png)
 
 The time complexity of mainstream sorting algorithms, such as quick sort, merge sort, heap sort, etc is usually $O(n\,log\,n)$.
 
@@ -787,7 +787,7 @@ fn factorialRecur(n: i32) i32 {
 }
 ```
 
-![Fig. 阶乘阶的时间复杂度](./algos/2.3.4.7.png)
+![Fig. 阶乘阶的时间复杂度](./pictures/2.3.4.7.png)
 
 Note that since $n!>2^n$ is constant for $n>4$, the factorial order grows faster than the exponential order, which is also unacceptable for large $n$.
 
@@ -892,7 +892,7 @@ Assuming the input data size is $n$, the following figure shows the common types
 $$O(1)<O(log\,n)<O(n)<O(n^2)<O(2^n)$$
 $$\text{constant order}<\text{logarithmic order}<\text{linear order}<\text{square order}<\text{exponential order}$$
 
-![Fig. 空间复杂度的常见类型](./algos/2.4.3.0.png)
+![Fig. 空间复杂度的常见类型](./pictures/2.4.3.0.png)
 
 >Tip
 >Some sample codes require some pre-knowledge, including arrays, linked lists, binary trees, recursive algorithms, etc. If you encounter something you don't understand, you can review it after studying the following chapters.
@@ -971,7 +971,7 @@ fn linearRecur(comptime n: i32) void {
 }
 ```
 
-![Fig. 递归函数产生的线性阶空间复杂度](./algos/2.4.3.2.png)
+![Fig. 递归函数产生的线性阶空间复杂度](./pictures/2.4.3.2.png)
 
 3. Square order $O(n2)$
 
@@ -1008,7 +1008,7 @@ fn quadraticRecur(comptime n: i32) i32 {
 }
 ```
 
-![Fig. 递归函数产生的平方阶空间复杂度](./algos/2.4.3.3.png)
+![Fig. 递归函数产生的平方阶空间复杂度](./pictures/2.4.3.3.png)
 
 4. Exponential order $O(2n)$
 
@@ -1026,7 +1026,7 @@ fn buildTree(mem_allocator: std.mem.Allocator, n: i32) !?*inc.TreeNode(i32) {
 }
 ```
 
-![Fig. 满二叉树产生的指数阶空间复杂度](./algos/2.4.3.4.png)
+![Fig. 满二叉树产生的指数阶空间复杂度](./pictures/2.4.3.4.png)
 
 5. Logarithmic order $O(log\,n)$
 
@@ -1107,7 +1107,7 @@ As shown in the following picture, logic structures can be divided into two cate
 - **Linear data structures**: arrays, linked lists, stacks, queues, hash tables.
 - **Non-linear data structures**: trees, heaps, graphs, hash tables.
 
-![Fig. 线性与非线性数据结构](./algos/3.1.1.png)
+![Fig. 线性与非线性数据结构](./pictures/3.1.1.png)
 
 Non-linear data structures can be further divided into tree structures and network structures.
 
@@ -1123,13 +1123,13 @@ In computers, memory and hard disks are the two main storage hardware devices. H
 
 **The system accesses the data of the target memory location through the "memory address Memory Location"**. As shown in the following picture, the computer assigns numbers to each cell in the table according to certain rules, ensuring that each memory space has a unique memory address. With these addresses, the program can access the data in memory.
 
-![Fig. 内存条、内存空间、内存地址](./algos/3.1.2.1.png)
+![Fig. 内存条、内存空间、内存地址](./pictures/3.1.2.1.png)
 
 Memory is a shared resource of all programs. When the memory is occupied by a program, other programs cannot use it at the same time. **Therefore, memory resources are an important consideration in the design of data structures and algorithms**. For example, the peak memory occupied by the algorithm should not exceed the remaining free memory of the system; if there are many running programs and lack of a large amount of contiguous memory space, then the selected data structure must be able to be stored in a discrete memory space.
 
 As shown in the following picture, **the physical structure reflects the way data is stored in computer memory**, which can be divided into continuous space storage of arrays and discrete space storage of linked lists. The physical structure determines the operation methods of data access, update, addition and deletion from the bottom layer, and at the same time presents complementary characteristics in terms of time efficiency and space efficiency.
 
-![Fig. 连续空间存储与离散空间存储](./algos/3.1.2.2.png)
+![Fig. 连续空间存储与离散空间存储](./pictures/3.1.2.2.png)
 
 It is worth noting that **all data structures are implemented based on arrays, linked lists, or a combination of the two**. For example, stacks and queues can be implemented using both arrays and linked lists; and an implementation of a hash table might contain both an array and a linked list.
 
@@ -1204,7 +1204,7 @@ First of all, it needs to be pointed out that numbers are stored in the computer
 
 The following picture shows the conversion method between original, inverse and complement.
 
-![Fig. 原码、反码与补码之间的相互转换](./algos/3.3.1.png)
+![Fig. 原码、反码与补码之间的相互转换](./pictures/3.3.1.png)
 
 Although the "true form of the original code" is the most intuitive, it has some limitations. On the one hand, **the original code of negative numbers cannot be directly used in operations**. For example, when calculating $1+(-2)$ under the original code, the result is $-3$, which is obviously wrong.
 
@@ -1278,7 +1278,7 @@ The value range of each item:
 $$S\in\{0,1\},\,E\in\{1,2,...,254\}$$
 $$(1+N)=(1+\sum_{i=1}^{23}b_{23-i}2^{-i})\subset[1,2-2^{-23}]$$
 
-![Fig. IEEE 754 标准下的 float 表示方式](./algos/3.3.2.png)
+![Fig. IEEE 754 标准下的 float 表示方式](./pictures/3.3.2.png)
 
 Take the above picture as an example, given S=0, E=124, N=2-2+2-3=0.375, then:
 $$val=(-1)^0\times2^{124-127}\times(1+0.375)=0.171875$$
@@ -1396,7 +1396,7 @@ Unicode is a character set standard that essentially assigns a number (called a 
 
 **A straightforward solution to the above problem is to store all characters as equal-length codes**. As shown in the figure below, each character in "Hello" occupies 1 byte, and each character in "Algorithm" occupies 2 bytes. We can encode all characters in the "Hello Algorithm" into 2-byte length by filling high bits with 0. In this way, the system can parse a character every 2 bytes and recover the content of this phrase.
 
-![Fig. Unicode 编码示例](./algos/3.4.3.png)
+![Fig. Unicode 编码示例](./pictures/3.4.3.png)
 
 However, ASCII has shown us that only 1 byte is needed to encode English. If the above solution is adopted, the size of the space occupied by the English text will be twice the size of the ASCII encoding, which is a waste of memory space. Therefore, we need a more efficient Unicode encoding method.
 
@@ -1415,7 +1415,7 @@ But why set the upper 2 bits of all the rest of the bytes to $10$? In fact, this
 
 The reason why $10$ is used as a check character is because under the UTF-8 encoding rules, it is impossible for the highest two digits of a character to be $10$. This conclusion can be proved by contradictory method: Suppose the highest two digits of a character are $10$, indicating that the length of the character is $1$, which corresponds to the ASCII code. The highest bit of the ASCII code should be $0$, which contradicts the assumption.
 
-![Fig. UTF-8 编码示例](./algos/3.4.4.png)
+![Fig. UTF-8 编码示例](./pictures/3.4.4.png)
 
 In addition to UTF-8, common encoding methods include the following.
 
@@ -1491,7 +1491,7 @@ It should be noted that the above discussions are all about the way strings are 
 
 An "array" is a linear data structure that stores elements of the same type in contiguous memory space. We refer to the position of an element in the array as the "index" of that element. The following picture shows the main terms and concepts of arrays.
 
-![Fig. 数组定义与存储方式](./algos/4.1.0.png)
+![Fig. 数组定义与存储方式](./pictures/4.1.0.png)
 
 4.1.1. Array common operations
 
@@ -1514,7 +1514,7 @@ Array elements are stored in contiguous memory space, which means that calculati
 elementAddr = firtstElementAddr + elementLength * elementIndex
 ```
 
-![Fig. 数组元素的内存地址计算](./algos/4.1.1.2.png)
+![Fig. 数组元素的内存地址计算](./pictures/4.1.1.2.png)
 
 Looking at the previous picture, we see that the first element of the array has an index of $0$, which seems counter-intuitive since counting from $1$ would be more natural. But from the perspective of the address calculation formula, the meaning of the index is essentially the offset of the memory address. The address offset of the first element is $0$, so its index is also reasonable.
 
@@ -1535,7 +1535,7 @@ fn randomAccess(nums: []i32) i32 {
 
 Array elements are "next to each other" in memory, with no space between them for any further data. As shown in the following picture, if you want to insert an element in the middle of the array, you need to move all the elements behind the element backward by one bit, and then assign the element to the index.
 
-![图 4-3   数组插入元素示例 ](./algos/4.1.1.3.png)
+![图 4-3   数组插入元素示例 ](./pictures/4.1.1.3.png)
 
 It is worth noting that since the length of the array is fixed, inserting an element will definitely cause a "lost" element at the end of the array. We leave the solution to this problem for the list chapter.
 
@@ -1557,7 +1557,7 @@ fn insert(nums: []i32, num: i32, index: usize) void {
 
 Similarly, as shown in the following picture, if you want to delete the element at index i, you need to move all the elements after index i forward by one.
 
-![图 4-4   数组删除元素示例 ](./algos/4.1.1.4.png)
+![图 4-4   数组删除元素示例 ](./pictures/4.1.1.4.png)
 
 Please note that after deleting the element, the original end element becomes "meaningless", so we don't need to modify it specially.
 
@@ -1664,7 +1664,7 @@ Memory space is a common resource of all programs. In a complex system operating
 
 "Linked List" is a linear data structure, each element of which is a node object, each node is connected by a pointer, and the next node can be accessed from the current node through the pointer. Since the pointer records the memory address of the next node, there is no need to ensure the continuity of the memory address, so that each node can be scattered and stored in various parts of the memory.
 
-![Fig. 链表定义与存储方式](./algos/4.2.0.png)
+![Fig. 链表定义与存储方式](./pictures/4.2.0.png)
 
 In the previous picture, the "Node" in the linked list contains two pieces of data, one is the node "Value", and the other is the "Pointer" pointing to the next node, or "Reference".
 
@@ -1719,7 +1719,7 @@ The array as a whole is a variable, for example, the array `nums` contains the e
 
 Inserting nodes in a linked list is very easy. As shown in the following picture, suppose we want to insert a new node `P` between two adjacent nodes `n0` and `n1`, **we only need to change the two node references (pointers)** with a time complexity of $O(1)$.
 
-![图 4-6   链表插入节点示例](./algos/4.2.1.2.png)
+![图 4-6   链表插入节点示例](./pictures/4.2.1.2.png)
 
 ```zig
 // inserting node P after node n0 in the linked list
@@ -1736,7 +1736,7 @@ As shown in the following picture, it is also very convenient to delete nodes in
 
 Please note that although the node `P` still points to `n1` after the delete operation is completed, it is actually impossible to visit `P` by traversing the linked list, which means that `P` no longer belongs to the linked list.
 
-![图 4-7   链表删除节点](./algos/4.2.1.3.png)
+![图 4-7   链表删除节点](./pictures/4.2.1.3.png)
 
 ```zig
 // deleting the first node after node n0 of the linked list
@@ -1826,7 +1826,7 @@ pub fn ListNode(comptime T: type) type {
 }
 ```
 
-![Fig. 常见链表种类](./algos/4.2.3.png)
+![Fig. 常见链表种类](./pictures/4.2.3.png)
 
 4.2.4. Typical application of linked list
 
@@ -2141,7 +2141,7 @@ We can compare the stack to a stack of plates on the table. If you need to take 
 
 As shown in the following picture, we refer to the top of the stacked elements as the "top of the stack" and the bottom as the "bottom of the stack". The operation of adding an element to the top of the stack is called "pushing", and the operation of deleting the top element of the stack is called "popping".
 
-![Fig. 栈的先入后出规则](./algos/5.1.0.png)
+![Fig. 栈的先入后出规则](./pictures/5.1.0.png)
 
 5.1.1. Stack common operations
 
@@ -2170,7 +2170,7 @@ When using a linked list to implement a stack, we can regard the head node of th
 
 for the push operation, we only need to insert elements into the head of the linked list. This node insertion method is called "head insertion method". For the stack operation, just delete the head node from the linked list.
 
-![LinkedListStack](./algos/5.1.2-1.1png) ![push()](./algos/5.1.2-1.2.png) ![pop()](./algos/5.1.2-1.3.png)
+![LinkedListStack](./pictures/5.1.2-1.1png) ![push()](./pictures/5.1.2-1.2.png) ![pop()](./pictures/5.1.2-1.3.png)
 
 The following is a sample code for implementing a stack based on a linked list.
 
@@ -2254,7 +2254,7 @@ fn LinkedListStack(comptime T: type) type {
 
 When using an array to implement a stack, we can use the end of the array as the top of the stack. As shown in the following picture, the operations of pushing and popping correspond to adding and deleting elements at the end of the array respectively, and the time complexity is $O(1)$.
 
-![ArrayStack](./algos/5.1.2-1.1png) ![push()](./algos/5.1.2-1.2.png) ![pop()](./algos/5.1.2-1.3.png)
+![ArrayStack](./pictures/5.1.2-1.1png) ![push()](./pictures/5.1.2-1.2.png) ![pop()](./pictures/5.1.2-1.3.png)
 
 Since the elements pushed onto the stack may increase continuously, we can use dynamic arrays, so that we don't need to deal with the problem of array expansion by ourselves. Below is the sample code.
 
@@ -2350,7 +2350,7 @@ In summary, we cannot simply determine which implementation is more memory-effic
 
 As shown in the following picture, we call the head of the queue the "head of the queue", the tail the "tail of the queue", the operation of adding elements to the tail of the queue is called "enqueuing", and the operation of deleting elements at the head of the queue is called "dequeuing".
 
-![Fig. 队列的先入先出规则](./algos/5.2.0.png)
+![Fig. 队列的先入先出规则](./pictures/5.2.0.png)
 
 5.2.1. Queue Common Operations
 
@@ -2375,7 +2375,7 @@ To implement a queue, we need a data structure that can add elements at one end 
 
 As shown in the following picture, we can regard the "head node" and "tail node" of the linked list as the front and end of the line respectively, and stipulate that only nodes can be added at the end of the line, and nodes can only be deleted at the front of the line.
 
-![LinkedListQueue](./algos/5.2.2.1-1.png) ![push()](./algos/5.2.2.1-2.png) ![pop()](./algos/5.2.2.1-3.png)
+![LinkedListQueue](./pictures/5.2.2.1-1.png) ![push()](./pictures/5.2.2.1-2.png) ![pop()](./pictures/5.2.2.1-3.png)
 
 The following is a sample code to implement a queue with a linked list.
 
@@ -2479,7 +2479,7 @@ Based on this design, **the effective range of elements contained in the array i
 
 It can be seen that both the enqueue and dequeue operations only need to be performed once, and the time complexity is $O(1)$.
 
-![ArrayQueue](./algos/5.2.2.2-1.png) ![push()](./algos/5.2.2.2-2.png) ![pop()](./algos/5.2.2.2-3.png)
+![ArrayQueue](./pictures/5.2.2.2-1.png) ![push()](./pictures/5.2.2.2-2.png) ![pop()](./pictures/5.2.2.2-3.png)
 
 You may find a problem: both `front` and `rear` are moving to the right during the process of enqueuing and dequeueing, and **when they reach the end of the array, they cannot continue to move**. To solve this problem, we can think of the array as a "circular array" connected end to end.
 
@@ -2589,7 +2589,7 @@ The comparison conclusion of the two implementations is consistent with that of 
 
 In a queue, we can only remove elements from the head or add elements to the tail. As shown in the folowing picture, a "bidirectional queue dequeue" provides more flexibility, allowing the addition or removal of elements at the head and tail.
 
-![Fig. 双向队列的操作](./algos/5.3.0.png)
+![Fig. 双向队列的操作](./pictures/5.3.0.png)
 
 5.3.1. Common operations on bidirectional queues
 
@@ -2621,7 +2621,7 @@ For a bidirectional queue, both the head and the tail can perform enqueue and de
 
 We regard the head node and tail node of the doubly linked list as the head and tail of the bidirectional queue, and at the same time realize the function of adding and deleting nodes at both ends.
 
-![LinkedListDeque](./algos/5.3.2.1-1.png) ![pushLast()](./algos/5.3.2.1-2.png) ![pushFirst()](./algos/5.3.2.1-3.png) ![popLast()](./algos/5.3.2.1-4.png) ![popFirst()](./algos/5.3.2.1-5.png)
+![LinkedListDeque](./pictures/5.3.2.1-1.png) ![pushLast()](./pictures/5.3.2.1-2.png) ![pushFirst()](./pictures/5.3.2.1-3.png) ![popLast()](./pictures/5.3.2.1-4.png) ![popFirst()](./pictures/5.3.2.1-5.png)
 
 The implementation code is shown below.
 
@@ -2787,7 +2787,7 @@ fn LinkedListDeque(comptime T: type) type {
 
 As shown in the following pcture, similar to implementing a queue based on an array, we can also use a circular array to implement a bidirectional queue.
 
-![ArrayDeque](./algos/5.3.2.2-1.png) ![pushLast()](./algos/5.3.2.2-2.png) ![pushFirst()](./algos/5.3.2.2-3.png) ![popLast()](./algos/5.3.2.2-4.png) ![popFirst()](./algos/5.3.2.2-5.png)
+![ArrayDeque](./pictures/5.3.2.2-1.png) ![pushLast()](./pictures/5.3.2.2-2.png) ![pushFirst()](./pictures/5.3.2.2-3.png) ![popLast()](./pictures/5.3.2.2-4.png) ![popFirst()](./pictures/5.3.2.2-5.png)
 
 On the basis of the implementation of the queue, it is only necessary to add the methods of "enqueue at the head of the queue" and "dequeue at the end of the queue".
 
@@ -2833,7 +2833,7 @@ We know that the "undo" function of software is usually implemented using a stac
 
 As shown in the following picture, given $n$ students, each student has two data items of "name" and "student number". If we want to implement the query function of "enter a student number and return the corresponding name", we can use a hash table to achieve it.
 
-![Fig. 哈希表的抽象表示](./algos/6.1.0.png)
+![Fig. 哈希表的抽象表示](./pictures/6.1.0.png)
 
 In addition to hash tables, arrays and linked lists can also implement query functions, and their efficiency comparisons are shown in the following table.
 
@@ -2878,7 +2878,7 @@ Then, we can use the `index` to access the corresponding bucket in the hash tabl
 
 Let the array length `capacity = 100`, the hash algorithm `hash(key) = key`, and the easily obtained hash function be `key % 100`. The following picture shows the working principle of the hash function by taking the `key` student number and `value` name as an example.
 
-![Fig. 哈希函数工作原理](./algos/6.1.2.png)
+![Fig. 哈希函数工作原理](./pictures/6.1.2.png)
 
 The following code implements a simple hash table. Here, we encapsulate key and value into a class Pair to represent key-value pairs.
 
@@ -3000,13 +3000,13 @@ For the hash function in the above example, when the last two digits of the inpu
 
 As shown in the following picture, two student numbers point to the same name, which is obviously wrong. We call this situation where multiple inputs correspond to the same output "Hash Collision".
 
-![Fig. 哈希冲突示例](./algos/6.1.3.1.png)
+![Fig. 哈希冲突示例](./pictures/6.1.3.1.png)
 
 It is easy to think that the larger the capacity $n$ of the hash table, the lower the probability that multiple keys will be assigned to the same bucket, and the fewer conflicts. Therefore, **we can reduce hash collisions by expanding the hash table**.
 
 As shown in the figure below, the key-value pairs `(136, A)` and `(236, D)` conflict before the expansion, and the conflict disappears after the expansion.
 
-![Fig. 哈希表扩容](./algos/6.1.3.2.png)
+![Fig. 哈希表扩容](./pictures/6.1.3.2.png)
 
 Similar to array expansion, hash table expansion requires migrating all key-value pairs from the original hash table to the new hash table, which is very time-consuming. And because the `capacity` of the hash table changes, we need to recalculate the storage locations of all key-value pairs through the hash function, which further increases the computational overhead of the expansion process. For this reason, programming languages usually reserve a large enough hash table capacity to prevent frequent expansion.
 
@@ -3027,7 +3027,7 @@ The structural improvement methods of the hash table mainly include chained addr
 
 In the original hash table, each bucket can only store one key-value pair. "Separate Chaining" converts a single element into a linked list, uses key-value pairs as linked list nodes, and stores all conflicting key-value pairs in the same linked list. The following picture shows an example of a chained address hash table.
 
-![Fig. 链式地址哈希表](./algos/6.2.1.png)
+![Fig. 链式地址哈希表](./pictures/6.2.1.png)
 
 The operation method of the hash table under the chained address has undergone some changes.
 
@@ -3063,7 +3063,7 @@ Linear detection uses a fixed-step linear search for detection, and its operatio
 - Inserting elements: Calculate the array index through the hash function. If an element is found in the bucket, traverse backward linearly from the conflict position (the step size is usually $1$) until an empty space is found, and insert the element into it.
 Find an element: If a hash conflict is found, use the same stride to traverse backward linearly until the corresponding element is found, and return `value`; if a vacancy is encountered, it means that the target key-value pair is not in the hash table, and return $None$.
 
-![Fig. 线性探测](./algos/6.2.2.1.png)
+![Fig. 线性探测](./pictures/6.2.2.1.png)
 
 However, linear probing suffers from the following drawbacks:
 
@@ -3102,7 +3102,7 @@ In the last two sections, we saw how hash tables work and how hash collisions ar
 
 If the hash collisions are too frequent, the performance of the hash table will be drastically degraded. As shown in the following picture, for the chain address hash table, ideally, the key-value pairs are evenly distributed in each bucket to achieve the best query efficiency; in the worst case, all key-value pairs are stored in the same bucket, and the time complexity degrades to $O(n)$.
 
-![Fig. 哈希冲突的最佳与最差情况](./algos/6.3.0.png)
+![Fig. 哈希冲突的最佳与最差情况](./pictures/6.3.0.png)
 
 **The distribution of key-value pairs is determined by the hash function**. Recall the calculation steps of the hash function, first calculate the hash value, and then take the modulus of the length of the array:
 
@@ -3270,7 +3270,7 @@ The two pointers of the node point to the "left child node" and "right child nod
 
 In a binary tree, all nodes except leaf nodes contain child nodes and non-empty subtrees. For example, in the following example, if "node 2" is regarded as the parent node, its left and right child nodes are "node 4" and "node 5" respectively, and the left subtree is "The tree formed by node 4 and its following nodes", the right subtree is "the tree formed by node 5 and below".
 
-![Fig. 父节点、子节点、子树](./algos/7.1.0.png)
+![Fig. 父节点、子节点、子树](./pictures/7.1.0.png)
 
 7.1.1. Binary tree common terms
 
@@ -3285,7 +3285,7 @@ Common terminology for binary trees is shown in the following picture.
 - "Depth" of the node: the number of edges passed from the root node to the node.
 - "Height" of the node: the number of edges passed from the furthest leaf node to the node.
 
-![Fig. 二叉树的常用术语](./algos/7.1.1.png)
+![Fig. 二叉树的常用术语](./pictures/7.1.1.png)
 
 >**Tip**
 >Please note that we usually define "height" and "depth" as "the number of edges walked", but some topics or textbooks may define them as "the number of nodes walked". In this case, both height and depth need to be incremented by 1.
@@ -3303,7 +3303,7 @@ Similar to a linked list, the nodes are initialized first, and then the referenc
 
 Similar to a linked list, inserting and deleting nodes in a binary tree can be achieved by modifying pointers. The following picture shows an example.
 
-![Fig. 在二叉树中插入与删除节点](./algos/7.1.2.png)
+![Fig. 在二叉树中插入与删除节点](./pictures/7.1.2.png)
 
 ```zig
 ```
@@ -3320,25 +3320,25 @@ The "perfect binary tree" is completely filled with nodes in all but the bottom 
 >**Tip**
 >In the Chinese community, a perfect binary tree is often called a "full binary tree", please pay attention to the distinction.
 
-![Fig. 完美二叉树](./algos/7.1.3.1.png)
+![Fig. 完美二叉树](./pictures/7.1.3.1.png)
 
 2. complete binary tree
 
 As shown in the following picture, only the lowest node of the "complete binary tree" is not filled, and the lowest node is filled as far as possible to the left.
 
-![Fig. 完全二叉树](./algos/7.1.3.2.png)
+![Fig. 完全二叉树](./pictures/7.1.3.2.png)
 
 3. full binary tree
 
 As shown in the following picture, the "full binary tree" all nodes have two child nodes except for the leaf node.
 
-![Fig. 完满二叉树](./algos/7.1.3.3.png)
+![Fig. 完满二叉树](./pictures/7.1.3.3.png)
 
 4. balanced binary tree
 
 As shown in the following picture, the absolute value of the difference between the heights of the left subtree and the right subtree of any node in the "balanced binary tree" does not exceed 1.
 
-![Fig. 平衡二叉树](./algos/7.1.3.4.png)
+![Fig. 平衡二叉树](./pictures/7.1.3.4.png)
 
 7.1.4. Degradation of Binary Trees
 
@@ -3347,7 +3347,7 @@ When the nodes of each layer of the binary tree are filled, a "perfect binary tr
 - The perfect binary tree is the ideal situation to take full advantage of the binary tree's "divide and conquer".
 - The linked list is the other extreme. All operations become linear operations, and the time complexity degenerates to $O(n)$.
 
-![Fig. 二叉树的最佳与最差结构](./algos/7.1.4.png)
+![Fig. 二叉树的最佳与最差结构](./pictures/7.1.4.png)
 
 As shown in the following table, under the best and worst structures, the number of leaf nodes, total number of nodes, height, etc. of the binary tree reach maximum or minimum values.
 
@@ -3370,7 +3370,7 @@ As shown in the following picture "Level-Order Traversal" traverses the binary t
 
 Level-order traversal essentially belongs to "Breadth-First Traversal", which embodies a layer-by-layer search method of "expanding outward one by one".
 
-![Fig. 二叉树的层序遍历](./algos/7.2.1.png)
+![Fig. 二叉树的层序遍历](./pictures/7.2.1.png)
 
 1. code
 
@@ -3417,7 +3417,7 @@ Correspondingly, pre-order, in-order, and post-order traversals all belong to "D
 
 The following picture shows how depth-first traversal of a binary tree works. **Depth-first traversal is like "walking" around the periphery of the entire binary tree**. At each node, three positions will be encountered, corresponding to pre-order traversal, in-order traversal, and post-order traversal.
 
-![Fig. 二叉搜索树的前、中、后序遍历](./algos/7.2.2.0.png)
+![Fig. 二叉搜索树的前、中、后序遍历](./pictures/7.2.2.0.png)
 
 1.code
 
@@ -3460,7 +3460,7 @@ The following picture shows the recursive process of traversing a binary tree in
 1. "Recurse" means to open a new method, and the program visits the next node in the process.
 2. "Return" indicates that the function returns, indicating that the current node has been visited.
 
-![<1>](./algos/7.2.2.1-1.png) ![<2>](./algos/7.2.2.1-2.png) ![<3>](./algos/7.2.2.1-3.png) ![<4>](./algos/7.2.2.1-4.png) ![<5>](./algos/7.2.2.1-5.png) ![<6>](./algos/7.2.2.1-6.png) ![<7>](./algos/7.2.2.1-7.png) ![<8>](./algos/7.2.2.1-8.png) ![<9>](./algos/7.2.2.1-9.png) ![<10>](./algos/7.2.2.1-10.png) ![<11>](./algos/7.2.2.1-11.png)
+![<1>](./pictures/7.2.2.1-1.png) ![<2>](./pictures/7.2.2.1-2.png) ![<3>](./pictures/7.2.2.1-3.png) ![<4>](./pictures/7.2.2.1-4.png) ![<5>](./pictures/7.2.2.1-5.png) ![<6>](./pictures/7.2.2.1-6.png) ![<7>](./pictures/7.2.2.1-7.png) ![<8>](./pictures/7.2.2.1-8.png) ![<9>](./pictures/7.2.2.1-9.png) ![<10>](./pictures/7.2.2.1-10.png) ![<11>](./pictures/7.2.2.1-11.png)
 
 2. complexity analysis
 
@@ -3479,7 +3479,7 @@ Let's analyze a simple case first. Given a perfect binary tree, we store all nod
 
 According to the characteristics of layer order traversal, we can deduce the "mapping formula" between the index of the parent node and the index of the child node: **if the index of the node is $i$, then the index of the left child node of the node is $2i+1$, and the index of the right child node is $2i+2$**. The following picture shows the mapping relationship between each node index.
 
-![Fig. 完美二叉树的数组表示](./algos/7.3.1.png)
+![Fig. 完美二叉树的数组表示](./pictures/7.3.1.png)
 
 **The role of the mapping formula is equivalent to the pointer in the linked list**. Given any node in the array, we can access its left (right) child nodes through the mapping formula.
 
@@ -3489,20 +3489,20 @@ However, a perfect binary tree is a special case. In the middle layer of the bin
 
 As shown in the following picture, given an imperfect binary tree, the above-mentioned array representation method is invalid.
 
-![Fig. 层序遍历序列对应多种二叉树可能性](./algos/7.3.2.1.png)
+![Fig. 层序遍历序列对应多种二叉树可能性](./pictures/7.3.2.1.png)
 
 To solve this problem, **we can consider writing out all $None$ explicitly in the level-order traversal sequence**. As shown in the figure below, after this processing, the sequence traversal sequence can uniquely represent the binary tree.
 
 ```zig
 ```
 
-![Fig. 任意类型二叉树的数组表示](./algos/7.3.2.2.png)
+![Fig. 任意类型二叉树的数组表示](./pictures/7.3.2.2.png)
 
 It is worth noting that **complete binary trees are well suited to be represented by arrays**. Looking back at the definition of a complete binary tree, $None$ only appears at the bottom and right, so **all $None$ must appear at the end of the sequence traversal sequence**.
 
 This means that when using an array to represent a complete binary tree, you can omit storing all $None$, which is very convenient. The following picture shows an example.
 
-![Fig. 完全二叉树的数组表示](./algos/7.3.2.3.png)
+![Fig. 完全二叉树的数组表示](./pictures/7.3.2.3.png)
 
 The following code implements a binary tree based on array representation, including the following operations.
 
@@ -3534,7 +3534,7 @@ As shown in the following picture, the "Binary Search Tree" satisfies the follow
 1. For the root node, the value of all nodes in the left subtree $<$ the value of the root node $<$ the value of all nodes in the right subtree.
 2. The left and right subtrees of any node are also binary search trees, which also satisfy condition 1.
 
-![Fig. 二叉搜索树](./algos/7.4.0.png)
+![Fig. 二叉搜索树](./pictures/7.4.0.png)
 
 7.4.1. Operations on Binary Search Trees
 
@@ -3548,7 +3548,7 @@ Given the target node value `num`, it can be looked up based on the nature of th
 - If `cur.val > num`, the target node is in the left subtree of `cur`, so `cur = cur.left`.
 - If `cur.val = num`, it means that the target node is found, jump out of the loop and return this node.
 
-![<1>](./algos/7.4.1.1-1.png) ![<2>](./algos/7.4.1.1-2.png) ![<3>](./algos/7.4.1.1-3.png) ![<4>](./algos/7.4.1.1-4.png)
+![<1>](./pictures/7.4.1.1-1.png) ![<2>](./pictures/7.4.1.1-2.png) ![<3>](./pictures/7.4.1.1-3.png) ![<4>](./pictures/7.4.1.1-4.png)
 
 The search operation of the binary search tree is consistent with the working principle of the binary search algorithm, which excludes half of the cases in each round. The number of loops is at most the height of the binary tree, which takes $O(log\,n)$ time when the binary tree is balanced.
 
@@ -3581,7 +3581,7 @@ Given an element num to be inserted, in order to maintain the nature of the bina
 1. **Find the insertion position**: Similar to the search operation, start from the root node, and search downwards according to the size relationship between the current node value and num, and jump out of the loop until you cross the leaf node (traversing to $None$).
 2. **Insert a node at this position**: initialize the node `num` and put the node at the position of $None$.
 
-![Fig. 在二叉搜索树中插入节点](./algos/7.4.1.2.png)
+![Fig. 在二叉搜索树中插入节点](./pictures/7.4.1.2.png)
 
 In the code implementation, you need to pay attention to the following two points.
 
@@ -3631,11 +3631,11 @@ Therefore, according to the number of child nodes of the target node, we need to
 
 As shown in the following picture, when the degree of the node to be deleted is $0$, it means that the node is a leaf node and can be deleted directly.
 
-![Fig. 在二叉搜索树中删除节点（度为 0）](./algos/7.4.1.3.1.png)
+![Fig. 在二叉搜索树中删除节点（度为 0）](./pictures/7.4.1.3.1.png)
 
 As shown in the following picture, when the degree of the node to be deleted is $1$, just replace the node to be deleted with its child node.
 
-![Fig. 在二叉搜索树中删除节点（度为 1）](./algos/7.4.1.3.2.png)
+![Fig. 在二叉搜索树中删除节点（度为 1）](./pictures/7.4.1.3.2.png)
 
 When the degree of the node to be deleted is $2$, we cannot delete it directly, but need to replace it with a node. Since the "left $<$ root $<$ right" property of the binary search tree must be maintained, **this node can be the smallest node of the right subtree or the largest node of the left subtree**.
 
@@ -3644,7 +3644,7 @@ Assuming we choose the smallest node of the right subtree (that is, the next nod
 1. Find the next node in the "in-order traversal sequence" of the node to be deleted, denoted as `tmp`.
 2. Overwrite the value of the node to be deleted with the value of `tmp`, and recursively delete the node `tmp` in the tree.
 
-![<1>](./algos/7.4.1.3.3-1.png) ![<2>](./algos/7.4.1.3.3-2.png) ![<3>](./algos/7.4.1.3.3-3.png) ![<4>](./algos/7.4.1.3.3-4.png)
+![<1>](./pictures/7.4.1.3.3-1.png) ![<2>](./pictures/7.4.1.3.3-2.png) ![<3>](./pictures/7.4.1.3.3-3.png) ![<4>](./pictures/7.4.1.3.3-4.png)
 
 The operation of deleting a node also takes $O(log\,n)$ time. It takes $O(log\,n)$ time to find the node to be deleted, and $O(log\,n)$ time to obtain the successor node of the in-order traversal.
 
@@ -3704,7 +3704,7 @@ This means that when performing an in-order traversal in a binary search tree, t
 
 Using the ascending nature of inorder traversal, we only need $O(n)$ time to obtain ordered data in the binary search tree, without additional sorting, which is very efficient.
 
-![Fig. 二叉搜索树的中序遍历序列](./algos/7.4.1.4.png)
+![Fig. 二叉搜索树的中序遍历序列](./pictures/7.4.1.4.png)
 
 7.4.2. Efficiency of binary search tree
 
@@ -3720,7 +3720,7 @@ Ideally, a binary search tree is "balanced" such that any node can be searched i
 
 However, if we continuously insert and delete nodes in the binary search tree, it may cause the binary tree to degenerate into a linked list as shown in the following picture, and the time complexity of various operations will also degenerate to $O(n)$.
 
-![Fig. 二叉搜索树的平衡与退化](./algos/7.4.2.png)
+![Fig. 二叉搜索树的平衡与退化](./pictures/7.4.2.png)
 
 7.4.3. Common applications of binary search trees
 
@@ -3734,11 +3734,11 @@ In the chapter on binary search tree, we mentioned that after multiple insertion
 
 As shown in the following picture, after two node deletion operations, the binary search tree will degenerate into a linked list.
 
-![Fig. AVL 树在删除节点后发生退化](./algos/7.5.0.1.png)
+![Fig. AVL 树在删除节点后发生退化](./pictures/7.5.0.1.png)
 
 For another example, after inserting two nodes in the following perfect binary tree, the tree will be severely skewed to the left, and the time complexity of the search operation will also deteriorate.
 
-![Fig. AVL 树在插入节点后发生退化](./algos/7.5.0.2.png)
+![Fig. AVL 树在插入节点后发生退化](./pictures/7.5.0.2.png)
 
 G. M. Adelson-Velsky and E. M. Landis proposed "AVL trees" in their 1962 paper "An algorithm for the organization of information". The paper describes a series of operations in detail to ensure that the AVL tree will not degenerate after continuous addition and deletion of nodes, thus keeping the time complexity of various operations at the $O(log\,n)$ level. In other words, in scenarios where frequent addition, deletion, query, and modification operations are required, the AVL tree can always maintain efficient data operation performance and has good application value.
 
@@ -3797,11 +3797,11 @@ We refer to the nodes with an absolute value of balance factor $>1$ as "unbalanc
 
 As shown in the figure below, below the nodes is the balance factor. From bottom to top, the first unbalanced node in the binary tree is "Node 3". We consider the subtree with the unbalanced node as the root node, record this node as node, and record its left child node as child, and perform the "right rotation" operation. After the clockwise rotation is completed, the subtree has been restored to balance, and still maintains the characteristics of the binary search tree.
 
-![<1>](./algos/7.5.2.1.1-1.png) ![<2>](./algos/7.5.2.1.1-2.png) ![<3>](./algos/7.5.2.1.1-3.png) ![<4>](./algos/7.5.2.1.1-4.png)
+![<1>](./pictures/7.5.2.1.1-1.png) ![<2>](./pictures/7.5.2.1.1-2.png) ![<3>](./pictures/7.5.2.1.1-3.png) ![<4>](./pictures/7.5.2.1.1-4.png)
 
 In addition, if the node `child` itself has a right child (denoted as `grandChild`), you need to add a step in the "right rotation": make `grandChild` the left child of `node`.
 
-![Fig. 有 grandChild 的右旋操作](./algos/7.5.2.1.2.png)
+![Fig. 有 grandChild 的右旋操作](./pictures/7.5.2.1.2.png)
 
 "Rotating clockwise" is a visual statement, in fact, it needs to be realized by modifying the node pointer, the code is as follows.
 
@@ -3825,11 +3825,11 @@ fn rightRotate(self: *Self, node: ?*inc.TreeNode(T)) ?*inc.TreeNode(T) {
 
 Correspondingly, if the "mirror image" of the above-mentioned unbalanced binary tree is considered, the "left-rotation" operation shown in the following picture needs to be performed.
 
-![Fig. 左旋操作](./algos/7.5.2.2.1.png)
+![Fig. 左旋操作](./pictures/7.5.2.2.1.png)
 
 Similarly, as shown in the following picture, if the node `child` itself has a left child node (denoted as `grandChild`), it is necessary to add a step in the "left rotation": make `grandChild` as the right child node of `node`.
 
-![Fig. 有 grandChild 的左旋操作](./algos/7.5.2.2.2.png)
+![Fig. 有 grandChild 的左旋操作](./pictures/7.5.2.2.2.png)
 
 It can be observed that **the clockwise and counter clockwise operations are logically mirror-symmetrical, and the two imbalances they respectively resolve are also symmetrical**. Based on symmetry, we can easily deduce the left-handed code from the right-handed one. Specifically, you only need to replace all `left` with `right` in the "clockwise" code, and replace all `right` with `left` to get the "counter clockwise" code.
 
@@ -3853,19 +3853,19 @@ fn leftRotate(self: *Self, node: ?*inc.TreeNode(T)) ?*inc.TreeNode(T) {
 
 For the unbalanced node 3 in the following picture, neither left nor right rotation alone can bring the subtree back into balance. At this time, it is necessary to rotate to the left and then to the right, that is, first perform "left rotation" on `child`, and then perform "right rotation" on `node`.
 
-![Fig. 先左旋后右旋](./algos/7.5.2.3.png)
+![Fig. 先左旋后右旋](./pictures/7.5.2.3.png)
 
 4. Clockwise and then counter clockwise
 
 As shown in the following picture, for the mirror image of the above-mentioned unbalanced binary tree, it is necessary to perform "right rotation" on `child` first, and then perform "left rotation" on `node`.
 
-![Fig. 先右旋后左旋](./algos/7.5.2.4.png)
+![Fig. 先右旋后左旋](./pictures/7.5.2.4.png)
 
 5. rotation options
 
 The four unbalanced situations shown in the following picture correspond to the above cases one by one, requiring rotation operations of right rotation, left rotation, right first then left, first left then right respectively.
 
-![Fig. AVL 树的四种旋转情况](./algos/7.5.2.5.png)
+![Fig. AVL 树的四种旋转情况](./pictures/7.5.2.5.png)
 
 As shown in the following table, we determine which of the imbalance nodes falls into the case in the previous picture by determining the balance factor of the imbalance node and the positive and negative signs of the balance factor of the higher child node.
 
@@ -4063,7 +4063,7 @@ A "Heap" is a complete binary tree that satisfies certain conditions and can be 
 - "Max Heap", the value of any node $\ge$ the value of its child nodes.
 - "Min Heap", the value of any node $\le$ the value of its child nodes.
 
-![Fig. 小顶堆与大顶堆](./algos/8.1.0.png)
+![Fig. 小顶堆与大顶堆](./pictures/8.1.0.png)
 
 As a special case of a complete binary tree, a heap has the following properties:
 
@@ -4107,7 +4107,7 @@ When an array is used to represent a binary tree, the elements represent node va
 
 As shown in the following picture, given an index $i$, its left child has index $2i+1$, its right child has index $2i+2$, and its parent has index $(i-1)/2$ (rounded down). When the index is out of range, it means empty node or node does not exist.
 
-![Fig. 堆的表示与存储](./algos/8.1.2.1.png)
+![Fig. 堆的表示与存储](./pictures/8.1.2.1.png)
 
 We can encapsulate the index mapping formula into a function for subsequent use.
 
@@ -4146,7 +4146,7 @@ Given an element `val`, we first add it to the bottom of the heap. After the add
 
 Consider **performing heapization from the bottom to the top**, starting from the entry node. As shown in the following picture, we compare the value of the inserted node with its parent, and swap them if the inserted node is larger. It then continues to do this, repairing each node in the heap from bottom to top, until it passes the root node or ends when it encounters a node that does not need to be swapped.
 
-![<1>](./algos/8.1.2.3-1.png) ![<2>](./algos/8.1.2.3-2.png) ![<3>](./algos/8.1.2.3-3.png) ![<4>](./algos/8.1.2.3-4.png) ![<5>](./algos/8.1.2.3-5.png) ![<6>](./algos/8.1.2.3-6.png) ![<7>](./algos/8.1.2.3-7.png) ![<8>](./algos/8.1.2.3-8.png) ![<9>](./algos/8.1.2.3-9.png)
+![<1>](./pictures/8.1.2.3-1.png) ![<2>](./pictures/8.1.2.3-2.png) ![<3>](./pictures/8.1.2.3-3.png) ![<4>](./pictures/8.1.2.3-4.png) ![<5>](./pictures/8.1.2.3-5.png) ![<6>](./pictures/8.1.2.3-6.png) ![<7>](./pictures/8.1.2.3-7.png) ![<8>](./pictures/8.1.2.3-8.png) ![<9>](./pictures/8.1.2.3-9.png)
 
 If the total number of nodes is $n$, the height of the tree is $log\,n$. It can be seen from this that the maximum number of rounds of heap operations is $O(log\,n)$, and **the time complexity of elements into the heap is $O(log\,n)$**.
 
@@ -4185,7 +4185,7 @@ The top element of the heap is the root node of the binary tree, which is the fi
 
 As shown in the following picture, top-to-bottom heaping operates in the opposite direction of bottom-to-top heaping. We compare the value of the root node with the values of its two children, swap the largest child with the root node; then do this in a loop, until it meets a leaf node or encounters a node that does not need to be exchanged.
 
-![<1>](./algos/8.1.2.4-1.png) ![<2>](./algos/8.1.2.4-2.png) ![<3>](./algos/8.1.2.4-3.png) ![<4>](./algos/8.1.2.4-4.png) ![<5>](./algos/8.1.2.4-5.png) ![<6>](./algos/8.1.2.4-6.png) ![<7>](./algos/8.1.2.4-7.png) ![<8>](./algos/8.1.2.4-8.png) ![<9>](./algos/8.1.2.4-9.png) ![<10>](./algos/8.1.2.4-10.png)
+![<1>](./pictures/8.1.2.4-1.png) ![<2>](./pictures/8.1.2.4-2.png) ![<3>](./pictures/8.1.2.4-3.png) ![<4>](./pictures/8.1.2.4-4.png) ![<5>](./pictures/8.1.2.4-5.png) ![<6>](./pictures/8.1.2.4-6.png) ![<7>](./pictures/8.1.2.4-7.png) ![<8>](./pictures/8.1.2.4-8.png) ![<9>](./pictures/8.1.2.4-9.png) ![<10>](./pictures/8.1.2.4-10.png)
 
 Similar to the operation of adding elements to the heap, the time complexity of the operation of removing elements from the top of the heap is also $O(log\,n)$.
 
@@ -4281,7 +4281,7 @@ By multiplying the above two, the time complexity of the heap building process c
 
 Let's do a more accurate calculation next. In order to reduce the difficulty of calculation, it is assumed that a "perfect binary tree" with $n$ nodes and height $h$ is given, and this assumption will not affect the correctness of the calculation results.
 
-![Fig. 完美二叉树的各层节点数量](./algos/8.2.3.png)
+![Fig. 完美二叉树的各层节点数量](./pictures/8.2.3.png)
 
 As shown in the previous picture, the maximum number of iterations of a node "top-to-bottom heaping" is equal to the distance from the node to the leaf node, which is exactly the "node height". Therefore, we can sum the "number of nodes $\times$ node height" of each layer to get **the sum of the heaping iterations of all nodes**.
 $$T(h)=2^0h+2^1(h-1)+2^2(h-2)+...+2^{(h-1)}\times1$$
@@ -4310,7 +4310,7 @@ We can perform the $k$ rounds of traversal shown in the following picture, and e
 
 This method is only applicable to the case of $k \ll n$, because when $k$ is close to $n$, its time complexity tends to be $O(n^2)$, which is very time-consuming.
 
-![Fig. 遍历寻找最大的 k 个元素](./algos/8.3.1.png)
+![Fig. 遍历寻找最大的 k 个元素](./pictures/8.3.1.png)
 
 >**Tip**
 >When $k=n$, we can get a sequence from large to small, which is equivalent to the "selection sort" algorithm.
@@ -4321,7 +4321,7 @@ As shown in the following picture, we can sort the array `nums` and return the r
 
 Obviously, this method "exceeds" the task, because we only need to find the largest $k$ elements without sorting other elements.
 
-![Fig. 排序寻找最大的 k 个元素](./algos/8.3.2.png)
+![Fig. 排序寻找最大的 k 个元素](./pictures/8.3.2.png)
 
 8.3.3. Method Three: Heaping
 
@@ -4332,7 +4332,7 @@ We can solve the Top-K problem more efficiently based on the heap, as shown in t
 3. Starting from the $k+1th$ element, if the current element is greater than the top element, remove the top element from the heap and put the current element into the heap.
 4. After the traversal is completed, the largest $k$ elements are saved in the heap.
 
-![<1>](./algos/8.3.3-1.png) ![<2>](./algos/8.3.3-2.png) ![<3>](./algos/8.3.3-3.png) ![<4>](./algos/8.3.3-4.png) ![<5>](./algos/8.3.3-5.png) ![<6>](./algos/8.3.3-6.png) ![<7>](./algos/8.3.3-7.png) ![<8>](./algos/8.3.3-8.png) ![<9>](./algos/8.3.3-9.png)
+![<1>](./pictures/8.3.3-1.png) ![<2>](./pictures/8.3.3-2.png) ![<3>](./pictures/8.3.3-3.png) ![<4>](./pictures/8.3.3-4.png) ![<5>](./pictures/8.3.3-5.png) ![<6>](./pictures/8.3.3-6.png) ![<7>](./pictures/8.3.3-7.png) ![<8>](./pictures/8.3.3-8.png) ![<9>](./pictures/8.3.3-9.png)
 
 A total of $n$ rounds of entering and exiting the heap are performed, and the maximum length of the heap is $k$, so the time complexity is $O(n\,log\,k)$. The efficiency of this method is very high. When $k$ is small, the time complexity tends to $O(n)$; when k is large, the time complexity will not exceed $O(n\,log\,n)$.
 
@@ -4376,7 +4376,7 @@ $$\begin{align*}
 
 If the vertices are regarded as nodes and the edges are regarded as references (pointers) connecting each node, we can regard the graph as a data structure extended from the linked list. As shown in the following picture, compared with linear relationships (linked lists) and divide-and-conquer relationships (trees), network relationships (graphs) have higher degrees of freedom and thus are more complex.
 
-![Fig. 链表、树、图之间的关系](./algos/9.1.0.png)
+![Fig. 链表、树、图之间的关系](./pictures/9.1.0.png)
 
 9.1.1. Common types of graphs
 
@@ -4385,18 +4385,18 @@ According to whether the edge has direction, it can be divided into "Undirected 
 - In an undirected graph, an edge represents a "two-way" connection between two vertices, such as the "friend relationship" in WeChat or QQ.
 - In a directed graph, the edges are directional, that is, the edges in the two directions of $A \rightarrow B$ and $A \leftarrow B$ are independent of each other, such as the relationship between "follow" and "followed" on Weibo or Douyin.
 
-![Fig. 有向图与无向图](./algos/9.1.1.1.png)
+![Fig. 有向图与无向图](./pictures/9.1.1.1.png)
 
 According to whether all vertices are connected, it can be divided into "Connected Graph" and "Disconnected Graph".
 
 - For a connected graph, starting from a certain vertex, you can reach any other vertex.
 - For a disconnected graph, starting from a vertex, at least one vertex cannot be reached.
 
-![Fig. 连通图与非连通图](./algos/9.1.1.2.png)
+![Fig. 连通图与非连通图](./pictures/9.1.1.2.png)
 
 We can also add a "weight" variable to the edge to get a "weighted graph" shown in the following picture. For example, in mobile games such as Glory of Kings, the system will calculate the "intimacy" between players based on the common game time, and this intimacy network can be represented by a weighted graph.
 
-![Fig. 有权图与无权图](./algos/9.1.1.3.png)
+![Fig. 有权图与无权图](./pictures/9.1.1.3.png)
 
 Graph data structures contain the following common terms.
 
@@ -4414,7 +4414,7 @@ Assuming that the number of vertices in the graph is n, the "Adjacency Matrix" u
 
 As shown in the following picture, if the adjacency matrix is $M$ and the vertex list is $V$, then the matrix element $M[i][j]=1$ means that there is an edge between the vertex $V[i]$ and the vertex $V[j]$, otherwise $M[i][j]=0$ means there is no edge between the two vertices.
 
-![Fig. 图的邻接矩阵表示](./algos/9.1.2.1.png)
+![Fig. 图的邻接矩阵表示](./pictures/9.1.2.1.png)
 
 An adjacency matrix has the following properties.
 
@@ -4428,7 +4428,7 @@ When using an adjacency matrix to represent a graph, we can directly access matr
 
 An "Adjacency list" uses $n$ linked lists to represent graphs, and linked list nodes represent vertices. The $ith$ linked list corresponds to the vertex $i$, which stores all the adjacent vertices of the vertex (that is, the vertices connected to the vertex). The following picture shows an example of a graph stored using an adjacency list.
 
-![Fig. 图的邻接表表示](./algos/9.1.2.2.png)
+![Fig. 图的邻接表表示](./pictures/9.1.2.2.png)
 
 The adjacency list only stores the edges that actually exist, and the total number of edges is usually much smaller than $n^2$, so it is more space efficient. However, in the adjacency list, the edge needs to be found by traversing the linked list, so its time efficiency is not as good as that of the adjacency matrix.
 
@@ -4457,7 +4457,7 @@ Given an undirected graph with n vertices, the implementation of various operati
 - **Deleting vertices**: Delete a row and a column in the adjacency matrix. The worst case is reached when the first row and first column are deleted, and $(n-1)^2$ elements need to be "moved up to the left", thus using $O(n^2)$ time.
 - **Initialization**: Pass in $n$ vertices, initialize the vertex list `vertices` of length $n$, use $O(n)$ time; initialize the `adjMat` of $n \times n$ size, use $O(n^2)$ time.
 
-![Initializing the adjacency matrix](./algos/9.2.1-1.png) ![Adding edge](./algos/9.2.1-2.png) ![Deleting edge](./algos/9.2.1-3.png) ![Adding vertex](./algos/9.2.1-4.png) ![Deleting vertex](./algos/9.2.1-5.png)
+![Initializing the adjacency matrix](./pictures/9.2.1-1.png) ![Adding edge](./pictures/9.2.1-2.png) ![Deleting edge](./pictures/9.2.1-3.png) ![Adding vertex](./pictures/9.2.1-4.png) ![Deleting vertex](./pictures/9.2.1-5.png)
 
 The following is the implementation code based on the adjacency matrix representation graph.
 
@@ -4474,7 +4474,7 @@ Assuming that the total number of vertices of the undirected graph is n and the 
 - **Deleting vertex**: It is necessary to traverse the entire adjacency list, delete all edges containing the specified vertex, and use $O(n+m)$ time.
 - **Initialization**: Create $n$ vertices and $2m$ edges in adjacency list, takes $O(n+m)$ time.
 
-![Initializing adjacency list](./algos/9.2.2-1.png) ![Add edge](./algos/9.2.2-2.png) ![Delete edge](./algos/9.2.2-3.png) ![Add vertex](./algos/9.2.2-4.png) ![Delete vertex](./algos/9.2.2-5.png)
+![Initializing adjacency list](./pictures/9.2.2-1.png) ![Add edge](./pictures/9.2.2-2.png) ![Delete edge](./pictures/9.2.2-3.png) ![Add vertex](./pictures/9.2.2-4.png) ![Delete vertex](./pictures/9.2.2-5.png)
 
 The following is a code example for implementing a graph based on an adjacency list. Careful students may notice that **we use the `Vertex` node class to represent vertices in the adjacency list**, and there is a reason for doing so.
 
@@ -4511,7 +4511,7 @@ Both "graph" and "tree" are nonlinear data structures, and both need to use "sea
 
 **Breadth-first traversal is a traversal method from near to far. Starting from a certain node, the vertex with the closest distance is always visited first, and expanded layer by layer**. As shown in the following picture, start from the upper left corner vertex, first traverse all adjacent vertices of this vertex, then traverse all adjacent vertices of the next vertex, and so on until all vertices are visited.
 
-![Fig. 图的广度优先遍历](./algos/9.3.1.png)
+![Fig. 图的广度优先遍历](./pictures/9.3.1.png)
 
 1. Algorithm implementation
 
@@ -4529,7 +4529,7 @@ In order to prevent repeated traversal of vertices, we need to use a hash table 
 
 The code is relatively abstract, it is recommended to refer to the following picture to deepen the understanding.
 
-![<1>](./algos/9.3.1.1-1.png) ![<2>](./algos/9.3.1.1-2.png) ![<3>](./algos/9.3.1.1-3.png) ![<4>](./algos/9.3.1.1-4.png) ![<5>](./algos/9.3.1.1-5.png) ![<6>](./algos/9.3.1.1-6.png) ![<7>](./algos/9.3.1.1-7.png) ![<8>](./algos/9.3.1.1-8.png) ![<9>](./algos/9.3.1.1-9.png) ![<10>](./algos/9.3.1.1-10.png) ![<11>](./algos/9.3.1.1-11.png)
+![<1>](./pictures/9.3.1.1-1.png) ![<2>](./pictures/9.3.1.1-2.png) ![<3>](./pictures/9.3.1.1-3.png) ![<4>](./pictures/9.3.1.1-4.png) ![<5>](./pictures/9.3.1.1-5.png) ![<6>](./pictures/9.3.1.1-6.png) ![<7>](./pictures/9.3.1.1-7.png) ![<8>](./pictures/9.3.1.1-8.png) ![<9>](./pictures/9.3.1.1-9.png) ![<10>](./pictures/9.3.1.1-10.png) ![<11>](./pictures/9.3.1.1-11.png)
 
 >**Is the sequence of breadth-first traversal unique?**
 >Not unique. Breadth-first traversal only requires traversal in the order of "from near to far", and the traversal order of multiple vertices with the same distance is allowed to be arbitrarily disrupted. Taking the above picture as an example, the access order of vertices $1$ and $3$ can be exchanged, and the access order of vertices $2$, $4$ and $6$ can also be exchanged arbitrarily.
@@ -4544,7 +4544,7 @@ The code is relatively abstract, it is recommended to refer to the following pic
 
 **Depth-first traversal is a traversal method that goes to the end first, goes back when there is nowhere to go**. As shown in the following picture, start from a the upper left corner vertex, visit an adjacent vertex of the current vertex, return when reaching the end, contniue walking to the end and return, and so on, until all vertex traversal is completed.
 
-![Fig. 图的深度优先遍历](./algos/9.3.2.0.png)
+![Fig. 图的深度优先遍历](./pictures/9.3.2.0.png)
 
 1. Algorithm implementation
 
@@ -4563,7 +4563,7 @@ The algorithm flow of depth-first traversal is shown in the following picture.
 
 In order to deepen the understanding, it is recommended to combine the diagram with the code to simulate the entire DFS process in the mind (or draw it with a pen), including when each recursive method is opened and when it returns.
 
-![<1>](./algos/9.3.2.1-1.png) ![<2>](./algos/9.3.2.1-2.png) ![<3>](./algos/9.3.2.1-3.png) ![<4>](./algos/9.3.2.1-4.png) ![<5>](./algos/9.3.2.1-5.png) ![<6>](./algos/9.3.2.1-6.png) ![<7>](./algos/9.3.2.1-7.png) ![<8>](./algos/9.3.2.1-8.png) ![<9>](./algos/9.3.2.1-9.png) ![<10>](./algos/9.3.2.1-10.png) ![<11>](./algos/9.3.2.1-11.png)
+![<1>](./pictures/9.3.2.1-1.png) ![<2>](./pictures/9.3.2.1-2.png) ![<3>](./pictures/9.3.2.1-3.png) ![<4>](./pictures/9.3.2.1-4.png) ![<5>](./pictures/9.3.2.1-5.png) ![<6>](./pictures/9.3.2.1-6.png) ![<7>](./pictures/9.3.2.1-7.png) ![<8>](./pictures/9.3.2.1-8.png) ![<9>](./pictures/9.3.2.1-9.png) ![<10>](./pictures/9.3.2.1-10.png) ![<11>](./pictures/9.3.2.1-11.png)
 
 >**Is the sequence of depth-first traversal unique?**
 >Similar to breadth-first traversal, the order of depth-first traversal sequence is not unique. Given a vertex, it doesn’t matter which direction to explore first, that is, the order of adjacent vertices can be arbitrarily disrupted, and it is all depth-first traversal.
@@ -4615,7 +4615,7 @@ Space complexity: The list `res`, the hash table `visited` have at most $|V|$ ve
 >**Question**
 >Given an array `nums` of length $n$, the elements are arranged in ascending order, and the array does not contain repeated elements. Find and return the index of the element `target` in this array. Returns $-1$ if the array does not contain the element.
 
-![Fig. 二分查找示例数据](./algos/10.1.0.png)
+![Fig. 二分查找示例数据](./pictures/10.1.0.png)
 
 As shown in the following picture, we first initialize the pointers $i=0$ and $j=n-1$, pointing to the first element and the last element of the array respectively, representing the search interval $[0, n-1]$. Note that square brackets denote closed intervals, which contain the boundary values themselves.
 
@@ -4629,7 +4629,7 @@ Next, loop through the following two steps:
 
 If the array does not contain the target element, the search range will eventually be reduced to empty. In this case $-1$ is returned.
 
-![<1>](./algos/10.1.0-1.png) ![<2>](./algos/10.1.0-2.png) ![<3>](./algos/10.1.0-3.png) ![<4>](./algos/10.1.0-4.png) ![<5>](./algos/10.1.0-5.png) ![<6>](./algos/10.1.0-6.png) ![<7>](./algos/10.1.0-7.png)
+![<1>](./pictures/10.1.0-1.png) ![<2>](./pictures/10.1.0-2.png) ![<3>](./pictures/10.1.0-3.png) ![<4>](./pictures/10.1.0-4.png) ![<5>](./pictures/10.1.0-5.png) ![<6>](./pictures/10.1.0-6.png) ![<7>](./pictures/10.1.0-7.png)
 
 It is worth noting that since both $i$ and $j$ are of type `int`, **$i+j$ may exceed the value range of type `int`**. In order to avoid large numbers out of bounds, we usually use the formula $m=\lfloor i+(j-i)/2 \rfloor$ to calculate the midpoint.
 
@@ -4693,7 +4693,7 @@ As shown in the following picture, under the two interval representations, the i
 
 Since the left and right boundaries in the "double-closed interval" representation are both defined as closed intervals, the operation of pointers $i$ and $j$ to shrink the interval is also symmetrical. This is less error-prone, so it is generally recommended to use the "double-closed interval" writing method.
 
-![Fig. 两种区间定义](./algos/10.1.1.png)
+![Fig. 两种区间定义](./pictures/10.1.1.png)
 
 10.1.2. Advantages and limitations
 
@@ -4717,7 +4717,7 @@ Binary search can not only be used to search for the target element, but also ha
 >**Question**
 >Given an ordered array `nums` of length n and an element `target`, the array has no duplicate elements. Now insert `target` into the array `nums`, keeping its order. If the element `target` already exists in the array, it is inserted to the left of it. Please return the index of `target` in the array after insertion.
 
-![Fig. 二分查找插入点示例数据](./algos/10.2.1.png)
+![Fig. 二分查找插入点示例数据](./pictures/10.2.1.png)
 
 If you want to reuse the binary search code in the previous section, you need to answer the following two questions.
 
@@ -4747,7 +4747,7 @@ The title requires inserting the `target` element to the leftmost, so **we need 
 1. Perform a binary search to get the index of any `target`, denoted as $k$.
 2. Starting from index $k$, traverse linearly to the left, and return when the leftmost `target` is found.
 
-![Fig. 线性查找重复元素的插入点](./algos/10.2.2.1.png)
+![Fig. 线性查找重复元素的插入点](./pictures/10.2.2.1.png)
 
 This method works, but it involves a linear search, so the time complexity is $O(n)$. This method is inefficient when there are many duplicate `target`s in the array.
 
@@ -4758,7 +4758,7 @@ Now consider expanding the binary search code. As shown in the following picture
 
 After the loop is complete, $i$ points to the leftmost `target` and $j$ points to the first element smaller than `target`, **so index $i$ is the insertion point**.
 
-![<1>](./algos/10.2.2.2-1.png) ![<2>](./algos/10.2.2.2-2.png) ![<3>](./algos/10.2.2.2-3.png) ![<4>](./algos/10.2.2.2-4.png) ![<5>](./algos/10.2.2.2-5.png) ![<6>](./algos/10.2.2.2-6.png) ![<7>](./algos/10.2.2.2-7.png) ![<8>](./algos/10.2.2.2-8.png)
+![<1>](./pictures/10.2.2.2-1.png) ![<2>](./pictures/10.2.2.2-2.png) ![<3>](./pictures/10.2.2.2-3.png) ![<4>](./pictures/10.2.2.2-4.png) ![<5>](./pictures/10.2.2.2-5.png) ![<6>](./pictures/10.2.2.2-6.png) ![<7>](./pictures/10.2.2.2-7.png) ![<8>](./pictures/10.2.2.2-8.png)
 
 Observe the following code, it is verified that the operations of branches `nums[m] > target` and `nums[m] == target` are the same, so the two can be merged.
 
@@ -4807,7 +4807,7 @@ In fact, we can use the function of finding the leftmost element to find the rig
 
 As shown in the following picture, after the search is complete, the pointer $i$ points to the leftmost `target + 1` (if it exists), and $j$ points to the rightmost `target`, so just return $j$.
 
-![Fig. 将查找右边界转化为查找左边界](./algos/10.3.2.1.png)
+![Fig. 将查找右边界转化为查找左边界](./pictures/10.3.2.1.png)
 
 Note that the returned insertion point is $i$, so you need to subtract $1$ from it to get $j$.
 
@@ -4824,7 +4824,7 @@ So, as shown in the following picture, we can construct an element that does not
 - **Find the leftmost target**: it can be converted to find `target - 0.5` and return the pointer $i$.
 - **Find the rightmost target**: it can be converted to find `target + 0.5` and return the pointer $j$.
 
-![Fig. 将查找边界转化为查找元素](./algos/10.3.2.2.png)
+![Fig. 将查找边界转化为查找元素](./pictures/10.3.2.2.png)
 
 The code is omitted here, but it is worth noting the following two points.
 
@@ -4842,7 +4842,7 @@ In algorithm problems, **we often reduce the time complexity of the algorithm by
 
 Consider iterating over all possible combinations directly. As shown in the following picture, we start a two-level loop, and in each round determine whether the sum of two integers is target, and if so, return their indexes.
 
-![Fig. 线性查找求解两数之和](./algos/10.4.1.png)
+![Fig. 线性查找求解两数之和](./pictures/10.4.1.png)
 
 ```zig
 // method 1: brute force enumeration
@@ -4871,7 +4871,7 @@ Consider a hash table, where the key-value pairs are array elements and element 
 1. Determine whether the number `target - nums[i]` is in the hash table, and if so, directly return the indexes of these two elements.
 2. Add the key-value pair `nums[i]` and index `i` to the hash table.
 
-![<1>](./algos/10.4.2-1.png) ![<2>](./algos/10.4.2-2.png) ![<3>](./algos/10.4.2-3.png)
+![<1>](./pictures/10.4.2-1.png) ![<2>](./pictures/10.4.2-2.png) ![<3>](./pictures/10.4.2-3.png)
 
 The implementation code is as follows, only a single layer of loop is required.
 
@@ -4939,7 +4939,7 @@ However, **using these algorithms often requires preprocessing of the data**. Fo
 
 Given a set of data of size $n$, we can use linear search, binary search, tree search, hash search and other methods to search for a target element in this data. The working principle of each method is shown in the following picture.
 
-![Fig. 多种搜索策略](./algos/10.5.3.png)
+![Fig. 多种搜索策略](./pictures/10.5.3.png)
 
 The operational efficiency and characteristics of the above methods are shown in the table below.
 
@@ -5002,7 +5002,7 @@ tree search
 
 As shown in the following picture, the data type in sorting algorithms can be integers, floating point numbers, characters or strings, etc. The ordering evaluation rules can be set according to needs, such as number size, character ASCII code order or custom rules.
 
-![Fig. 数据类型和判断规则示例](./algos/11.1.0.png)
+![Fig. 数据类型和判断规则示例](./pictures/11.1.0.png)
 
 11.1.1. Evaluation dimension
 
@@ -5057,7 +5057,7 @@ Assuming the length of the array is $n$, the algorithm flow of the selection sor
 4. And so on. After $n-1$ rounds of selection and exchange, the first $n-1$ elements of the array are sorted.
 5. The only remaining element must be the largest element and does not need to be sorted, so the array sorting is complete.
 
-![<1>](./algos/11.2.0-1.png) ![<2>](./algos/11.2.0-2.png) ![<3>](./algos/11.2.0-3.png) ![<4>](./algos/11.2.0-4.png) ![<5>](./algos/11.2.0-5.png) ![<6>](./algos/11.2.0-6.png) ![<7>](./algos/11.2.0-7.png) ![<8>](./algos/11.2.0-8.png) ![<9>](./algos/11.2.0-9.png) ![<10>](./algos/11.2.0-10.png) ![<11>](./algos/11.2.0-11.png)
+![<1>](./pictures/11.2.0-1.png) ![<2>](./pictures/11.2.0-2.png) ![<3>](./pictures/11.2.0-3.png) ![<4>](./pictures/11.2.0-4.png) ![<5>](./pictures/11.2.0-5.png) ![<6>](./pictures/11.2.0-6.png) ![<7>](./pictures/11.2.0-7.png) ![<8>](./pictures/11.2.0-8.png) ![<9>](./pictures/11.2.0-9.png) ![<10>](./pictures/11.2.0-10.png) ![<11>](./pictures/11.2.0-11.png)
 
 In the code, we use $k$ to record the smallest element in the unsorted interval.
 
@@ -5071,7 +5071,7 @@ In the code, we use $k$ to record the smallest element in the unsorted interval.
 - **Space complexity $O(1)$, in-place sorting**: pointers $i$, $j$ use constant size extra space.
 - **Unstable sorting**: as shown in the following picture, element `nums[i]` may be exchanged to the right of its equal element, causing the relative order of the two to change.
 
-![Fig. 选择排序非稳定示例](./algos/11.2.1.png)
+![Fig. 选择排序非稳定示例](./pictures/11.2.1.png)
 
 11.3 Bubble Sort
 
@@ -5079,7 +5079,7 @@ In the code, we use $k$ to record the smallest element in the unsorted interval.
 
 As shown in the following picture, the bubbling process can be simulated using the element swapping operation: traverse from the far left of the array, compare the size of adjacent elements in turn, and swap them if "left element > right element". When the traversal is complete, the largest element is moved to the far right of the array.
 
-![<1>](./algos/11.3.0-1.png) ![<2>](./algos/11.3.0-2.png) ![<3>](./algos/11.3.0-3.png) ![<4>](./algos/11.3.0-4.png) ![<5>](./algos/11.3.0-5.png) ![<6>](./algos/11.3.0-6.png) ![<7>](./algos/11.3.0-7.png)
+![<1>](./pictures/11.3.0-1.png) ![<2>](./pictures/11.3.0-2.png) ![<3>](./pictures/11.3.0-3.png) ![<4>](./pictures/11.3.0-4.png) ![<5>](./pictures/11.3.0-5.png) ![<6>](./pictures/11.3.0-6.png) ![<7>](./pictures/11.3.0-7.png)
 
 11.3.1. Algorithmic process
 
@@ -5090,7 +5090,7 @@ Assuming the length of the array is $n$, the steps of bubble sorting are shown i
 3. By analogy, after $n-1$ rounds of "bubbling", **the first $n-1$ largest elements are swapped to the correct position**.
 4. The only remaining element must be the smallest element and does not need to be sorted, so the array sorting is complete.
 
-![Fig. 冒泡排序流程](./algos/11.3.1.png)
+![Fig. 冒泡排序流程](./pictures/11.3.1.png)
 
 ```zig
 // bubble sort
@@ -5156,7 +5156,7 @@ Specifically, we select a reference element in the unsorted interval, compare th
 
 The following picture shows the operation process of inserting elements into the array. Assuming the base element is `base`, we need to move all elements between the target index and `base` one position to the right, and then assign `base` to the target index.
 
-![Fig. 单次插入操作](./algos/11.4.0.png)
+![Fig. 单次插入操作](./pictures/11.4.0.png)
 
 11.4.1. Algorithmic process
 
@@ -5167,7 +5167,7 @@ The overall process of insertion sort is shown in the following picture.
 3. Select the 3rd element as `base` and insert it in the correct position, **the first 3 elements of the array are sorted**.
 4. By analogy, in the last round, the last element is selected as the `base`, and after inserting it in the correct position, **all elements are sorted**.
 
-![Fig. 插入排序流程](./algos/11.4.1.png)
+![Fig. 插入排序流程](./pictures/11.4.1.png)
 
 ```zig
 // insertion sort
@@ -5216,7 +5216,7 @@ The core operation of quicksort is "pivot partitioning", and its goal is to sele
 2. Set up a loop, use `i` (`j`) in each round to find the first element that is larger (smaller) than the reference number, and then swap the two elements.
 3. Repeat step `2.` until `i` and `j` meet then stop, and finally swap the reference number to the dividing line of the two sub-arrays.
 
-![<1>](./algos/11.5.0-1.png) ![<2>](./algos/11.5.0-2.png) ![<3>](./algos/11.5.0-3.png) ![<4>](./algos/11.5.0-4.png) ![<5>](./algos/11.5.0-5.png) ![<6>](./algos/11.5.0-6.png) ![<7>](./algos/11.5.0-7.png) ![<8>](./algos/11.5.0-8.png) ![<9>](./algos/11.5.0-9.png)
+![<1>](./pictures/11.5.0-1.png) ![<2>](./pictures/11.5.0-2.png) ![<3>](./pictures/11.5.0-3.png) ![<4>](./pictures/11.5.0-4.png) ![<5>](./pictures/11.5.0-5.png) ![<6>](./pictures/11.5.0-6.png) ![<7>](./pictures/11.5.0-7.png) ![<8>](./pictures/11.5.0-8.png) ![<9>](./pictures/11.5.0-9.png)
 
 After the pivot division is completed, the original array is divided into three parts: left sub-array, reference number, and right sub-array, and "any element of the left sub-array $\le$ reference number $\le$ any element of the right sub-array". So we next just need to sort those two subarrays.
 
@@ -5256,7 +5256,7 @@ The overall flow of quicksort is shown in the following picture
 2. Then, recursively perform "pivot partition" on the left sub-array and the right sub-array respectively.
 3. Continue to recurse until the length of the sub-array is 1, thus completing the sorting of the entire array.
 
-![Fig. 快速排序流程](./algos/11.5.1.png)
+![Fig. 快速排序流程](./pictures/11.5.1.png)
 
 ```zig
 // quicksort
@@ -5364,7 +5364,7 @@ fn quickSort(nums: []i32, left_: usize, right_: usize) void {
 - **Division stage**: the array is continuously divided from the midpoint by recursion, and the sorting problem of long arrays is converted into the sorting problem of short arrays.
 - **Merging stage**: when the length of the sub-array is 1, the division is terminated, and the merging is started, and the two shorter ordered arrays on the left and right are continuously merged into a longer ordered array until the end.
 
-![Fig. 归并排序的划分与合并阶段](./algos/11.6.0.png)
+![Fig. 归并排序的划分与合并阶段](./pictures/11.6.0.png)
 
 11.6.1. Algorithmic process
 
@@ -5375,7 +5375,7 @@ As shown in the following picture, the "partition phase" recursively cuts the ar
 
 The "merge phase" merges the left and right subarrays into one sorted array from bottom to top. It should be noted that the merging starts from the subarray with length 1, and each subarray in the merging stage is ordered.
 
-![<1>](./algos/11.6.1-1.png) ![<2>](./algos/11.6.1-2.png) ![<3>](./algos/11.6.1-3.png) ![<4>](./algos/11.6.1-4.png) ![<5>](./algos/11.6.1-5.png) ![<6>](./algos/11.6.1-6.png) ![<7>](./algos/11.6.1-7.png) ![<8>](./algos/11.6.1-8.png) ![<9>](./algos/11.6.1-9.png) ![<10>](./algos/11.6.1-10.png) ![<11>](./algos/11.6.1-11.png)
+![<1>](./pictures/11.6.1-1.png) ![<2>](./pictures/11.6.1-2.png) ![<3>](./pictures/11.6.1-3.png) ![<4>](./pictures/11.6.1-4.png) ![<5>](./pictures/11.6.1-5.png) ![<6>](./pictures/11.6.1-6.png) ![<7>](./pictures/11.6.1-7.png) ![<8>](./pictures/11.6.1-8.png) ![<9>](./pictures/11.6.1-9.png) ![<10>](./pictures/11.6.1-10.png) ![<11>](./pictures/11.6.1-11.png)
 
 It is observed that the recursive order of merge sort is the same as the post-order traversal of the binary tree.
 
@@ -5486,7 +5486,7 @@ Assuming the length of the array is $n$, the process of heap sorting shown in th
 >**Tip**
 >In fact, step `2.` and step `3.` are also included in the operation of removing elements from the heap, but there is an additional step of popping out elements.
 
-![<1>](./algos/11.7.1-1.png) ![<2>](./algos/11.7.1-2.png) ![<3>](./algos/11.7.1-3.png) ![<4>](./algos/11.7.1-4.png) ![<5>](./algos/11.7.1-5.png) ![<6>](./algos/11.7.1-6.png) ![<7>](./algos/11.7.1-7.png) ![<8>](./algos/11.7.1-8.png) ![<9>](./algos/11.7.1-9.png) ![<10>](./algos/11.7.1-10.png) ![<11>](./algos/11.7.1-11.png) ![<12>](./algos/11.7.1-12.png)
+![<1>](./pictures/11.7.1-1.png) ![<2>](./pictures/11.7.1-2.png) ![<3>](./pictures/11.7.1-3.png) ![<4>](./pictures/11.7.1-4.png) ![<5>](./pictures/11.7.1-5.png) ![<6>](./pictures/11.7.1-6.png) ![<7>](./pictures/11.7.1-7.png) ![<8>](./pictures/11.7.1-8.png) ![<9>](./pictures/11.7.1-9.png) ![<10>](./pictures/11.7.1-10.png) ![<11>](./pictures/11.7.1-11.png) ![<12>](./pictures/11.7.1-12.png)
 
 In the code implementation, we use the same top-to-bottom heap (Sift Down) function as in the heap chapter. It is worth noting that since the length of the heap will decrease as the largest element is extracted, we need to add a length parameter $n$ to the `siftDown()` function to specify the current effective length of the heap.
 
@@ -5516,7 +5516,7 @@ Consider an array of length n whose elements are floating point numbers in the r
 2. Perform sorting on each bucket separately (this document uses the built-in sorting function of the programming language).
 3. Merge the results in ascending order of the buckets.
 
-![Fig. 桶排序算法流程](./algos/11.8.1.png)
+![Fig. 桶排序算法流程](./pictures/11.8.1.png)
 
 ```zig
 [class]{}-[func]{bucketSort}
@@ -5539,13 +5539,13 @@ In order to achieve even distribution, we can first set a rough dividing line an
 
 As shown in the following picture, this approach essentially creates a recursive tree with the goal of making the leaf node values ​​as even as possible. Of course, it is not necessary to divide the data into three buckets in each round, and the specific division method can be flexibly selected according to the characteristics of the data.
 
-![Fig. 递归划分桶](./algos/11.8.3.1.png)
+![Fig. 递归划分桶](./pictures/11.8.3.1.png)
 
 If we know the probability distribution of product prices in advance, **we can set the price boundary of each bucket according to the data probability distribution**. It is worth noting that the data distribution does not necessarily require special statistics, and can also be approximated by using a certain probability model according to the characteristics of the data.
 
 As shown in the following picture, we assume that product prices obey a normal distribution, so that the price range can be set reasonably, so that products are evenly distributed to each bucket.
 
-![Fig. 根据概率分布划分桶](./algos/11.8.3.2.png)
+![Fig. 根据概率分布划分桶](./pictures/11.8.3.2.png)
 
 11.9. counting sort
 
@@ -5559,7 +5559,7 @@ Let's look at a simple example first. Given an array `nums` of length $n$ whose 
 2. **Use `counter` to count the number of occurrences of each number in `nums`**, where `counter[num]` corresponds to the number of occurrences of number `num`. The statistical method is very simple, just traverse `nums` (set the current number as `num`), and increase `counter[num]` by $1$ every round.
 3. **Since each index of `counter` is naturally ordered, it is equivalent to all numbers having been sorted**. Next, we traverse `counter`, and fill in `nums` in ascending order according to the number of occurrences of each number.
 
-![Fig. 计数排序流程](./algos/11.9.1.png)
+![Fig. 计数排序流程](./pictures/11.9.1.png)
 
 ```zig
 [class]{}-[func]{countingSortNaive}
@@ -5583,7 +5583,7 @@ $$prefix[i]=\sum_{j=0}^icounter[j]$$
 
 After the traversal is completed, the sorted results are in the array `res`, and finally use `res` to overwrite the original array `nums`. The following picture shows the complete counting sort process.
 
-![<1>](./algos/11.9.2-1.png) ![<2>](./algos/11.9.2-2.png) ![<3>](./algos/11.9.2-3.png) ![<4>](./algos/11.9.2-4.png) ![<5>](./algos/11.9.2-5.png) ![<6>](./algos/11.9.2-6.png) ![<7>](./algos/11.9.2-7.png) ![<8>](./algos/11.9.2-8.png)
+![<1>](./pictures/11.9.2-1.png) ![<2>](./pictures/11.9.2-2.png) ![<3>](./pictures/11.9.2-3.png) ![<4>](./pictures/11.9.2-4.png) ![<5>](./pictures/11.9.2-5.png) ![<6>](./pictures/11.9.2-6.png) ![<7>](./pictures/11.9.2-7.png) ![<8>](./pictures/11.9.2-8.png)
 
 The implementation code of counting sort is as follows.
 
@@ -5619,7 +5619,7 @@ Taking the student number data as an example, assuming that the lowest digit of 
 2. Perform "counting sort" on the $kth$ digit of the student number. After completion, the data will be sorted according to the $kth$ bit from small to large.
 3. Increase $k$ by $1$, then return to step `2.` Continue to iterate until all bits are sorted then end.
 
-![Fig. 基数排序算法流程](./algos/11.10.1.png)
+![Fig. 基数排序算法流程](./pictures/11.10.1.png)
 
 Let's analyze the code implementation. For a number $x$ in base $d$, to obtain its $kth$ digit $x_k$, the following calculation formula can be used:
 $$x_k=\lfloor\frac{x}{d^{k-1}}\rfloor mod\,d$$
@@ -5714,7 +5714,7 @@ Compared with counting sorting, radix sorting is suitable for situations with a 
 
 The follwoing picture compares the efficiency, stability, in-place and adaptability of mainstream sorting algorithms.
 
-![Fig. 排序算法对比](./algos/11.11.png)
+![Fig. 排序算法对比](./pictures/11.11.png)
 
 11.11.1. Q & A
 
@@ -5762,7 +5762,7 @@ As shown in the following picture, the "merge sort" algorithm that has been intr
 1. **Divide**: Recursively divide the original array (original problem) into two sub-arrays (sub-problems) until there is only one element left in the sub-array (minimum sub-problem).
 2. **Conquer**: Merge ordered sub-arrays (solutions to sub-problems) from bottom to top to obtain an ordered original array (solutions to the original problem).
 
-![Fig. 归并排序的分治策略](./algos/12.1.0.png)
+![Fig. 归并排序的分治策略](./pictures/12.1.0.png)
 
 12.1.1. How to estimate the divide and conquer problem
 
@@ -5790,7 +5790,7 @@ Taking "bubble sort" as an example, it takes $O(n^2)$ time to process an array o
 
 $$O(n+(\frac{n}{2})^2\times2+n)=O(\frac{n^2}{2}+2n)$$
 
-![Fig. 划分数组前后的冒泡排序](./algos/12.1.2.1.png)
+![Fig. 划分数组前后的冒泡排序](./pictures/12.1.2.1.png)
 
 Next, we compute the following inequality, whose left and right sides are the total number of operations before and after division, respectively:
 
@@ -5814,7 +5814,7 @@ Parallel optimization is especially effective in a multi-core or multi-processor
 
 For example, in bucket sorting shown in the following picture, we evenly distribute massive amounts of data into each bucket, then the sorting tasks of all buckets can be distributed to each computing unit, and the results can be merged after completion.
 
-![Fig. 桶排序的并行计算](./algos/12.1.2.2.png)
+![Fig. 桶排序的并行计算](./pictures/12.1.2.2.png)
 
 12.1.3. Divide and conquer common applications
 
@@ -5875,7 +5875,7 @@ Starting from the original problem $f(0,n-1)$, perform a binary search through t
 
 The following picture shows the divide and conquer process of binary search for element 6 in the array.
 
-![Fig. 二分查找的分治过程](./algos/12.2.png)
+![Fig. 二分查找的分治过程](./pictures/12.2.png)
 
 In the implementation code, we declare a recursive function `dfs()` to solve the problem $f(i,j)$.
 
@@ -5890,7 +5890,7 @@ In the implementation code, we declare a recursive function `dfs()` to solve the
 >**Question**
 >Given a `preorder` traversal and `inorder` traversal of a binary tree, construct a binary tree from it and return the root node of the binary tree.
 
-![Fig. 构建二叉树的示例数据](./algos/12.3.0.png)
+![Fig. 构建二叉树的示例数据](./pictures/12.3.0.png)
 
 1. estimating whether it is a divide-and-conquer problem
 
@@ -5915,7 +5915,7 @@ Taking the data in the previous picture as an example, we can obtain the divisio
 2. Find the index of the root node 3 in `inorder`, which can be used to divide `inorder` into `[ 9 | 3 | 1 2 7 ]`.
 3. According to the results of `inorder` division, the number of nodes in the left subtree and right subtree is easily obtained as 1 and 3 respectively, so the `preorder` can be divided into `[ 3 | 9 | 2 1 7 ]`.
 
-![Fig. 在前序和中序遍历中划分子树](./algos/12.3.2.png)
+![Fig. 在前序和中序遍历中划分子树](./pictures/12.3.2.png)
 
 3. Describe subtree intervals based on variables
 
@@ -5935,7 +5935,7 @@ As shown in the following table, the above variables can represent the index of 
 
 Please note that the meaning of $(m-l)$ in the index of the root node of the right subtree is "the number of nodes in the left subtree". It is recommended to understand it with the following figure.
 
-![Fig. 根节点和左右子树的索引区间表示](./algos/12.3.3.png)
+![Fig. 根节点和左右子树的索引区间表示](./pictures/12.3.3.png)
 
 4. Code
 
@@ -5949,11 +5949,11 @@ In order to improve the efficiency of querying $m$, we use a hash table `hmap` t
 
 The following picture shows the recursive process of building a binary tree. Each node is established in the process of "downward" recursion, and each edge (ie reference) is established in the process of "upward" recursion.
 
-![<1>](./algos/12.3.4.1-1.png) ![<2>](./algos/12.3.4.1-2.png) ![<3>](./algos/12.3.4.1-3.png) ![<4>](./algos/12.3.4.1-4.png) ![<5>](./algos/12.3.4.1-5.png) ![<6>](./algos/12.3.4.1-6.png) ![<7>](./algos/12.3.4.1-7.png) ![<8>](./algos/12.3.4.1-8.png) ![<9>](./algos/12.3.4.1-9.png)
+![<1>](./pictures/12.3.4.1-1.png) ![<2>](./pictures/12.3.4.1-2.png) ![<3>](./pictures/12.3.4.1-3.png) ![<4>](./pictures/12.3.4.1-4.png) ![<5>](./pictures/12.3.4.1-5.png) ![<6>](./pictures/12.3.4.1-6.png) ![<7>](./pictures/12.3.4.1-7.png) ![<8>](./pictures/12.3.4.1-8.png) ![<9>](./pictures/12.3.4.1-9.png)
 
 The following picture shows the division results of the `preorder` traversal and `inorder` traversal in each recursive function.
 
-![图 12-9   每个递归函数中的划分结果](./algos/12.3.4.2.png)
+![图 12-9   每个递归函数中的划分结果](./pictures/12.3.4.2.png)
 
 Assuming that the number of nodes in the tree is $n$, initializing each node (executing a recursive function `dfs()`) takes $O(1)$ time. So the overall time complexity is $O(n)$.
 
@@ -5970,7 +5970,7 @@ In both merge sort and building a binary tree, we decompose the original problem
 >2. Only one disc can be moved at a time.
 >3. The smaller disc must always be on top of the larger disc.
 
-![Fig. 汉诺塔问题示例](./algos/12.4.0.png)
+![Fig. 汉诺塔问题示例](./pictures/12.4.0.png)
 
 We denote the Tower of Hanoi problem of size $i$ as $f(i)$. For example $f(3)$ represents the Tower of Hanoi problem of moving $3$ disks from `A` to `C`.
 
@@ -5978,7 +5978,7 @@ We denote the Tower of Hanoi problem of size $i$ as $f(i)$. For example $f(3)$ r
 
 as shown in the following picture, for problem $f(1)$, that is, when there is only one disk, it is sufficient to move it directly from `A` to `C`.
 
-![<1>](./algos/12.4.1.1-1.png) ![<2>](./algos/12.4.1.1-2.png)
+![<1>](./pictures/12.4.1.1-1.png) ![<2>](./pictures/12.4.1.1-2.png)
 
 For problem $f(2)$, that is, when there are two disks, since the small disk must always be above the large disk, **it is necessary to use `B` to complete the movement**.
 
@@ -5986,7 +5986,7 @@ For problem $f(2)$, that is, when there are two disks, since the small disk must
 2. Move the large disk from `A` to `C` again.
 3. Finally move the small disc from `B` to `C`.
 
-![<1>](./algos/12.4.1.2-1.png) ![<2>](./algos/12.4.1.2-2.png) ![<3>](./algos/12.4.1.2-3.png) ![<4>](./algos/12.4.1.2-4.png)
+![<1>](./pictures/12.4.1.2-1.png) ![<2>](./pictures/12.4.1.2-2.png) ![<3>](./pictures/12.4.1.2-3.png) ![<4>](./pictures/12.4.1.2-4.png)
 
 The process of solving problem $f(2)$ can be summarized as: **Move two discs from `A` to `C` with the aid of `B`**. Among them, `C` is called the target column, and `B` is called the buffer column.
 
@@ -6000,7 +6000,7 @@ Since the solutions of $f(1)$ and $f(2)$ are known, we can think from the perspe
 2. Move the remaining one disc in `A` directly from `A` to `C`.
 3. Let `C` be the target column and `A` the buffer column, move the two discs from `B` to `C`.
 
-![<1>](./algos/12.4.2.1-1.png) ![<2>](./algos/12.4.2.1-2.png) ![<3>](./algos/12.4.2.1-3.png) ![<4>](./algos/12.4.2.1-4.png)
+![<1>](./pictures/12.4.2.1-1.png) ![<2>](./pictures/12.4.2.1-2.png) ![<3>](./pictures/12.4.2.1-3.png) ![<4>](./pictures/12.4.2.1-4.png)
 
 Essentially, **we divide problem $f(3)$ into two subproblems $f(2)$ and subproblem $f(1)$**. After solving these three sub-problems in sequence, the original problem is solved. This shows that the subproblems are independent and the solutions can be combined.
 
@@ -6012,7 +6012,7 @@ So far, we can summarize the divide-and-conquer strategy for the Tower of Hanoi 
 
 For these two sub-problems $f(n-1)$, recursive division can be performed in the same way until the smallest sub-problem $f(1)$ is reached. While the solution of $f(1)$ is known, only one move operation is required.
 
-![Fig. 汉诺塔问题的分治策略](./algos/12.4.2.2.png)
+![Fig. 汉诺塔问题的分治策略](./pictures/12.4.2.2.png)
 
 3. Code
 
@@ -6028,7 +6028,7 @@ In the code, we declare a recursive function `dfs(i, src, buf, tar)` whose effec
 
 As shown in the following picture, the Tower of Hanoi problem forms a recursive tree with a height of $n$, each node represents a sub-problem and corresponds to an open `dfs()` function, s**o the time complexity is $O(2^n)$, and the space complexity is $O(n)$**.
 
-![Fig. 汉诺塔问题的递归树](./algos/12.4.3.png)
+![Fig. 汉诺塔问题的递归树](./pictures/12.4.3.png)
 
 >**Quote**
 >The Tower of Hanoi problem comes from an ancient legend. In a temple in ancient India, the monks had three tall diamond pillars and $64$ gold discs of various sizes. The monks kept moving the original discs, believing that the moment the last disc was placed correctly, the world would end.
@@ -6070,7 +6070,7 @@ For this question, we traverse the tree in preorder and estimate whether the val
 [class]{}-[func]{preOrder}
 ```
 
-![Fig. 在前序遍历中搜索节点](./algos/13.1.0.png)
+![Fig. 在前序遍历中搜索节点](./pictures/13.1.0.png)
 
 13.1.1. try and fallback
 
@@ -6094,7 +6094,7 @@ In each "attempt", we record the path by adding the current node to `path`; befo
 
 Observing the process shown in the following picture, we can understand try and rollback as "forward" and "undo", and the two operations are inverse to each other.
 
-![<1>](./algos/13.1.1-1.png) ![<2>](./algos/13.1.1-2.png) ![<3>](./algos/13.1.1-3.png) ![<4>](./algos/13.1.1-4.png) ![<5>](./algos/13.1.1-5.png) ![<6>](./algos/13.1.1-6.png) ![<7>](./algos/13.1.1-7.png) ![<8>](./algos/13.1.1-8.png) ![<9>](./algos/13.1.1-9.png) ![<10>](./algos/13.1.1-10.png) ![<11>](./algos/13.1.1-11.png)
+![<1>](./pictures/13.1.1-1.png) ![<2>](./pictures/13.1.1-2.png) ![<3>](./pictures/13.1.1-3.png) ![<4>](./pictures/13.1.1-4.png) ![<5>](./pictures/13.1.1-5.png) ![<6>](./pictures/13.1.1-6.png) ![<7>](./pictures/13.1.1-7.png) ![<8>](./pictures/13.1.1-8.png) ![<9>](./pictures/13.1.1-9.png) ![<10>](./pictures/13.1.1-10.png) ![<11>](./pictures/13.1.1-11.png)
 
 13.1.2. pruning
 
@@ -6112,7 +6112,7 @@ In order to meet the above constraints, we need to add a pruning operation: duri
 
 Pruning is a very vivid term. As shown in the following picture, during the search process, we "cut off" the search branches that do not meet the constraint conditions, avoiding many meaningless attempts, thereby improving the search efficiency.
 
-![Fig. 根据约束条件剪枝](./algos/13.1.2.png)
+![Fig. 根据约束条件剪枝](./pictures/13.1.2.png)
 
 13.1.3. framework code
 
@@ -6142,7 +6142,7 @@ Next, we solve Example 3 based on the framework code. The state `state` is the n
 
 According to the meaning of the question, the search should continue after finding a node with a value of 7, **so we need to delete the `return` statement after recording the solution**. The follwoing picture compares the search process for retaining or removing return statements.
 
-![Fig. 保留与删除 return 的搜索过程对比](./algos/13.1.3.png)
+![Fig. 保留与删除 return 的搜索过程对比](./pictures/13.1.3.png)
 
 Compared with the code implementation based on preorder traversal, the code implementation based on the backtracking algorithm framework is more verbose, but it is more versatile. In fact, **many backtracking problems can be solved under this framework**. We only need to define `state` and `choices` according to specific problems, and implement each method in the framework.
 
@@ -6227,7 +6227,7 @@ From the point of view of the backtracking code, the candidate set `choices` are
 
 As shown in the following picture, we can expand the search process into a recursive tree, and each node in the tree represents the current state `state`. Starting from the root node, after three rounds of selection, the leaf nodes are reached, and each leaf node corresponds to a permutation.
 
-![Fig. 全排列的递归树](./algos/13.2.1.png)
+![Fig. 全排列的递归树](./pictures/13.2.1.png)
 
 1. Repeat selection pruning
 
@@ -6238,7 +6238,7 @@ In order to realize that each element is only selected once, we consider introdu
 
 As shown in the following picture, suppose we choose 1 in the first round, 3 in the second round, and 2 in the third round, then we need to cut off the branch of element 1 in the second round, and cut off the branches of elements 1 and 3 in the third round.
 
-![Fig. 全排列剪枝示例](./algos/13.2.1.1.png)
+![Fig. 全排列剪枝示例](./pictures/13.2.1.1.png)
 
 Looking at the previous picture, this pruning operation reduces the search space size from $O(n^n)$ to $O(n!)$.
 
@@ -6261,7 +6261,7 @@ Assume the input array is $[1,1,2]$. In order to easily distinguish between two 
 
 As shown in the following picture, half of the permutations generated by the above method are duplicates.
 
-![Fig. 重复排列](./algos/13.2.2.png)
+![Fig. 重复排列](./pictures/13.2.2.png)
 
 So how do you remove duplicate alignments? Most directly, consider de-duplicating the alignments directly with the help of a hash table. However, this is not elegant enough, **as the search branch that generates the duplicate alignments is unnecessary and should be identified and pruned in advance**, which further improves the efficiency of the algorithm.
 
@@ -6273,7 +6273,7 @@ Similarly, after selecting $2$ in the first round, $1$ and $\^1$ in the second r
 
 Essentially, **our goal is to ensure that multiple equal elements are selected only once in a certain round of selection**.
 
-![Fig. 重复排列剪枝](./algos/13.2.2.1.png)
+![Fig. 重复排列剪枝](./pictures/13.2.2.1.png)
 
 2. Code
 
@@ -6298,7 +6298,7 @@ Note that while both `selected` and `duplicated` are used for pruning, they have
 
 The following picture shows the effective range of the two pruning conditions. Note that each node in the tree represents a choice, and each node on the path from the root node to the leaf node constitutes a permutation.
 
-![Fig. 两种剪枝条件的作用范围](./algos/13.2.2.3.png)
+![Fig. 两种剪枝条件的作用范围](./pictures/13.2.2.3.png)
 
 13.3. Subsets and Questions
 
@@ -6328,7 +6328,7 @@ Enter the array $[3,4,5]$ and target element $9$ into the above code, the output
 
 This is because the search process is selection order sensitive, whereas subsets are not. As shown in the following picture, selecting $4$ before selecting $5$ and selecting $5$ before selecting $4$ are two different branches, but both correspond to the same subset.
 
-![Fig. 子集搜索与越界剪枝](./algos/13.3.1.1.png)
+![Fig. 子集搜索与越界剪枝](./pictures/13.3.1.1.png)
 
 In order to remove duplicate subsets, **a direct idea is to deduplicate the result list**. But this method is very inefficient for two reasons.
 
@@ -6348,7 +6348,7 @@ In the search, each layer of choices is attempted one by one from left to right,
 2. Select $4$ and $5$ in the first two rounds to generate subset $[4,5,...]$.
 3. If $5$ is selected in the first round, **$3$ and $4$ should be skipped in the second round**, because the subset $[5,3,...]$ and the subset $[5,4,...]$ are exactly the same as the subsets described in steps 1. and 2.
 
-![Fig. 不同选择顺序导致的重复子集](./algos/13.3.1.2.png)
+![Fig. 不同选择顺序导致的重复子集](./pictures/13.3.1.2.png)
 
 To sum up, given the input array $[x_1,x_2,...,x_n]$, if the selection sequence in the search process is $[x_{i_1},x_{i_2},...,x_{i_m}]$, then the selection sequence needs to satisfy $i_1 \le i_2 \le ... \le i_m$, **selection sequences that do not satisfy this condition will cause repetitions and should be pruned**.
 
@@ -6369,7 +6369,7 @@ In addition, we also made two optimizations to the code:
 
 The following picture shows the overall backtracking process after inputting the array $[3,4,5]$ and the target element $9$ into the above code.
 
-![Fig. 子集和 I 回溯过程](./algos/13.3.1.3.png)
+![Fig. 子集和 I 回溯过程](./pictures/13.3.1.3.png)
 
 13.3.2. Consider the case of repeated elements
 
@@ -6380,7 +6380,7 @@ Compared with the previous question, **the input array of this question may cont
 
 **The reason for this duplication is that equal elements are selected multiple times in a certain round**. As shown in the following picture, there are three choices in the first round, two of which are $4$, which will generate two repeated search branches, thereby outputting a repeated subset; similarly, two $4s$ in the second round will also generate repeated sub-sets set.
 
-![Fig. 相等元素导致的重复子集](./algos/13.3.2.0.png)
+![Fig. 相等元素导致的重复子集](./pictures/13.3.2.0.png)
 
 1. equal element pruning
 
@@ -6398,7 +6398,7 @@ At the same time, **each array element specified in this question can only be se
 
 The following picture shows the backtracking process of the array $[4,4,5]$ and the target element $9$, including four pruning operations. Please combine diagrams with code comments to understand the entire search process and how each pruning operation works.
 
-![Fig. 子集和 II 回溯过程](./algos/13.3.2.2.png)
+![Fig. 子集和 II 回溯过程](./pictures/13.3.2.2.png)
 
 13.4. N queens problem
 
@@ -6407,11 +6407,11 @@ The following picture shows the backtracking process of the array $[4,4,5]$ and 
 
 As shown in the following picture, when $n=4$, a total of two solutions can be found. From the perspective of the backtracking algorithm, there are $n^2$ squares in the $n\ times n$ size chessboard, and all `choices` are given. In the process of placing queens one by one, the state of the board is constantly changing, and the board at each moment is the state `state`.
 
-![Fig. 4 皇后问题的解](./algos/13.4.0.1.png)
+![Fig. 4 皇后问题的解](./pictures/13.4.0.1.png)
 
 The following picture shows the three constraints of this problem: multiple queens cannot be in the same row, column, or diagonal. It is worth noting that the diagonals are divided into main diagonals `\` and secondary diagonals `/`.
 
-![Fig. n 皇后问题的约束条件](./algos/13.4.0.2.png)
+![Fig. n 皇后问题的约束条件](./pictures/13.4.0.2.png)
 
 1. row by row placement strategy
 
@@ -6421,7 +6421,7 @@ That is to say, we can adopt a row-by-row placement strategy: starting from the 
 
 As shown in the followingh picture, it is the row-by-row placement process of the $4$ queens problem. Due to the limitation of the frame, only one of the search branches in the first row is expanded in the following picture, and the solutions that do not satisfy the column constraints and diagonal constraints are all pruned.
 
-![Fig. 逐行放置策略](./algos/13.4.1.png)
+![Fig. 逐行放置策略](./pictures/13.4.1.png)
 
 Essentially, **the row-by-row placement strategy acts as pruning**, which avoids all search branches where multiple queens appear in the same row.
 
@@ -6435,7 +6435,7 @@ That is to say, if two squares satisfy $row1-col1=row2-col2$, they must be on th
 
 Similarly, **$row+col$ of all squares on the sub-diagonal is a constant value**. We can use the same method to handle the subdiagonal constraints with the help of the array `diag2`.
 
-![Fig. 处理列约束和对角线约束](./algos/13.4.2.png)
+![Fig. 处理列约束和对角线约束](./pictures/13.4.2.png)
 
 3. Code
 
@@ -6490,7 +6490,7 @@ In this section, we start with a classic example, first give its brute force bac
 
 As shown in the figure below, for a $3$-step staircase, there are $3$ ways to climb to the top of the building.
 
-![Fig. 爬到第 3 阶的方案数量](./algos/14.1.0.png)
+![Fig. 爬到第 3 阶的方案数量](./pictures/14.1.0.png)
 
 The goal of this problem is to solve the number of solutions. We can consider exhaustively enumerating all possibilities by backtracking. Specifically, think of climbing stairs as a process of multiple rounds of selection: starting from the ground, choosing $1$ or $2$ steps per round, increasing the number of solutions by $1$ each time you reach the top of the stairs, and pruning them when you cross the top of the stairs.
 
@@ -6541,7 +6541,7 @@ $$dp[i]=dp[i-1]+dp[i-2]$$
 
 This means that in the stair climbing problem, there is a recursive relationship between the subproblems, and **the solution to the original problem can be constructed from the solutions to the subproblems**. The followoing picture shows this recurrence relationship.
 
-![Fig. 方案数量递推关系](./algos/14.1.1.1.png)
+![Fig. 方案数量递推关系](./pictures/14.1.1.1.png)
 
 We can get the brute force search solution according to the recursive formula. Taking $dp[n]$ as the starting point, recursively decompose a larger problem into the sum of two smaller problems until it return when it reaches the smallest sub-problems $dp[1]$ and $dp[2]$. Among them, the solution $dp[1]=1$, $ of the smallest subproblem is known, which means climbing to the $1st$ and $2nd$ level respectively has $1$ and $2$ solutions.
 
@@ -6567,7 +6567,7 @@ fn climbingStairsDFS(comptime n: usize) i32 {
 
 The following picture shows the recursive tree formed by brute force search. For the problem $dp[n]$, the depth of the recursion tree is $n$, and the time complexity is $O(2^n)$. The exponential growth is explosive. If we input a relatively large $n$, we will be stuck in a long wait.
 
-![Fig. 爬楼梯对应递归树](./algos/14.1.1.2.png)
+![Fig. 爬楼梯对应递归树](./pictures/14.1.1.2.png)
 
 Looking at the previous picture, it is found that **the exponential time complexity is caused by "overlapping sub-problems"**. For example: $dp[9]$ is decomposed into $dp[8]$ and $dp[7]$, dp[8] is decomposed into $dp[7]$ and $dp[6]$, both of which contain the subproblem $dp[7]$.
 
@@ -6609,7 +6609,7 @@ fn climbingStairsDFSMem(comptime n: usize) i32 {
 
 Looking at the following picture, after memorization processing, all overlapping sub-problems only need to be calculated once, and the time complexity is optimized to $O(n)$, which is a huge leap.
 
-![Fig. 记忆化搜索对应递归树](./algos/14.1.2.png)
+![Fig. 记忆化搜索对应递归树](./pictures/14.1.2.png)
 
 14.1.3. Method Three: Dynamic Programming
 
@@ -6641,7 +6641,7 @@ fn climbingStairsDP(comptime n: usize) i32 {
 
 The following picture simulates the execution process of the above code.
 
-![Fig. 爬楼梯的动态规划过程](./algos/14.1.3.png)
+![Fig. 爬楼梯的动态规划过程](./pictures/14.1.3.png)
 
 Like the backtracking algorithm, dynamic programming also uses the concept of "states" to represent a specific stage of problem solving, and each state corresponds to a subproblem and the corresponding local optimal solution. For example, the state of the stair climbing problem is defined as the current stair step $i$.
 
@@ -6695,7 +6695,7 @@ We slightly modify the stair climbing problem to make it more suitable for demon
 
 As shown in the following picture, if the costs of the $1st$, $2nd$ and $3rd$ steps are $1$, $10$, and $1$ respectively, then the minimum cost to climb from the ground to the $3rd$ step is $2$.
 
-![Fig. 爬到第 3 阶的最小代价](./algos/14.2.1.1.png)
+![Fig. 爬到第 3 阶的最小代价](./pictures/14.2.1.1.png)
 
 Let $dp[i]$ be the cumulative cost of climbing to the $ith$ level. Since the $ith$ level can only come from the $i-1th$ or $i-2th$ level, $dp[i]$ can only be equal to $dp[i-1]+cost[i]$ or $dp[i-2]+cost[i]$. In order to reduce the cost as much as possible, we should choose the smaller of the two, namely:
 
@@ -6731,7 +6731,7 @@ fn minCostClimbingStairsDP(comptime cost: []i32) i32 {
 
 The following picture shows the dynamic programming process of the previous code.
 
-![Fig. 爬楼梯最小代价的动态规划过程](./algos/14.2.1.2.png)
+![Fig. 爬楼梯最小代价的动态规划过程](./pictures/14.2.1.2.png)
 
 This problem can also be space optimized, compressing one dimension to zero dimension, reducing the space complexity from $O(n)$ to $O(1)$.
 
@@ -6767,7 +6767,7 @@ However, the situation is different if we add a constraint to the stairs climbin
 
 For example, in the following picture, there are only two feasible solutions left to climb up to the third step, and the solution of jumping the first step three times in a row does not meet the constraint conditions, so it is discarded.
 
-![Fig. 带约束爬到第 3 阶的方案数量](./algos/14.2.2.1.png)
+![Fig. 带约束爬到第 3 阶的方案数量](./pictures/14.2.2.1.png)
 
 In this problem, if you jumped $1$ step in the previous round, then you must jump $2$ steps in the next round. This means that **the choice of the next step cannot be independently determined by the current state (the current number of stairs), but is also related to the previous state (the number of stairs in the previous round)**.
 
@@ -6783,7 +6783,7 @@ $$\begin{cases}
 dp[i,1]=dp[i-1,2]\\
 dp[i,2]=dp[i-2,1]+dp[i-2,2]
 \end{cases}$$
-![Fig. 考虑约束下的递推关系](./algos/14.2.2.2.png)
+![Fig. 考虑约束下的递推关系](./pictures/14.2.2.2.png)
 
 In the end, just return $dp[n,1]+dp[n,2]$, and the sum of the two represents the total number of solutions to climbed to the $nth$ step.
 
@@ -6857,7 +6857,7 @@ In order to show the problem-solving steps more vividly, we use a classic proble
 
 The following picture shows an example where the minimum path sum for a given grid is 13.
 
-![Fig. 最小路径和示例数据](./algos/14.3.2.0.1.png)
+![Fig. 最小路径和示例数据](./pictures/14.3.2.0.1.png)
 
 **Step 1: think about the decision-making of each round, define the state, and get the dp table**
 
@@ -6867,7 +6867,7 @@ The sub-problem corresponding to the state $[i,j]$ is: the minimum path sum from
 
 So far, we have obtained a two-dimensional $dp$ matrix with the same size as the input grid `grid`.
 
-![Fig. 状态定义与 dp 表](./algos/14.3.2.0.2.png)
+![Fig. 状态定义与 dp 表](./pictures/14.3.2.0.2.png)
 
 >**Note**
 >The dynamic programming and backtracking process can be described as a sequence of decisions, and the state consists of all decision variables. It should contain all the variables describing the progress of the problem, and it should contain enough information to be able to deduce the next state.
@@ -6882,7 +6882,7 @@ Based on the above analysis, the following state transition equation can be dedu
 
 $$dp[i,j]=min(dp[i-1,j],dp[i,j-1])+grid[i,j]$$
 
-![Fig. 最优子结构与状态转移方程](./algos/14.3.2.0.3.png)
+![Fig. 最优子结构与状态转移方程](./pictures/14.3.2.0.3.png)
 
 >**Note**
 >According to the defined $dp$ table, consider the relationship between the original problem and the sub-problem, and find out the method of constructing the optimal solution of the original problem through the optimal solution of the sub-problem, that is, the optimal substructure.
@@ -6895,7 +6895,7 @@ In this problem, the state in the first row can only be transferred to the right
 
 As shown in the following picture, since each cell is transferred from the cell to its left and the cell above it, we use a loop to traverse the matrix, an outer loop to traverse the rows, and an inner loop to traverse the columns.
 
-![Fig. 边界条件与状态转移顺序](./algos/14.3.2.0.4.png)
+![Fig. 边界条件与状态转移顺序](./pictures/14.3.2.0.4.png)
 
 >**Note**
 >Boundary conditions are used in dynamic programming to initialize the $dp$ table and in search for pruning.
@@ -6936,7 +6936,7 @@ The following picture shows a recursive tree with $dp[2,1]$ as the root node, wh
 
 Essentially, the overlapping subproblem is caused by the fact that **there are multiple paths to reach a cell from the upper left corner**.
 
-![Fig. 暴力搜索递归树](./algos/14.3.2.1.png)
+![Fig. 暴力搜索递归树](./pictures/14.3.2.1.png)
 
 Each state has two choices: down and right. It takes $m+n-2$ steps to go from the upper left corner to the lower right corner, so the worst time complexity is $O(2^{m+n})$. Note that this calculation does not take into account the proximity to the grid boundary, leaving only one choice when reaching the network boundary. So the actual number of paths will be less.
 
@@ -6971,7 +6971,7 @@ fn minPathSumDFSMem(grid: anytype, mem: anytype, i: i32, j: i32) i32 {
 
 As shown in the following picture, after the introduction of memoization, the solutions of all subproblems only need to be calculated once, so the time complexity depends on the total number of states, that is, the grid size $O(nm)$.
 
-![Fig. 记忆化搜索递归树](./algos/14.3.2.2.png)
+![Fig. 记忆化搜索递归树](./pictures/14.3.2.2.png)
 
 3. Method Three: Dynamic Programming
 
@@ -7007,7 +7007,7 @@ The following picture shows the state transition process of the minimum path sum
 
 The array dp has size $n \times m$, so the space complexity is $O(nm)$.
 
-![<1>](./algos/14.3.2.3-1.png) ![<2>](./algos/14.3.2.3-2.png) ![<3>](./algos/14.3.2.3-3.png) ![<4>](./algos/14.3.2.3-4.png) ![<5>](./algos/14.3.2.3-5.png) ![<6>](./algos/14.3.2.3-6.png) ![<7>](./algos/14.3.2.3-7.png) ![<8>](./algos/14.3.2.3-8.png) ![<9>](./algos/14.3.2.3-9.png) ![<10>](./algos/14.3.2.3-10.png) ![<11>](./algos/14.3.2.3-11.png) ![<12>](./algos/14.3.2.3-12.png)
+![<1>](./pictures/14.3.2.3-1.png) ![<2>](./pictures/14.3.2.3-2.png) ![<3>](./pictures/14.3.2.3-3.png) ![<4>](./pictures/14.3.2.3-4.png) ![<5>](./pictures/14.3.2.3-5.png) ![<6>](./pictures/14.3.2.3-6.png) ![<7>](./pictures/14.3.2.3-7.png) ![<8>](./pictures/14.3.2.3-8.png) ![<9>](./pictures/14.3.2.3-9.png) ![<10>](./pictures/14.3.2.3-10.png) ![<11>](./pictures/14.3.2.3-11.png) ![<12>](./pictures/14.3.2.3-12.png)
 
 4. space optimization
 
@@ -7050,7 +7050,7 @@ In this section, we first solve the most common 0-1 bag problem.
 
 Observe the following picture, since the item number $i$ starts counting from $1$ and the array index starts counting from $0$, them item $i$ corresponds to weight $wgt[i-1]$ and value $val[i-1]$.
 
-![Fig. 0-1 背包的示例数据](./algos/14.4.0.png)
+![Fig. 0-1 背包的示例数据](./pictures/14.4.0.png)
 
 We can think of the 0-1 bag problem as a process consisting of $n$ rounds of decisions. Each object has two decisions, whether to put it in or not, so the problem satisfies the decision tree model.
 
@@ -7115,7 +7115,7 @@ As shown in the following picture, since each item will generate two search bran
 
 Observing the recursion tree, it is easy to find that there are overlapping sub-problems, such as $dp[1,10]$, etc. However, when there are many items and the bag capacity is large, especially when there are many items of the same weight, the number of overlapping sub-problems will increase significantly.
 
-![Fig. 0-1 背包的暴力搜索递归树](./algos/14.4.1.png)
+![Fig. 0-1 背包的暴力搜索递归树](./pictures/14.4.1.png)
 
 2. Method 2: Memorized search
 
@@ -7149,7 +7149,7 @@ fn knapsackDFSMem(wgt: []i32, val: []i32, mem: anytype, i: usize, c: usize) i32 
 
 The following picture shows the pruned search branches in memoized recursion.
 
-![Fig. 0-1 背包的记忆化搜索递归树](./algos/14.4.2.png)
+![Fig. 0-1 背包的记忆化搜索递归树](./pictures/14.4.2.png)
 
 3. Method 3: Dynamic Programming
 
@@ -7179,7 +7179,7 @@ fn bagDP(comptime wgt: []i32, val: []i32, comptime cap: usize) i32 {
 
 As shown in the following picture, the time complexity and space complexity are determined by the size of the array $dp$, that is, $O(n \times cap)$.
 
-![<1>](./algos/14.4.3-1.png) ![<2>](algos/14.4.3-2.png) ![<3>](algos/14.4.3-3.png) ![<4>](algos/14.4.3-4.png) ![<5>](algos/14.4.3-5.png) ![<6>](algos/14.4.3-6.png) ![<7>](algos/14.4.3-7.png) ![<8>](algos/14.4.3-8.png) ![<9>](algos/14.4.3-9.png) ![<10>](algos/14.4.3-10.png) ![<11>](algos/14.4.3-11.png) ![<12>](algos/14.4.3-12.png) ![<13>](algos/14.4.3-13.png) ![<14>](algos/14.4.3-14.png)
+![<1>](./pictures/14.4.3-1.png) ![<2>](algos/14.4.3-2.png) ![<3>](algos/14.4.3-3.png) ![<4>](algos/14.4.3-4.png) ![<5>](algos/14.4.3-5.png) ![<6>](algos/14.4.3-6.png) ![<7>](algos/14.4.3-7.png) ![<8>](algos/14.4.3-8.png) ![<9>](algos/14.4.3-9.png) ![<10>](algos/14.4.3-10.png) ![<11>](algos/14.4.3-11.png) ![<12>](algos/14.4.3-12.png) ![<13>](algos/14.4.3-13.png) ![<14>](algos/14.4.3-14.png)
 
 4. state compression
 
@@ -7192,7 +7192,7 @@ Thinking further, can we achieve space optimization with only one array? It can 
 
 The following picture shows the transition from row i=1 to row i=2 under a single array. Please consider the difference between forward order traversal and reverse order traversal.
 
-![<1>](./algos/14.4.4-1.png) ![<2>](./algos/14.4.4-2.png) ![<3>](./algos/14.4.4-3.png) ![<4>](./algos/14.4.4-4.png) ![<5>](./algos/14.4.4-5.png) ![<6>](./algos/14.4.4-6.png)
+![<1>](./pictures/14.4.4-1.png) ![<2>](./pictures/14.4.4-2.png) ![<3>](./pictures/14.4.4-3.png) ![<4>](./pictures/14.4.4-4.png) ![<5>](./pictures/14.4.4-5.png) ![<6>](./pictures/14.4.4-6.png)
 
 In the code implementation, we only need to delete the first dimension $i$ of the array `dp` directly, and change the inner loop to reverse order traversal.
 
@@ -7226,7 +7226,7 @@ In this section, we first solve another common bag problem: the full bag problem
 Question
 Given $n$ items, the $ith$ item has weight $wgt[i-1]$, value $val[i-1]$, and a bag with capacity $cap$. **Each item can be selected repeatedly**, and the question is what is maximum value of the item that can be placed within the bag capacity.
 
-![Fig. 完全背包问题的示例数据](./algos/14.5.1.0.png)
+![Fig. 完全背包问题的示例数据](./pictures/14.5.1.0.png)
 
 1. dynamic programming ideas
 
@@ -7275,7 +7275,7 @@ Since the current state is transferred from the state on the left and above, eac
 
 This traversal order is the exact opposite of the 0-1 bag. Please use the following picture to understand the difference between the two.
 
-![<1>](./algos/14.5.1.3-1.png) ![<2>](./algos/14.5.1.3-2.png) ![<3>](./algos/14.5.1.3-3.png) ![<4>](./algos/14.5.1.3-4.png) ![<5>](./algos/14.5.1.3-5.png) ![<6>](./algos/14.5.1.3-6.png)
+![<1>](./pictures/14.5.1.3-1.png) ![<2>](./pictures/14.5.1.3-2.png) ![<3>](./pictures/14.5.1.3-3.png) ![<4>](./pictures/14.5.1.3-4.png) ![<5>](./pictures/14.5.1.3-5.png) ![<6>](./pictures/14.5.1.3-6.png)
 
 The code implementation is relatively simple, only need to delete the first dimension of the array $dp$.
 
@@ -7308,7 +7308,7 @@ The bag problem is representative of a large class of dynamic programming proble
 >**Question**
 >Given $n$ kinds of coins, the face value of the $ith$ coin is $coins[i-1]$, and the target amount is $amt$. **Each coin can be selected repeatedly**, and the question is what is the minimum number of coins that can make up the target amount. Returns $-1$ if the target amount cannot be made.
 
-![Fig. 零钱兑换问题的示例数据](./algos/14.5.2.0.png)
+![Fig. 零钱兑换问题的示例数据](./pictures/14.5.2.0.png)
 
 1. dynamic programming ideas
 
@@ -7379,7 +7379,7 @@ fn coinChangeDP(comptime coins: []i32, comptime amt: usize) i32 {
 
 The following picture shows the dynamic programming process of coin change, which is very similar to the full bag.
 
-![<1>](./algos/14.5.2.2-1.png) ![<2>](./algos/14.5.2.2-2.png) ![<3>](./algos/14.5.2.2-3.png) ![<4>](./algos/14.5.2.2-4.png) ![<5>](./algos/14.5.2.2-5.png) ![<6>](./algos/14.5.2.2-6.png) ![<7>](./algos/14.5.2.2-7.png) ![<8>](./algos/14.5.2.2-8.png) ![<9>](./algos/14.5.2.2-9.png) ![<10>](./algos/14.5.2.2-10.png) ![<11>](./algos/14.5.2.2-11.png) ![<12>](./algos/14.5.2.2-12.png) ![<13>](./algos/14.5.2.2-13.png) ![<14>](./algos/14.5.2.2-14.png) ![<15>](./algos/14.5.2.2-15.png)
+![<1>](./pictures/14.5.2.2-1.png) ![<2>](./pictures/14.5.2.2-2.png) ![<3>](./pictures/14.5.2.2-3.png) ![<4>](./pictures/14.5.2.2-4.png) ![<5>](./pictures/14.5.2.2-5.png) ![<6>](./pictures/14.5.2.2-6.png) ![<7>](./pictures/14.5.2.2-7.png) ![<8>](./pictures/14.5.2.2-8.png) ![<9>](./pictures/14.5.2.2-9.png) ![<10>](./pictures/14.5.2.2-10.png) ![<11>](./pictures/14.5.2.2-11.png) ![<12>](./pictures/14.5.2.2-12.png) ![<13>](./pictures/14.5.2.2-13.png) ![<14>](./pictures/14.5.2.2-14.png) ![<15>](./pictures/14.5.2.2-15.png)
 
 3. space optimization
 
@@ -7419,7 +7419,7 @@ fn coinChangeDPComp(comptime coins: []i32, comptime amt: usize) i32 {
 Question
 Given $n$ kinds of coins, the face value of the $ith$ coin is $coins[i-1]$, and the target amount is $amt$. Each coin can be selected repeatedly, what is the number of coin combinations to get the target amount?
 
-![Fig. 零钱兑换问题 II 的示例数据](./algos/14.5.3.0.png)
+![Fig. 零钱兑换问题 II 的示例数据](./pictures/14.5.3.0.png)
 
 1. dynamic programmin ideas
 
@@ -7495,7 +7495,7 @@ Edit distance, also known as Levenshtein distance, refers to the minimum number 
 
 As shown in the following picture, converting `kitten` to `sitting` requires 3 editing steps, including 2 replacement operations and 1 addition operation; converting `hello` to `algo` requires 3 steps, including 2 replacement operations and 1 deletion operation.
 
-![Fig. 编辑距离的示例数据](./algos/14.6.0.1.png)
+![Fig. 编辑距离的示例数据](./pictures/14.6.0.1.png)
 
 **The edit distance problem can be explained naturally with a decision tree model**. Strings correspond to tree nodes, and a decision round (an edit operation) corresponds to an edge of the tree.
 
@@ -7503,7 +7503,7 @@ As shown in the followin picture, in the case of unlimited operations, each node
 
 From the perspective of decision tree, the goal of this problem is to find the shortest path between node `hello` and node `algo`.
 
-![Fig. 基于决策树模型表示编辑距离问题](./algos/14.6.0.2.png)
+![Fig. 基于决策树模型表示编辑距离问题](./pictures/14.6.0.2.png)
 
 1. dynamic programming ideas
 
@@ -7530,7 +7530,7 @@ Consider the sub-problem $dp[i,j]$, the tail characters of the corresponding two
 2. Delete $s[i-1]$, then the sub-problem $dp[i-1,j]$ remains.
 3. Replace $s[i-1]$ with $t[j-1]$, then the subproblem $dp[i-1,j-1]$ remains.
 
-![Fig. 编辑距离的状态转移](./algos/14.6.1.png)
+![Fig. 编辑距离的状态转移](./pictures/14.6.1.png)
 
 According to the above analysis, the optimal substructure can be obtained: the minimum number of editing steps of $dp[i,j]$ is equal to the minimum number of editing steps among $dp[i,j-1]$, $dp[i-1,j]$, $dp[i-1,j-1]$, plus the number of editing steps this time $1$. The corresponding state transition equation is:
 $$dp[i,j]=min(dp[i,j-1],dp[i-1,j],dp[i-1,j-1])+1$$
@@ -7578,7 +7578,7 @@ fn editDistanceDP(comptime s: []const u8, comptime t: []const u8) i32 {
 
 As shown in the following picture, the state transition process of the edit distance problem is very similar to the bag problem, and can be regarded as a process of filling in a two-dimensional grid.
 
-![<1>](./algos/14.6.2-1.png) ![<2>](./algos/14.6.2-2.png) ![<3>](./algos/14.6.2-3.png) ![<4>](./algos/14.6.2-4.png) ![<5>](./algos/14.6.2-5.png) ![<6>](./algos/14.6.2-6.png) ![<7>](./algos/14.6.2-7.png) ![<8>](./algos/14.6.2-8.png) ![<9>](./algos/14.6.2-9.png) ![<10>](./algos/14.6.2-10.png) ![<11>](./algos/14.6.2-11.png) ![<12>](./algos/14.6.2-12.png) ![<13>](./algos/14.6.2-13.png) ![<14>](./algos/14.6.2-14.png) ![<15>](./algos/14.6.2-15.png)
+![<1>](./pictures/14.6.2-1.png) ![<2>](./pictures/14.6.2-2.png) ![<3>](./pictures/14.6.2-3.png) ![<4>](./pictures/14.6.2-4.png) ![<5>](./pictures/14.6.2-5.png) ![<6>](./pictures/14.6.2-6.png) ![<7>](./pictures/14.6.2-7.png) ![<8>](./pictures/14.6.2-8.png) ![<9>](./pictures/14.6.2-9.png) ![<10>](./pictures/14.6.2-10.png) ![<11>](./pictures/14.6.2-11.png) ![<12>](./pictures/14.6.2-12.png) ![<13>](./pictures/14.6.2-13.png) ![<14>](./pictures/14.6.2-14.png) ![<15>](./pictures/14.6.2-15.png)
 
 3. space optimization
 
@@ -7667,7 +7667,7 @@ Let's first understand the working principle of the greedy algorithm through the
 
 The greedy strategy of this question is shown in the following picture. Given the target amount, we greedily choose the coin that is not larger and closest to it, and repeat this step until the target amount is reached.
 
-![Fig. 零钱兑换的贪心策略](./algos/15.1.0.png)
+![Fig. 零钱兑换的贪心策略](./pictures/15.1.0.png)
 
 The implementation code is shown below. You may not help but sigh: So Clean! The greedy algorithm solves the coin change problem with only ten lines of code.
 
@@ -7681,7 +7681,7 @@ However, **for some combinations of coin values, the greedy algorithm cannot fin
 - **Counter example** $coins=[1,20,50]$: Assuming $amt=60$, the greedy algorithm can only find the exchange combination of $50+1x10$, a total of $11$ coins, but dynamic programming can find the optimal solution $20+20+20$, which only need $3$ coins.
 - **Counter example** $coins=[1,49,50]$: Assuming $amt=98$, the greedy algorithm can only find the exchange combination of $50+1x48$, a total of $49$ coins, but dynamic programming can find the optimal solution $49+49$, only needing $2$ coins.
 
-![Fig. 贪心无法找出最优解的示例](./algos/15.1.1.png)
+![Fig. 贪心无法找出最优解的示例](./pictures/15.1.1.png)
 
 In other words, for the coin change problem, the greedy algorithm cannot guarantee to find the global optimal solution, and may find a very poor solution. It is better suited to be solved with dynamic programming.
 
@@ -7743,7 +7743,7 @@ Greedy algorithms are often used in optimization problems that satisfy greedy se
 >**Question**
 >Given $n$ items, the $ith$ item has weight $wgt[i-1]$, value $val[i-1]$, and a bag with capacity $cap$. Each item can only be selected once, but a part of the item can be selected. The value is calculated according to the selected weight ratio. What is the maximum value of the items in the bag without exceeding the bag capacity?
 
-![Fig. 分数背包问题的示例数据](./algos/15.2.0.1.png)
+![Fig. 分数背包问题的示例数据](./pictures/15.2.0.1.png)
 
 The fractional bag is very similar to 0-1 bag as a whole. The state includes the current item $i$ and capacity $c$. The goal is to find the maximum value that does not exceed the bag capacity.
 
@@ -7752,7 +7752,7 @@ The difference is that this problem allows only a part of the item to be selecte
 1. For item $i$, its value per unit weight is $\frac{val[i-1]}{wgt[i-1]}$, referred to as unit value.
 2. Assuming that a part of the item $i$ is put in and the weight is $w$, the added value of the bag is $w \times \frac{val[i-1]}{wgt[i-1]}$.
 
-![Fig. 物品在单位重量下的价值](./algos/15.2.0.2.png)
+![Fig. 物品在单位重量下的价值](./pictures/15.2.0.2.png)
 
 1. Greedy policy determination
 
@@ -7762,7 +7762,7 @@ Maximizing the total value of the items in the bag **essentially means maximizin
 2. Go through all items, and **greedily select the item with the highest unit value each round**.
 3. If the remaining bag capacity is insufficient, just use part of the current item to fill the bag.
 
-![Fig. 分数背包的贪心策略](./algos/15.2.1.png)
+![Fig. 分数背包的贪心策略](./pictures/15.2.1.png)
 
 2. code
 
@@ -7788,7 +7788,7 @@ For other items in the solution, we can also construct the above contradiction. 
 
 As shown in the following picture, if the item weight and item unit value are regarded as the horizontal axis and vertical axis of a 2D chart respectively, the fractional bag problem can be transformed into "finding the maximum enclosed area under a limited horizontal axis interval". Through this analogy, we can understand the effectiveness of greedy strategies from a geometric perspective.
 
-![Fig. 分数背包问题的几何表示](./algos/15.2.3.png)
+![Fig. 分数背包问题的几何表示](./pictures/15.2.3.png)
 
 15.3. maximum capacity problem
 
@@ -7799,7 +7799,7 @@ As shown in the following picture, if the item weight and item unit value are re
 >
 >Please select two partitions in the array to make the combined container have the largest capacity, and return the maximum capacity.
 
-![Fig. 最大容量问题的示例数据](./algos/15.3.0.png)
+![Fig. 最大容量问题的示例数据](./pictures/15.3.0.png)
 
 The container is surrounded by any two partitions, so **the state of this problem is the index of the two partitions, denoted as $[i,j]$**.
 
@@ -7811,17 +7811,17 @@ Assuming that the length of the array is $n$, and the number of combinations of 
 
 There is a more efficient solution to this problem. As shown in the following picture, select a state $[i,j]$ which satisfies the index $i<j$ and the height $ht[i]<ht[j]$, that is, $i$ is a short board and $j$ is a long board.
 
-![Fig. 初始状态](./algos/15.3.1.1.png)
+![Fig. 初始状态](./pictures/15.3.1.1.png)
 
 As shown in the following picture, **if the long board $j$ is approached to the short board $i$ at this time, the capacity will definitely decrease**.
 
 This is because after moving the long board $j$, the width $j-i$ will definitely become smaller; while the height is determined by the short board, so the height can only remain the same ($i$ is still a short board) or become smaller ($j$ after moving becomes a short board) .
 
-![Fig. 向内移动长板后的状态](./algos/15.3.1.2.png)
+![Fig. 向内移动长板后的状态](./pictures/15.3.1.2.png)
 
 Thinking in reverse, we can increase the capacity only if we shrink the shorter board $i$ inward. Because although the width will definitely become smaller, the height may become larger (the short board $i$ after moving may become longer). For example in the following picture the area becomes larger after moving the short board.
 
-![Fig. 向内移动长板后的状态](./algos/15.3.1.3.png)
+![Fig. 向内移动长板后的状态](./pictures/15.3.1.3.png)
 
 From this, the greedy strategy of this problem can be deduced: initialize the two pointers to split the two ends of the container, and shrink the pointer corresponding to the short board inward each round until the two pointers meet.
 
@@ -7832,7 +7832,7 @@ The following picture shows the execution process of the greedy strategy.
 3. Compare the heights of board $i$ and board $j$, and move the short board one space inward.
 4. Loop through steps `2.` and `3.` until $i$ and $j$ meet.
 
-![<1>](./algos/15.3.1.4-1.png) ![<2>](./algos/15.3.1.4-2.png) ![<3>](./algos/15.3.1.4-3.png) ![<4>](./algos/15.3.1.4-4.png) ![<5>](./algos/15.3.1.4-5.png) ![<6>](./algos/15.3.1.4-6.png) ![<7>](./algos/15.3.1.4-7.png) ![<8>](./algos/15.3.1.4-8.png) ![<9>](./algos/15.3.1.4-9.png)
+![<1>](./pictures/15.3.1.4-1.png) ![<2>](./pictures/15.3.1.4-2.png) ![<3>](./pictures/15.3.1.4-3.png) ![<4>](./pictures/15.3.1.4-4.png) ![<5>](./pictures/15.3.1.4-5.png) ![<6>](./pictures/15.3.1.4-6.png) ![<7>](./pictures/15.3.1.4-7.png) ![<8>](./pictures/15.3.1.4-8.png) ![<9>](./pictures/15.3.1.4-9.png)
 
 2. Code
 
@@ -7851,7 +7851,7 @@ The reason why greedy is faster than exhaustive is because each round of greedy 
 For example, in the state $cap[i,j]$, $i$ is the short board and $j$ is the long board. If the short board $i$ is moved one space inward greedily, the state shown in the following picture will be "skipped". **This means that the capacity sizes of these states cannot be verified afterwards**.
 $$cap[i,i+1],cap[i,i+2],...,cap[i,j-2],cap[i,j-1]$$
 
-![Fig. 移动短板导致被跳过的状态](./algos/15.3.3.0.png)
+![Fig. 移动短板导致被跳过的状态](./pictures/15.3.3.0.png)
 
 It is observed that **these skipped states are actually all the states that move long board $j$ inwards**. In the second step, we have proved that moving the long board inward will definitely lead to a smaller capacity. That is to say, none of the skipped states can be the optimal solution, and **skipping them will not lead to missing the optimal solution**.
 
@@ -7862,7 +7862,7 @@ The above analysis shows that **the operation of moving the short board is "safe
 >**Question**
 >Given a positive integer n, divide it into the sum of at least two positive integers, find the maximum product of all integers after division.
 
-![Fig. 最大切分乘积的问题定义](./algos/15.4.0.png)
+![Fig. 最大切分乘积的问题定义](./pictures/15.4.0.png)
 
 Suppose we divide $n$ into $m$ integer factors, and the $ith$ factor is recorded as $n_i$, that is
 $$n=\sum_{i=1}^{m}n_i$$
@@ -7882,7 +7882,7 @@ As shown in the following picture, when $n \ge 4$, the product will become large
 
 **Greedy strategy 1**: If the segmentation scheme contains a factor $\ge 4$, then it should continue to be divided. The final segmentation scheme should only have three factors $1$, $2$ and $3$.
 
-![Fig. 切分导致乘积变大](./algos/15.4.1.1.png)
+![Fig. 切分导致乘积变大](./pictures/15.4.1.1.png)
 
 Next think about which factor is optimal. Among the three factors $1$, $2$ and $3$, $1$ is obviously the worst, because $1\times(n-1)<n$ is always true, that is, cutting out $1$ will lead to a reduction in the product.
 
@@ -7890,7 +7890,7 @@ As shown in the following picture when $n=6$, then $3\times3>2\times2\times2$. *
 
 **Greedy strategy 2**: In the segmentation scheme, there should be at most two $2s$$. Because three $2s$ can always be replaced by two $3s$, resulting in a larger product.
 
-![Fig. 最优切分因子](./algos/15.4.1.2.png)
+![Fig. 最优切分因子](./pictures/15.4.1.2.png)
 
 To sum up the above, the follwoing greedy strategy can be derived.
 
@@ -7910,7 +7910,7 @@ Note that for the edge case $n \le 3$, a $1$ must be split out, and the product 
 [class]{}-[func]{maxProductCutting}
 ```
 
-![Fig. 最大切分乘积的计算方法](./algos/15.4.2.png)
+![Fig. 最大切分乘积的计算方法](./pictures/15.4.2.png)
 
 **The time complexity depends on how the programming language's exponentiation is implemented**. Taking Python as an example, there are three commonly used power calculation functions:
 
@@ -8017,7 +8017,7 @@ As shown in the following picture, there is an "Edit" icon in the upper right co
 2. Modify the content of the Markdown source file, check the correctness of the content, and try to keep the formatting consistent.
 3. Fill out the modification instructions at the bottom of the page and click the "Propose file change" button. After the page redirects, click the "Create pull request" button to initiate a pull request.
 
-![Fig. 页面编辑按键](./algos/16.2.1.png)
+![Fig. 页面编辑按键](./pictures/16.2.1.png)
 
 The picture cannot be modified directly, you need to create a new [Issue](https://github.com/krahets/hello-algo/issues) or comment to describe the problem, we will redraw and replace the picture as soon as possible.
 
