@@ -1,0 +1,43 @@
+<mxfile host="Electron" modified="2023-09-18T16:09:09.305Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="Bc6B2oKNRcEhUDmmtNkG" version="21.6.8" type="device">
+  <diagram name="Page-1" id="Pe50aOLU-5XkUMhJ1gd0">
+    <mxGraphModel dx="1358" dy="1258" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" backgroundImage="{&quot;src&quot;:&quot;https://www.hello-algo.com/chapter_sorting/quick_sort.assets/quick_sort_overview.png&quot;,&quot;width&quot;:&quot;1280&quot;,&quot;height&quot;:&quot;720&quot;,&quot;x&quot;:0,&quot;y&quot;:0}" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CQBQ9UvaK4rrsUU5EGJQ-21" value="Start recursion" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="615" y="120" width="115" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="G9l5A2_iWzimnGmGl99A-1" value="Right subaray recursion" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="615" y="340" width="155" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="G9l5A2_iWzimnGmGl99A-2" value="End recursion" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="615" y="570" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="G9l5A2_iWzimnGmGl99A-3" value="Left subarray recursion" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=right;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="130" y="340" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="G9l5A2_iWzimnGmGl99A-4" value="End recursion" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=right;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="180" y="570" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="G9l5A2_iWzimnGmGl99A-5" value="End recursion" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="345" y="570" width="106" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="G9l5A2_iWzimnGmGl99A-6" value="Sentinel partition" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fillColor=#E5E5E5;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="400" y="228" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="G9l5A2_iWzimnGmGl99A-7" value="Sentinel partition" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fillColor=#E5E5E5;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="294" y="452" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="G9l5A2_iWzimnGmGl99A-8" value="Sentinel partition" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;fillColor=#E5E5E5;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="480" y="452" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="G9l5A2_iWzimnGmGl99A-9" value="Summary&lt;br style=&quot;font-size: 16px;&quot;&gt;&lt;br style=&quot;font-size: 16px;&quot;&gt;Perform recursive subarray &quot;pivot partition&quot; until the subarray length is 1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="860" y="268" width="324" height="142" as="geometry" />
+        </mxCell>
+        <mxCell id="ABt4yOqQ5Q1tGvqfCxFT-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1070" y="660" width="180" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

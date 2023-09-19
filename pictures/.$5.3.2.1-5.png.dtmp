@@ -1,0 +1,28 @@
+<mxfile host="Electron" modified="2023-09-18T13:46:32.801Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.8 Chrome/114.0.5735.289 Electron/25.5.0 Safari/537.36" etag="jhQzoKVm_BMTb2eF6teb" version="21.6.8" type="device">
+  <diagram name="Page-1" id="PdLHGn7b6QEUX5wWfX7K">
+    <mxGraphModel dx="1358" dy="1258" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" backgroundImage="{&quot;src&quot;:&quot;https://www.hello-algo.com/chapter_stack_and_queue/deque.assets/linkedlist_deque_pop_first.png&quot;,&quot;width&quot;:&quot;1280&quot;,&quot;height&quot;:&quot;720&quot;,&quot;x&quot;:0,&quot;y&quot;:0}" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="nGMy9B3WN8wvk37Fr2YK-32" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1065" y="660" width="185" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="TcBIUWU5slRmsJ9IMhEH-58" value="Head node" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=center;fontStyle=1;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="780" y="302" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TcBIUWU5slRmsJ9IMhEH-59" value="Tail node" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=center;fontStyle=1;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="780" y="500" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="TcBIUWU5slRmsJ9IMhEH-60" value="The underlying implementation is a double linked list, externally represented as a double queue" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;align=left;fontStyle=1;fontColor=#898989;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="505" y="414" width="245" height="66" as="geometry" />
+        </mxCell>
+        <mxCell id="TcBIUWU5slRmsJ9IMhEH-61" value="Dequeue front of line" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;fillColor=#E5E5E5;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="300" y="170" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="TcBIUWU5slRmsJ9IMhEH-62" value="Delete head node" style="rounded=1;whiteSpace=wrap;html=1;fontSize=16;align=left;fillColor=#E5E5E5;strokeColor=none;" parent="1" vertex="1">
+          <mxGeometry x="850" y="200" width="140" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
