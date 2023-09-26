@@ -66,7 +66,7 @@ My heartfelt thanks to my parents, it is your continuous support and encourageme
 - When it comes to inconsistent nouns between programming languages, Python shall prevail in this book, such as using None to represent "empty".
 - This book partially abandons the comment specification of the programming language in exchange for a more compact content layout. Comments are mainly divided into three types: title comments, content comments, multi-line comments.
 
-```zig
+```rust
 // Title comment, used to mark functions, classes, test cases, etc.
 
 // Content comments, used to explain the code in detail
@@ -120,8 +120,8 @@ Fig. 评论区示例
 In general, we can divide the process of learning data structures and algorithms into three stages:
 
 1. **Introduction to algorithms**. We need to be familiar with the characteristics and usage of various data structures, and learn the principles, processes, uses, and efficiency of different algorithms.
-2. **Practice algorithm problems**. It is recommended to start with popular topics, such as [Jianzhi Offer](https://leetcode.cn/problem-list/xb9nqhhg/) and [LeetCode Hot 100](https://leetcode.cn/problem-list/2cktkvj/), and accumulate at least 100 topics first to familiarize yourself with mainstream algorithm problems. "Knowledge Forgotten" can be a challenge when you first practice the problems, but don't worry, it's normal. We can review the topic according to the "Ebbinghaus Forgetting Curve", and usually after 3-5 rounds of repetition, we can keep it in mind.
-3. **Build a knowledge system**. In terms of learning, we can read algorithm column articles, problem-solving frameworks and algorithm teaching materials to continuously enrich the knowledge system. In terms of practicing problems, you can try to use advanced strategies, such as classification by topic, multiple solutions for one problem, multiple problems for one solution, etc. Relevant experience in practicing problems can be found in various communities.
+1. **Practice algorithm problems**. It is recommended to start with popular topics, such as [Jianzhi Offer](https://leetcode.cn/problem-list/xb9nqhhg/) and [LeetCode Hot 100](https://leetcode.cn/problem-list/2cktkvj/), and accumulate at least 100 topics first to familiarize yourself with mainstream algorithm problems. "Knowledge Forgotten" can be a challenge when you first practice the problems, but don't worry, it's normal. We can review the topic according to the "Ebbinghaus Forgetting Curve", and usually after 3-5 rounds of repetition, we can keep it in mind.
+1. **Build a knowledge system**. In terms of learning, we can read algorithm column articles, problem-solving frameworks and algorithm teaching materials to continuously enrich the knowledge system. In terms of practicing problems, you can try to use advanced strategies, such as classification by topic, multiple solutions for one problem, multiple problems for one solution, etc. Relevant experience in practicing problems can be found in various communities.
 
 As an introductory tutorial, the content of this book mainly covers the "first stage", aiming to help you carry out the second and third stages of learning more efficiently.
 
@@ -152,8 +152,8 @@ Before discussing algorithms formally, there is an interesting fact worth sharin
 **Example 1**: Look up a dictionary. In the dictionary, each word is arranged in alphabetical order. Suppose we need to find a word whose first letter is *r*, usually this will implemented as in the following pictures:
 
 1. Turn over about half of the pages of the dictionary to see what the first letter of the page is, assuming the first letter is *m*.
-2. Since `r` is located after `m` in the alphabet, the first half of the dictionary is excluded, and the search range is narrowed to the second half.
-3. Repeat steps `1.` and `2.` until you find the page number whose first letter is *r*.
+1. Since `r` is located after `m` in the alphabet, the first half of the dictionary is excluded, and the search range is narrowed to the second half.
+1. Repeat steps `1.` and `2.` until you find the page number whose first letter is *r*.
 
 ![Step 1](./pictures/1.1.1-1.png)![Step 2](./pictures/1.1.1-2.png)![Step 3](./pictures/1.1.1-3.png)![Step 4](./pictures/1.1.1-4.png)![Step 5](./pictures/1.1.1-5.png)
 
@@ -162,8 +162,8 @@ Looking up a dictionary, an essential skill for elementary school students, is a
 **Example 2**: Organize poker. When we play cards, we need to arrange the poker cards in each game so that they are arranged from small to large. The implementation process is shown in the following picture:
 
 1. Divide the playing cards into two parts, "ordered" and "disordered", and assume that the leftmost playing card is already in order in the initial state.
-2. Draw a playing card from the unordered part and insert it into the correct position of the ordered part; after completion, the leftmost 2 cards are already in order.
-3. Continuously loop step `2.` , each round insert a playing card from the unordered part to the ordered part, until all the playing cards are in order.
+1. Draw a playing card from the unordered part and insert it into the correct position of the ordered part; after completion, the leftmost 2 cards are already in order.
+1. Continuously loop step `2.` , each round insert a playing card from the unordered part to the ordered part, until all the playing cards are in order.
 
 ![Fig. 扑克排序步骤](./pictures/1.1.2.png)
 
@@ -172,10 +172,10 @@ The above method of sorting playing cards is essentially an "insertion sort" alg
 **Example 3**: Currency change. Suppose we bought 69 euros of goods in the supermarket and paid 100 euros to the cashier, the cashier needs to give us 31 euros. He will naturally complete the reasoning shown in the following picture:
 
 1. The options are currencies smaller than the face value of 31 euros, including 1, 5, 10, and 20 euros.
-2. Take the largest 20 euros from the options, and the remaining is 31 - 20 = 11 euros.
-3. Take the largest 10 euros from the remaining options, and the remaining is 11 - 10 = 1 euros.
-4. Take the largest 1 euros from the remaining options, and the remaining is 1 - 1 = 0 euros.
-5. Complete the change, the solution is 20 + 10 + 1 = 31 euros.
+1. Take the largest 20 euros from the options, and the remaining is 31 - 20 = 11 euros.
+1. Take the largest 10 euros from the remaining options, and the remaining is 11 - 10 = 1 euros.
+1. Take the largest 1 euros from the remaining options, and the remaining is 1 - 1 = 0 euros.
+1. Complete the change, the solution is 20 + 10 + 1 = 31 euros.
 
 ![Fig. 货币找零过程](./pictures/1.1.3.png)
 
@@ -268,7 +268,7 @@ Therefore, under the premise of being able to solve the problem, algorithm effic
 
 In short, **our goal is to design "fast and cheap" data structures and algorithms**. It is very important to effectively evaluate the efficiency of algorithms, because only by understanding the evaluation criteria can we compare and analyze various algorithms, thereby guiding the algorithm design and optimization process.
 
-#### 2.1.1. practical testing¶
+#### 2.1.1. practical testing
 
 Suppose we now have Algorithm `A` and Algorithm `B`, both of which can solve the same problem, and now we need to compare the efficiency of these two algorithms. The most direct way is to find a computer, run these two algorithms, and monitor and record their running time and memory usage. This evaluation method can reflect the real situation, but it also has major limitations.
 
@@ -308,14 +308,22 @@ In data structures and algorithms, it is very common to repeatedly execute a cer
 
 An "iteration" is a control structure that repeatedly executes a task. In iteration, a program executes a certain piece of code repeatedly if a certain condition is met until the condition is no longer met.
 
-1. for loop
+##### 1. for loop
 
 `for` loops are one of the most common forms of iteration and **are useful when the number of iterations is known in advance**.
 
 The following function implements the summation $1+2+...+n$ based on the for loop, and the summation result is recorded using the variable `res`. It should be noted that the interval corresponding to `range(a, b)` in Python is "left closed and right open", and the corresponding traversal range is $a,a+1,...,b-1$.
 
-```zig
-[class]{}-[func]{forLoop}
+```rust
+// for loop
+pub fn forLoop(n: u32) usize {
+    var res: usize = 0;
+    // Loop sum 1, 2, ..., n-1, n
+    for (0..n) |i| {
+        res += i;
+    }
+    return res;
+}
 ```
 
 The following picture shows a block diagram of the summation function.
@@ -324,32 +332,63 @@ The following picture shows a block diagram of the summation function.
 
 The number of operations of this summation function is proportional, or "linear", to the input data size $n$. In fact, time complexity describes this as "linear relationship". Related content will be introduced in detail in the next section.
 
-2. while loop
+##### 2. while loop
 
 Similar to the `for` loop, the `while` loop is also a way to implement iteration. In a `while` loop, the program checks the condition first each round, and continues execution if the condition is true, otherwise it ends the loop.
 
 Below, we use a while loop to implement the sum $1+2+...+n$.
 
-```zig
-[class]{}-[func]{whileLoop}
+```rust
+// while loop
+pub fn whileLoop(n: u32) usize {
+    var res: usize = 0;
+    var i: u32 = 1; // Initialize condition variables
+    // Loop sum 1, 2, ..., n-1, n
+    while (i <= n) {
+        res += i;
+        i += 1; // Update condition variables
+    }
+    return res;
+}
 ```
 
-In the `while` loop, since the steps of initializing and updating the condition variable are independent of the loop structure, **it has more degrees of freedom than the** `for` **loop**.
+In the `while` loop, since the steps of initializing and updating the condition variable are independent of the loop structure, **it has more degrees of freedom than the `for` loop**.
 
 For example, in the following code, the condition variable $i$ is updated twice per round, which is not very convenient to implement with a `for` loop.
 
-```zig
-[class]{}-[func]{whileLoopII}
+```rust
+// while loop (two updates)
+pub fn whileLoopII(n: u32) usize {
+    var res: usize = 0;
+    var i: u32 = 1; // Initialize condition variables
+    // Loop sum 1, 4, ...
+    while (i <= n) {
+        res += i;
+        // Update condition variables
+        i += 1;
+        i *= 2;
+    }
+    return res;
+}
 ```
 
 In general, **the** `for` **loop is more compact in code, while the** `while` **loop is more flexible**, and both can implement iteration structures. The choice of which one to use should be determined by the needs of a particular problem.
 
-3. nested loop
+##### 3. nested loop
 
 We can nest another loop structure inside a loop structure, taking the `for` loop as an example:
 
-```zig
-[class]{}-[func]{nestedForLoop}
+```rust
+// nested for loop
+pub fn nestedForLoop(n: u32) void {
+    // Loop i = 1, 2, ..., n-1, n
+    for (0..n) |i| {
+        // Loop j = 1, 2, ..., n-1, n
+        for (0..n) |j| {
+            std.debug.print("({d}, {d}), ", .{ i, j });
+        }
+    }
+}
 ```
 
 The following picture shows the block diagram of the nested loop.
@@ -375,8 +414,16 @@ From an implementation point of view, recursive code mainly contains three eleme
 
 Observe the following code, we simply call the function `recur(n)` to complete the calculation of $1+2+...+n$:
 
-```zig
-[class]{}-[func]{recur}
+```rust
+// recursion
+pub fn recur(n: u32) usize {
+    // Termination condition
+    if (n == 1) return 1;
+    // recursive call
+    const res = recur(n - 1);
+    // return results
+    return n + res;
+}
 ```
 
 ![图 2-3   求和函数的递归过程](./pictures/2.2.2.0.png)
@@ -391,7 +438,7 @@ Taking the previous summation function as an example, let the equation $f(n) = 1
 - **Iteration**: Simulate the summation process in a loop, traverse from $1$ to $n$, perform the summation operation in each round, and then obtain $f(n)$.
 - **Recursion**: Decompose the problem into sub-problems $f(n) = n + f(n - 1)$, and decompose continuously (recursively) until the basic case $f(0) = 0$.
 
-1. call stack
+##### 1. call stack
 
 Every time a recursive function calls itself, the system will allocate memory for the newly opened function to store local variables, calling addresses, and other information. This will lead to two results.
 
@@ -404,7 +451,7 @@ As shown in the following picture, before the termination condition is triggered
 
 In practice, the depth of recursion allowed by a programming language is usually limited, and too deep recursion may cause a stack overflow error.
 
-2. tail recursion
+##### 2. tail recursion
 
 Interestingly, **if a function is called recursively as the last step before returning**, the function can be optimized by the compiler or interpreter to be comparable to iteration in terms of space efficiency. This situation is called "tail recursion".
 
@@ -413,8 +460,14 @@ Interestingly, **if a function is called recursively as the last step before ret
 
 Taking the calculation of $1+2+...+n$ as an example, we can set the result variable `res` as a function parameter to achieve tail recursion.
 
-```zig
-[class]{}-[func]{tailRecur}
+```rust
+// tail recursion
+pub fn tailRecur(n: u32, res: u32) usize {
+    // Termination condition
+    if (n == 0) return res;
+    // tail recursive call
+    return tailRecur(n - 1, n + res);
+}
 ```
 
 A comparison of the two recursive processes is shown in the following picture.
@@ -427,7 +480,7 @@ A comparison of the two recursive processes is shown in the following picture.
 >**Tip**
 >Note that many compilers or interpreters do not support tail recursion optimization. For example, Python does not support tail-recursive optimization by default, so even if the function is tail-recursive, it is still possible to encounter stack overflow problems.
 
-3. recursion tree
+##### 3. recursion tree
 
 When dealing with algorithmic problems related to "divide and conquer", recursion is often more intuitive than iteration, and the code is easier to read. Take the "Fibonacci sequence" as an example.
 
@@ -441,8 +494,17 @@ Assuming that the $nth$ number of the Fibonacci sequence is $f(n)$, it is easy t
 
 Perform recursive calls according to the recursive relationship, and use the first two numbers as the termination condition to write the recursive code. Call `fib(n)` to get the $nth$ number of the Fibonacci sequence.
 
-```zig
-[class]{}-[func]{fib}
+```rust
+// Fibonacci Sequence: Recursion
+pub fn fib(n: u32) usize {
+    // Termination condition
+    if (n == 0) return n;
+    if (n == 1 or n == 2) return 1;
+    // recursive call
+    const res = fib(n - 1) + fib(n - 2);
+    // Return result
+    return res;
+}
 ```
 
 Looking at the above code, we recursively call two functions inside the function, **which means that two call branches are generated from one call**. As shown in the following picture, this continuous recursive call will eventually generate a "recursion tree recursion tree" with $n$ layers.
@@ -477,8 +539,34 @@ In fact, recursive terms such as "call stack" and "stack frame space" already im
 
 Therefore, **we can use an explicit stack to simulate the behavior of a call stack**, thus converting recursion into iterative form:
 
-```zig
-[class]{}-[func]{forLoopRecur}
+```rust
+// Simulate recursion using iteration
+pub fn forLoopRecur(n: u32) !usize {
+    var m = n;
+
+    // Use an explicit stack to simulate the system call stack
+    const UnsignedStack = Stack.Stack(u32);
+    var res: u32 = 0;
+
+    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
+    defer arena.deinit();
+    var stack = UnsignedStack.init(arena.allocator());
+    defer stack.deinit();
+
+    // recursive call
+    while (m > 0) {
+        // Simulate "pass" through "stack-up operation"
+        try stack.push(n);
+        m = m - 1;
+    }
+    // Returns the result
+    while (!stack.isEmpty()) {
+        // Simulate "return" through "stack-out operation"
+        res += stack.pop().?;
+    }
+    // res = 1+2+3+...+n
+    return res;
+}
 ```
 
 Observe the above code, when the recursion is converted into iteration, the code becomes more complex. Although iteration and recursion can be converted into each other in many cases, it is not always worth doing so for two reasons.
@@ -498,7 +586,18 @@ The running time can intuitively and accurately reflect the efficiency of the al
 
 For example, in the following code, the input data size is $n$.
 
-```zig
+```rust
+// given an operating system
+pub fn algorithm(n: u32) void {
+    var a: u32 = 2; // 1 ns
+    a = a + 1; // 1 ns
+    a = a * 2; // 10 ns
+    // loop n times
+    for (0..n) |i| { // 1ns, to be executed every round
+        _ = i;
+        std.debug.print("{d}", .{0}); // 5 ns
+    }
+}
 ```
 
 According to the above method, the running time of the algorithm can be obtained as $6n+12$ ns.
@@ -513,7 +612,27 @@ Time complexity analysis counts not the running time of the algorithm, but **the
 
 The concept of "time growth trend" is relatively abstract, and we use an example to understand it. Suppose the input data size is $n$, given three algorithm functions `A` , `B` , `C` .
 
-```zig
+```rust
+// Time complexity of algorithm A: constant order
+pub fn algorithmA(n: u32) void {
+    _ = n;
+    std.debug.print("{d}", .{0});
+}
+// Time complexity of algorithm B: linear order
+pub fn algorithmB(n: u32) void {
+    for (0..n) |i| {
+        _ = i;
+        std.debug.print("{d}", .{0});
+    }
+}
+// Time complexity of algorithm C: constant order
+pub fn algorithmC(n: u32) void {
+    _ = n;
+    for (0..100000) |i| {
+        _ = i;
+        std.debug.print("{d}", .{0});
+    }
+}
 ```
 
 The following picture shows the time complexity of the above three algorithmic functions.
@@ -534,7 +653,17 @@ Compared with directly counting the running time of algorithms, what are the cha
 
 Given a function with input size $n$:
 
-```zig
+```rust
+pub fn algorithm(n: u32) void {
+    var a: u32 = 2; // +1
+    a = a + 1; // +1
+    a = a * 2; // +1
+    // loop n times
+    for (0..n) |i| { // +1, to be executed every round
+        _ = i;
+        std.debug.print("{d}", .{0}); // +1
+    }
+}
 ```
 
 Assuming that the number of computing operations of the algorithm is a function of the input data size $n$, denoted as $T(n)$, then the number of operations of the above function is:
@@ -560,7 +689,7 @@ Asymptotic upper bounds are a bit mathematical, so don't worry if you don't feel
 
 According to the definition, after determining $f(n)$, we can get the time complexity $O(f(n))$. So how to determine the asymptotic upper bound $f(n)$? The overall process is divided into two steps: first count the number of operations, and then estimate the asymptotic upper bound.
 
-1. Step 1: Count the number of operations
+##### 1. Step 1: Count the number of operations
 
 For the code, it is enough to calculate line by line from top to bottom. However, since the constant $c$ in the above $c \cdot f(n)$ can take any size, various coefficients and constants in the operand $T(n)$ can be ignored. According to this principle, the following counting simplification techniques can be summarized.
 
@@ -576,10 +705,27 @@ T(n)&=2n(n+1)+(5n+1)+2\\
 T(n)&=n^2+n
 \end{align*}$$
 
-```zig
+```rust
+pub fn algorithm(n: u32) void {
+    var a: u32 = 1; // +0 (tip 1)
+    a = a + n; // +0 (tip 1)
+    // +n (tip 2)
+    for (0..5 * n + 1) |i| {
+        _ = i;
+        std.debug.print("{d}", .{0});
+    }
+    // +n*n (tip 2)
+    for (0..2 * n) |i| {
+        _ = i;
+        for (0..n + 1) |j| {
+            _ = j;
+            std.debug.print("{d}", .{0});
+        }
+    }
+}
 ```
 
-2. Step 2: Determine the asymptotic upper bound
+##### 2. Step 2: Determine the asymptotic upper bound
 
 **The time complexity is determined by the highest order term in the polynomial $T(n)$**. This is because as n tends to infinity, the highest-order term will play a dominant role, and the influence of other terms can be ignored.
 
@@ -597,7 +743,7 @@ The following table shows some examples, where some exaggerated values are used 
 
 Assuming that the input data size is n, common time complexity types include (arranged in order from low to high):
 
-$$O(1)<O(log\,n)<O(n)<O(n\,log\,n)<O(n^2)<O(2^n)<O(n!)$$
+$$O(1)<O(log\ n)<O(n)<O(n\ log\ n)<O(n^2)<O(2^n)<O(n!)$$
 $$\text{constant order}<\text{logarithmic order}<\text{linear order}<\text{linear logarithmic order}<\text{square order}<\text{exponential order}<\text{factorial order}$$
 
 ![Fig. 时间复杂度的常见类型](./pictures/2.3.4.0.png)
@@ -605,13 +751,13 @@ $$\text{constant order}<\text{logarithmic order}<\text{linear order}<\text{linea
 >**Tip**
 >Some sample codes require some prior knowledge, including arrays, recursion, and more. If you encounter a part that you don't understand, you can review it after studying the following chapters. At this stage, please focus on understanding the meaning and calculation method of time complexity.
 
-1. Constant order $O(1)$
+##### 1. Constant order $O(1)$
 
 The number of operations of constant order has nothing to do with the input data size $n$, that is, it does not change as $n$ changes.
 
 For the following algorithm, although the number of operations `size` may be large, the time complexity is still $O(1)$ since it is independent of the data size $n$.
 
-```zig
+```rust
 // constant order
 fn constant(n: i32) i32 {
     _ = n;
@@ -625,11 +771,11 @@ fn constant(n: i32) i32 {
 }
 ```
 
-2. Linear order $O(n)$
+##### 2. Linear order $O(n)$
 
 The number of operations of linear order grows linearly with respect to the input data size $n$. Linear order usually occurs in single-layer loops:
 
-```zig
+```rust
 // linear order
 fn linear(n: i32) i32 {
     var count: i32 = 0;
@@ -643,7 +789,7 @@ fn linear(n: i32) i32 {
 
 The time complexity of operations such as traversing arrays and traversing linked lists is $O(n)$, where $n$ is the length of the array or linked list.
 
-```zig
+```rust
 // linear order (traversing arrays)
 fn arrayTraversal(nums: []i32) i32 {
     var count: i32 = 0;
@@ -657,11 +803,11 @@ fn arrayTraversal(nums: []i32) i32 {
 
 It is worth noting that **the data size $n$ needs to be determined specifically according to the type of input data**. For example, in the first example, the variable $n$ is the input data size; in the second example, the array length $n$ is the data size.
 
-3. Square order $O(n2)$
+##### 3. Square order $O(n2)$
 
 The number of operations of quadratic order grows quadratically with respect to the input data size. Quadratic order usually occurs in nested loops, both outer and inner loops are $O(n)$, so $O(n2)$ overall.
 
-```zig
+```rust
 // square order
 fn quadratic(n: i32) i32 {
     var count: i32 = 0;
@@ -683,7 +829,7 @@ The following picture compares the three time complexities of constant order, li
 
 Taking "bubble sort" as an example, the outer loop executes $n-1$ times, and the inner loop executes $n-1,n-2,...,2,1$ times, with an average of $n/2$ times, so the time complexity is $O((n-1)n/2)=O(n^2)$.
 
-```zig
+```rust
 // square order (bubble sort)
 fn bubbleSort(nums: []i32) i32 {
     var count: i32 = 0;  // counter 
@@ -706,13 +852,13 @@ fn bubbleSort(nums: []i32) i32 {
 }
 ```
 
-4. Exponential order $O(2n)$
+##### 4. Exponential order $O(2n)$
 
 "Cell division" in biology is a typical example of exponential growth: the initial state is $1$ cell, after one round of division, it becomes $2$, after two rounds of division, it becomes $4$, and so on, after $n$ rounds of division, there are $2n$ cells.
 
 The following code and picture simulate the process of cell division with a time complexity $O(2^n)$.
 
-```zig
+```rust
 // exponential order (loop implementation)
 fn exponential(n: i32) i32 {
     var count: i32 = 0;
@@ -735,7 +881,7 @@ fn exponential(n: i32) i32 {
 
 In practical algorithms, exponential order often appears in recursive functions. For example, in the following code, which recursively splits in two and stops after $n$ splits.
 
-```zig
+```rust
 // exponential order (recursive implementation)
 fn expRecur(n: i32) i32 {
     if (n == 1) return 1;
@@ -745,13 +891,13 @@ fn expRecur(n: i32) i32 {
 
 Exponential order growth is very fast and is more common in exhaustive methods (brute force search, backtracking, etc.). For problems with large data sizes, exponential order is unacceptable, and algorithms such as "dynamic programming" or "greedy" are usually used to solve them.
 
-5. logarithmic order $O(log\,n)$
+##### 5. logarithmic order $O(log\ n)$
 
-In contrast to exponential order, logarithmic order reflects the "reduction to half each round". Assuming that the input data size is $n$, since each round is reduced to half, the number of cycles is $log_2\,n$, which is the inverse function of $2^n$.
+In contrast to exponential order, logarithmic order reflects the "reduction to half each round". Assuming that the input data size is $n$, since each round is reduced to half, the number of cycles is $log_2\ n$, which is the inverse function of $2^n$.
 
-The following code and picture simulate the process of "reducing each round to half" with a time complexity of $O(log_2\,n$), abbreviated as $O(log],n)$.
+The following code and picture simulate the process of "reducing each round to half" with a time complexity of $O(log_2\ n$), abbreviated as $O(log],n)$.
 
-```zig
+```rust
 // logarithmic order (loop implementation)
 fn logarithmic(n: f32) i32 {
     var count: i32 = 0;
@@ -767,9 +913,9 @@ fn logarithmic(n: f32) i32 {
 
 ![Fig. 对数阶的时间复杂度](./pictures/2.3.4.5.png)
 
-Similar to exponential order, logarithmic order is also commonly found in recursive functions. The following code forms a recursive tree of height $log_2\,n$.
+Similar to exponential order, logarithmic order is also commonly found in recursive functions. The following code forms a recursive tree of height $log_2\ n$.
 
-```zig
+```rust
 // logarithmic order (recursive implementation)
 fn logRecur(n: f32) i32 {
     if (n <= 1) return 0;
@@ -779,18 +925,18 @@ fn logRecur(n: f32) i32 {
 
 Logarithmic order often appears in algorithms based on divide-and-conquer strategies, embodying the algorithmic ideas of "one divides into many" and "simplifies complexity". It grows slowly and is second only to the ideal time complexity of constant order.
 
->**What is the base of $O(log\,n)$**
->To be precise, the time complexity corresponding to "one divided into $m$" is $O(log_m\,n)$. And through the logarithm-for-base formula, we can get equal time complexity with different bases:
+>**What is the base of $O(log\ n)$**
+>To be precise, the time complexity corresponding to "one divided into $m$" is $O(log_m\ n)$. And through the logarithm-for-base formula, we can get equal time complexity with different bases:
 >
->$$O(log_m\,n)=O(log_k\,n/log_k\,m)=O(log_k\,n)$$
+>$$O(log_m\ n)=O(log_k\ n/log_k\ m)=O(log_k\ n)$$
 >
 >That is, the base $m$ can be converted without affecting the complexity. Therefore, we usually omit the base $m$, and record the logarithmic order directly as $O(log_n)$.
 
-6. Linear-logarithmic order $O(n\,log\,n)$
+##### 6. Linear-logarithmic order $O(n\ log\ n)$
 
-The linear-logarithmic order often appears in nested loops, and the time complexities of the two loops are $O(n\,log\,n)$ and $O(n)$ respectively. The relevant code is as follows:
+The linear-logarithmic order often appears in nested loops, and the time complexities of the two loops are $O(n\ log\ n)$ and $O(n)$ respectively. The relevant code is as follows:
 
-```zig
+```rust
 // linear logarithmic order
 fn linearLogRecur(n: f32) i32 {
     if (n <= 1) return 1;
@@ -804,13 +950,13 @@ fn linearLogRecur(n: f32) i32 {
 }
 ```
 
-The following picture shows how the linear-logarithmic order is generated. The total number of operations on each layer of the binary tree is $n$, and the tree has a total of layers $log_2\,n+1$, so the time complexity is $O(n\,log\,n)$.
+The following picture shows how the linear-logarithmic order is generated. The total number of operations on each layer of the binary tree is $n$, and the tree has a total of layers $log_2\ n+1$, so the time complexity is $O(n\ log\ n)$.
 
 ![Fig. 线性对数阶的时间复杂度](./pictures/2.3.4.6.png)
 
-The time complexity of mainstream sorting algorithms, such as quick sort, merge sort, heap sort, etc is usually $O(n\,log\,n)$.
+The time complexity of mainstream sorting algorithms, such as quick sort, merge sort, heap sort, etc is usually $O(n\ log\ n)$.
 
-7. Factorial order $O(n!)$
+##### 7. Factorial order $O(n!)$
 
 The factorial order corresponds to the "full permutation" problem in mathematics. Given $n$ non-repeating elements, find all possible permutations, the number of which is:
 
@@ -818,7 +964,7 @@ $$n! =n\times(n-1)\times(n-2)\times...\times2\times1$$
 
 Factorial is usually implemented using recursion. As shown in the following code and picture, the first layer splits out $n$, the second layer splits out $n-1$, and so on, until the $nth$ layer stops splitting:
 
-```zig
+```rust
 // factorial step (recursive implementation)
 fn factorialRecur(n: i32) i32 {
     if (n == 0) return 1;
@@ -845,7 +991,7 @@ Note that since $n!>2^n$ is constant for $n>4$, the factorial order grows faster
 
 The "worst time complexity" corresponds to the asymptotic upper bound of the function, expressed in big $O$ notation. Correspondingly, the "best time complexity" corresponds to the asymptotic lower bound of the function, expressed in $\Omega$ notation.
 
-```zig
+```rust
 // generate an array with elements { 1, 2, ..., n } in shuffled order
 pub fn randomNumbers(comptime n: usize) [n]i32 {
     var nums: [n]i32 = undefined;
@@ -905,7 +1051,25 @@ Therefore, when analyzing the space complexity of a program, **we usually count 
 
 ![Fig. 算法使用的相关空间](./pictures/2.4.1.0.png)
 
-```zig
+```rust
+const Node = struct {
+    val: u32,
+    next: *Node = undefined,
+};
+
+fn function() usize {
+    return 0;
+}
+
+fn algorithm(n: u32) usize {        // Input data
+    _ = n;
+    const a: u32 = 0;               // Temporary data (constant)
+    var b: u32 = 0;                 // Temporary data (variables)
+    var node = Node{ .val = 0 };    // Temporary data (object)
+    _ = node;
+    var c = function();             // Stack frame space (calling function)
+    return a + b + c;               // Output Data
+}
 ```
 
 #### 2.4.2 Calculation method
@@ -919,7 +1083,7 @@ Looking at the following code, "worst" in worst space complexity has two meaning
 1. **Based on the worst input data**: when $n<10$, the space complexity is $O(1)$; but when $n>10$, the initialized array `nums` occupies $O(n)$ space; so the worst space complexity is $O(n)$.
 2. **Based on the peak memory in the running of the algorithm**: for example, the program occupies $O(1)$ space before executing the last line; when initializing the array `nums`, the program occupies $O(n)$ space; so the worst space complexity is $O(n)$.
 
-```zig
+```rust
 ```
 
 **In the recursive function, you need to pay attention to the statistical stack frame space**. For example the following code:
@@ -927,27 +1091,43 @@ Looking at the following code, "worst" in worst space complexity has two meaning
 - The function `loop()` calls `function()` $n$ times in the loop, and `function()` in each round returns and releases the stack frame space, so the space complexity is still $O(1)$.
 - The recursive function `recur()` will have $n$ unreturned `recur()` during the running process, thus occupying $O(n)$ stack frame space.
 
-```zig
+```rust
+fn function() usize {
+    // perform some action
+    return 0;
+}
+// loop O(1)
+fn loop(n: i32) void {
+    for (0..n) |i| {
+        _ = i;
+        function();
+    }
+}
+// recursion O(n)
+fn recur(n: i32) void {
+    if (n == 1) {
+        return;
+    }
+    recur(n - 1);
+}
 ```
 
 #### 2.4.3 common type
 
 Assuming the input data size is $n$, the following figure shows the common types of space complexity (arranged from low to high).
 
-$$O(1)<O(log\,n)<O(n)<O(n^2)<O(2^n)$$
+$$O(1)<O(log\ n)<O(n)<O(n^2)<O(2^n)$$
 $$\text{constant order}<\text{logarithmic order}<\text{linear order}<\text{square order}<\text{exponential order}$$
 
 ![Fig. 空间复杂度的常见类型](./pictures/2.4.3.0.png)
 
-1. Constant order $O(1)$
+##### 1. Constant order $O(1)$
 
 Constant order is common in constants, variables, and objects whose number is independent of the input data size $n$.
 
 It should be noted that the memory occupied by initializing variables or calling functions in the loop will be released after entering the next loop, that is, it will not accumulate occupied space, and the space complexity is still $O(1)$:
 
-```zig
-[class]{}-[func]{function}
-
+```rust
 // constant order
 fn constant(n: i32) void {
     // constants, variables, objects take up O(1) space
@@ -973,11 +1153,11 @@ fn constant(n: i32) void {
 }
 ```
 
-2. Linear order $O(n)$
+##### 2. Linear order $O(n)$
 
 Linear order is common in arrays, linked lists, stacks, queues, etc. where the number of elements is proportional to $n$:
 
-```zig
+```rust
 // linear order
 fn linear(comptime n: i32) !void {
     // an array of length n takes O(n) space
@@ -1004,7 +1184,7 @@ fn linear(comptime n: i32) !void {
 
 As shown in the following picture, the recursion depth of this function is $n$, that is, there are $n$ unreturned `linear_recur()` functions at the same time, and the stack frame space of $O(n)$ size is used:
 
-```zig
+```rust
 // linear order (recursive implementation)
 fn linearRecur(comptime n: i32) void {
     std.debug.print("Recursion n = {}\n", .{n});
@@ -1015,11 +1195,11 @@ fn linearRecur(comptime n: i32) void {
 
 ![Fig. 递归函数产生的线性阶空间复杂度](./pictures/2.4.3.2.png)
 
-3. Square order $O(n2)$
+##### 3. Square order $O(n2)$
 
 Quadratic order is common in matrices and graphs, where the number of elements is quadratic with $n$.
 
-```zig
+```rust
 // square order
 fn quadratic(n: i32) !void {
     // 2-dimensions list takes O(n^2) space
@@ -1040,7 +1220,7 @@ fn quadratic(n: i32) !void {
 
 As shown in the following picture, the recursion depth of this function is $n$, and an array is initialized in each recursive function, the lengths are $n,n-1,...,2,1$, and the average length is $n/2$, so $O(n2)$ space overall:
 
-```zig
+```rust
 // square order (recursive implementation)
 fn quadraticRecur(comptime n: i32) i32 {
     if (n <= 0) return 0;
@@ -1052,11 +1232,11 @@ fn quadraticRecur(comptime n: i32) i32 {
 
 ![Fig. 递归函数产生的平方阶空间复杂度](./pictures/2.4.3.3.png)
 
-4. Exponential order $O(2n)$
+##### 4. Exponential order $O(2n)$
 
 Exponential order is common in binary trees. Observe in the following picture, the number of nodes of a "full binary tree" with height $n$ is $2^n-1$, occupying $O(2n)$ space:
 
-```zig
+```rust
 // exponential order (build a full binary tree)
 fn buildTree(mem_allocator: std.mem.Allocator, n: i32) !?*inc.TreeNode(i32) {
     if (n == 0) return null;
@@ -1070,11 +1250,11 @@ fn buildTree(mem_allocator: std.mem.Allocator, n: i32) !?*inc.TreeNode(i32) {
 
 ![Fig. 满二叉树产生的指数阶空间复杂度](./pictures/2.4.3.4.png)
 
-5. Logarithmic order $O(log\,n)$
+##### 5. Logarithmic order $O(log\ n)$
 
-Logarithmic order is common in divide and conquer algorithms. For example, merge sort, input an array of length $n$, each round of recursion divides the array into two halves from the midpoint, forming a recursive tree with a height of $log\,n$, using $O(log\,n)$ stack frame space.
+Logarithmic order is common in divide and conquer algorithms. For example, merge sort, input an array of length $n$, each round of recursion divides the array into two halves from the midpoint, forming a recursive tree with a height of $log\ n$, using $O(log\ n)$ stack frame space.
 
-Another example is to convert a number into a string, input a positive integer $n$, and its number of digits is $log_{10}\,n+1$, that is, the corresponding string length is $log_{10}\,n+1$, so the space complexity is $O(log_{10}\,n+1)=O(log\,n)$.
+Another example is to convert a number into a string, input a positive integer $n$, and its number of digits is $log_{10}\ n+1$, that is, the corresponding string length is $log_{10}\ n+1$, so the space complexity is $O(log_{10}\ n+1)=O(log\ n)$.
 
 #### 2.4.4 balance time and space
 
@@ -1086,7 +1266,7 @@ Which idea to choose depends on which aspect we value more. In most cases, time 
 
 ### 2.5 summary
 
-1. key review
+#### 1. key review
 
 **Algorithm Efficiency Evaluation**
 
@@ -1099,7 +1279,7 @@ Which idea to choose depends on which aspect we value more. In most cases, time 
 - Time complexity is used to measure the trend of the algorithm's running time increasing with the amount of data, which can effectively evaluate the efficiency of the algorithm, but it may fail in some cases, such as when the amount of input data is small or the time complexity is the same, it is impossible to accurately compare the algorithms The pros and cons of efficiency.
 - The worst time complexity is represented by Big O notation, which is the asymptotic upper bound of the function, reflecting the growth level of T(n) when n tends to positive infinity.
 - Calculating the time complexity is divided into two steps, first counting the number of calculation operations, and then estimating the asymptotic upper bound.
-- The common time complexity is $O(1)$, $O(lo\,n)$, $O(n)$, $O(n\,log\,n)$, $O(n^2)$, $O(2^n)$, $O(n!)$ etc. from small to large.
+- The common time complexity is $O(1)$, $O(lo\ n)$, $O(n)$, $O(n\ log\ n)$, $O(n^2)$, $O(2^n)$, $O(n!)$ etc. from small to large.
 - The time complexity of some algorithms is not fixed, but related to the distribution of the input data. The time complexity is divided into worst, best, and average time complexity. The best time complexity is almost useless, because the input data generally needs to meet strict conditions to achieve the best situation.
 - The average time complexity reflects the operating efficiency of the algorithm under random data input, which is closest to the algorithm performance in practical applications. Calculating the average time complexity requires statistical distribution of input data and mathematical expectations after synthesis.
 
@@ -1108,9 +1288,9 @@ Which idea to choose depends on which aspect we value more. In most cases, time 
 - Similar to time complexity, space complexity is used to measure the trend of the space occupied by the algorithm as the amount of data grows.
 - The relevant memory space during the operation of the algorithm can be divided into input space, temporary storage space, and output space. Normally, the input space is not included in the space complexity calculation. The temporary storage space can be divided into instruction space, data space, and stack frame space. The stack frame space usually only affects the space complexity in recursive functions.
 - We usually only focus on the worst space complexity, that is, the space complexity of the statistical algorithm under the worst input data and worst running time point.
-- Common space complexities are $O(1)$, $O(log\,n)$, $O(n)$, $O(n^2)$, $O(2^n)$, etc. from small to large.
+- Common space complexities are $O(1)$, $O(log\ n)$, $O(n)$, $O(n^2)$, $O(2^n)$, etc. from small to large.
 
-2. Q & A
+#### 2. Q & A
 
 >**Is the space complexity of tail recursion $O(1)$?**
 >Theoretically, the space complexity of tail recursive functions can be optimized to $O(1)$. However, most programming languages (such as Java, Python, C++, Go, C#, etc.) do not support automatic optimization of tail recursion, so the space complexity is generally considered to be $O(n)$.
@@ -1200,8 +1380,8 @@ When it comes to data in computers, we think of various forms such as text, pict
 
 The value range of a basic data type depends on the space it occupies. For example, Java stipulates:
 
-- The integer type `byte` occupies $1\,byte=8\,bits$ and can represent $2^8$ numbers.
-- The integer type `int` occupies $4\,bytes=32\,bits$ and can represent $2^{32}$ numbers.
+- The integer type `byte` occupies $1\ byte=8\ bits$ and can represent $2^8$ numbers.
+- The integer type `int` occupies $4\ bytes=32\ bits$ and can represent $2^{32}$ numbers.
 
 The following table lists the occupied space, value range and default value of various basic data types. There is no need to memorize this form, just a general understanding, and it can be recalled by looking up the table when necessary.
 
@@ -1228,7 +1408,12 @@ If we want to represent "a row of numbers", we naturally think of using an array
 
 In other words, **primitive data types provide the "content type" of the data, while data structures provide the "organization" of the data**. For example, in the following code, we use the same data structure (array) to store and represent different basic data types, including `int`, `float`, `char`, `bool`, etc.
 
-```zig
+```rust
+// initialize arrays using multiple basic data types
+const numbers = [5]u32;
+const decimals = [5]f32;
+const characters = [5]u8;
+const bools = [5]bool;
 ```
 
 ### 3.3 Binary code $*$
@@ -1254,12 +1439,13 @@ Although the "true form of the original code" is the most intuitive, it has some
 
 $$\begin{align*}
 &1+(-2)\\
-&\rightarrow0000\,0001+1000\,0010\\
-&=1000\,0011\\
+&\rightarrow0000\ 0001+1000\ 0010\\
+&=1000\ 0011\\
 &=-3
 \end{align*}$$
 
 In order to solve this problem, the computer introduced "one's complement code". If we first convert the original code to the inverse code, and calculate $1+(-2)$ under the inverse code, and finally convert the result from the inverse code back to the original code, we can get the correct result $-1$.
+
 $$\begin{align*}
 &1+(-2)\\
 &\rightarrow00000001(\text{original code})+10000010(\text{original code})\\
@@ -1268,22 +1454,27 @@ $$\begin{align*}
 &=10000001(\text{original code})\\
 &=-1
 \end{align*}$$
+
 On the other hand, **the original code of the number zero has two representations of $+0$ and $-0$**. This means that the number zero corresponds to two different binary codes, which can cause ambiguity problems. For example, in conditional estimation, if there is no distinction between positive zero and negative zero, it may lead to wrong estimation results. If we want to deal with positive zero and negative zero ambiguity, we need to introduce additional estimation operations, which may reduce the computing efficiency of the computer.
+
 $$
 +0\rightarrow00000000\\
 -0\rightarrow10000000
 $$
+
 Like the original code, the inverse code also has the problem of positive and negative zero ambiguity. For this reason, the computer further introduces "2's complement code". Let's first observe the conversion process of the original code, inverse code, and complement code of negative zero:
+
 $$\begin{align*}
 &-0\rightarrow10000000(\text{original code})\\
 &=11111111(\text{inverse code})\\
 &=100000000(\text{complement})
 \end{align*}$$
-Adding $1$ to the complement of negative zero will generate a carry, and since the length of the `byte` type is only 8 bits, so the $1$ overflowing to the ninth bit will be discarded. **Thus the complement of negative zero is $0000\,0000$, which is the same as the complement of positive zero**. This means that there is only one zero in the two's complement representation, resolving the positive and negative zero ambiguity.
+
+Adding $1$ to the complement of negative zero will generate a carry, and since the length of the `byte` type is only 8 bits, so the $1$ overflowing to the ninth bit will be discarded. **Thus the complement of negative zero is $0000\ 0000$, which is the same as the complement of positive zero**. This means that there is only one zero in the two's complement representation, resolving the positive and negative zero ambiguity.
 
 There is one last doubt left: the value range of the `byte` type is $[-128,127]$, how to get the extra negative number $-128$? We noticed that all integers in the interval $[-127,+127]$ have corresponding original code, inverse code and complement code, and the original code and complement code can be converted to each other.
 
-However, **the two's complement $1000\,0000$ is an exception, it does not have a corresponding original code**. According to the conversion method, we get the original code of this complement as $0000\,0000$. This is clearly contradictory, since the original code represents the number $0$, whose complement should be itself. The computer specifies that this special two's complement $1000\,0000$ represents $-128$. In fact, $(-1)+(-127)$ evaluates to $-128$ in two's complement.
+However, **the two's complement $1000\ 0000$ is an exception, it does not have a corresponding original code**. According to the conversion method, we get the original code of this complement as $0000\ 0000$. This is clearly contradictory, since the original code represents the number $0$, whose complement should be itself. The computer specifies that this special two's complement $1000\ 0000$ represents $-128$. In fact, $(-1)+(-127)$ evaluates to $-128$ in two's complement.
 
 $$\begin{align*}
 &(-127)+(-1)\\
@@ -1307,7 +1498,9 @@ The design of the complement code is very delicate, and we will introduce it her
 If you are careful, you may find that `int` and `float` have the same length, both are 4 bytes, but why the value range of `float` is much larger than that of `int`? This is very counter-intuitive, because it stands to reason that `float` needs to represent decimals, and the value range should be smaller.
 
 In fact, **this is because of the different representation of the floating-point number `float`**. Note that a 32-bit length binary number is:
+
 $$b_{31}b_{30}b_{29}...b_2b_1b_0$$
+
 According to the IEEE 754 standard, a 32-bit length `float` consists of the following parts:
 
 - Sign bit $S$: occupies 1 bit, corresponding to $b_{31}$.
@@ -1315,17 +1508,24 @@ According to the IEEE 754 standard, a 32-bit length `float` consists of the foll
 - Mantissa bit $N$: 23 bits, corresponding to $b_{22}b_{21}...b_0$.
 
 The value corresponding to the binary `float` is calculated by:
+
 $$val=(-1)^{b_{31}}\times2^{(b_{30}b_{29}...b_{20})*2-127}\times(1 \cdot b*{22}b_{21}...b_0)*2$$
+
 The calculation formula converted to decimal system:
+
 $$val=(-1)^S\times2^{E-127}\times(1+N)$$
+
 The value range of each item:
-$$S\in\{0,1\},\,E\in\{1,2,...,254\}$$
+
+$$S\in\{0,1\},\ E\in\{1,2,...,254\}$$
 $$(1+N)=(1+\sum_{i=1}^{23}b_{23-i}2^{-i})\subset[1,2-2^{-23}]$$
 
 ![Fig. IEEE 754 标准下的 float 表示方式](./pictures/3.3.2.png)
 
 Take the above picture as an example, given $S=0$, $E=124$, $N=2-2+2-3=0.375$, then:
+
 $$val=(-1)^0\times2^{124-127}\times(1+0.375)=0.171875$$
+
 Now we can answer the original question: **`float`'s representation includes exponent bits, resulting in a much larger range of values than `int`**. According to the above calculation, the maximum positive number that `float` can represent is $2^{254-127}\times(2-2^{-23})\approx3.4\times10^{38}$, and the smallest negative number can be obtained by switching the sign bit.
 
 **Although the floating-point number `float` expands the range of values, it has the side effect of sacrificing precision**. The integer type `int` uses all 32 bits to represent numbers, and the numbers are evenly distributed; due to the existence of exponent bits, the larger the value of the floating-point number `float`, the larger the difference between two adjacent numbers will tend to be.
@@ -1498,29 +1698,20 @@ It should be noted that the above discussions are all about the way strings are 
 
 ### 3.5 Summary
 
-1. key review
+#### 1. key review
 
 - Data structure can be classified from two perspectives of logical structure and physical structure. Logical structure describes the logical relationship between data elements, while physical structure describes how data is stored in computer memory.
-
 - Common logical structures include linear, tree, and network. Usually we divide data structures into linear (arrays, linked lists, stacks, queues) and nonlinear (trees, graphs, heaps) according to the logical structure. Hash table implementations may contain both linear and non-linear structures.
-
 - While the program is running, data is stored in the computer's memory. Each memory space has a corresponding memory address, and the program accesses data through these memory addresses.
-
 - The physical structure is mainly divided into continuous space storage (array) and discrete space storage (linked list). All data structures are implemented by arrays, linked lists, or a combination of both.
-
 - The basic data types in the computer include integer `byte`, `short`, `int`, `long`, floating point number `float`, `double`, character `char` and Boolean `boolean`. Their range of values ​​depends on the size of the footprint and the representation.
-
 - Original code, inverse code, and complement code are three methods of encoding numbers in a computer, and they can be converted to each other. The highest bit of the original code of an integer is the sign bit, and the remaining bits are the value of the number.
-
 - Integers are stored in a computer in two's complement form. Under the complement representation, the computer can treat the addition of positive numbers and negative numbers equally, and there is no need to design special hardware circuits for subtraction operations, and there is no ambiguity between positive and negative zeros.
-
 - The encoding of floating point numbers consists of 1 sign bit, 8 exponent bits and 23 fraction bits. Due to the existence of exponent bits, the value range of floating-point numbers is much larger than that of integers, at the cost of sacrificing precision.
-
 - ASCII code is the earliest English character set, with a length of 1 byte and a total of 127 characters.  The GBK character set is a commonly used Chinese character set, which contains more than 20,000 Chinese characters.  Unicode is committed to providing a complete character set standard, including characters from various languages ​​in the world, so as to solve the problem of garbled characters caused by inconsistent character encoding methods.
-
 - UTF-8 is the most popular Unicode encoding method and is very versatile. It is a variable-length encoding method with good scalability and effectively improves the efficiency of storage space.  UTF-16 and UTF-32 are equal-length encoding methods. UTF-16 takes up less space than UTF-8 when encoding Chinese.  Programming languages ​​such as Java and C# use UTF-16 encoding by default.
 
-2. Q & A
+#### 2. Q & A
 
 >**Why does a hash table contain both linear and non-linear data structures?**
 >The bottom layer of the hash table is an array, and in order to resolve hash conflicts, we may use the "zipper method" (will be discussed in the subsequent hash table chapter). In the zipper method, each address (bucket) in the array points to a linked list; when the length of the linked list exceeds a certain threshold, it may be converted into a tree (usually a red-black tree). Therefore, hash tables may contain both linear (arrays, linked lists) and non-linear (trees) data structures.
@@ -1543,17 +1734,17 @@ An "array" is a linear data structure that stores elements of the same type in c
 
 #### 4.1.1 Array common operations
 
-1. Initializing the array
+##### 1. Initializing the array
 
 We can choose two initialization methods for arrays according to our needs: no initial value and provided initial value. Most programming languages ​​initialize array elements to $0$ when no initial value is specified.
 
-```zig
+```rust
 // initializing the array
 var arr = [_]i32{0} ** 5; // { 0, 0, 0, 0, 0 }
 var nums = [_]i32{ 1, 3, 2, 5, 4 };
 ```
 
-2. Accessing elements
+##### 2. Accessing elements
 
 Array elements are stored in contiguous memory space, which means that calculating the memory address of an array element is very easy. Given the memory address of the array (that is, the memory address of the first element) and the index of an element, we can use the following formula to calculate the memory address of the element, so as to directly access this element.
 
@@ -1563,7 +1754,7 @@ Looking at the previous picture, we see that the first element of the array has 
 
 Accessing elements in an array is very efficient, and we can randomly access any element in an array in $O(1)$ time.
 
-```zig
+```rust
 // accessing a random element
 fn randomAccess(nums: []i32) i32 {
     // randomly draw an integer in the interval [0, nums.len)
@@ -1574,7 +1765,7 @@ fn randomAccess(nums: []i32) i32 {
 }
 ```
 
-3. Inserting elements
+##### 3. Inserting elements
 
 Array elements are "next to each other" in memory, with no space between them for any further data. As shown in the following picture, if you want to insert an element in the middle of the array, you need to move all the elements behind the element backward by one bit, and then assign the element to the index.
 
@@ -1582,7 +1773,7 @@ Array elements are "next to each other" in memory, with no space between them fo
 
 It is worth noting that since the length of the array is fixed, inserting an element will definitely cause a "lost" element at the end of the array. We leave the solution to this problem for the list chapter.
 
-```zig
+```rust
 // Insert element num at index of the array
 fn insert(nums: []i32, num: i32, index: usize) void {
     // Move the index and all subsequent elements backward by one
@@ -1596,7 +1787,7 @@ fn insert(nums: []i32, num: i32, index: usize) void {
 }
 ```
 
-4. Deleting elements
+##### 4. Deleting elements
 
 Similarly, as shown in the following picture, if you want to delete the element at index $i$, you need to move all the elements after index $i$ forward by one.
 
@@ -1604,7 +1795,7 @@ Similarly, as shown in the following picture, if you want to delete the element 
 
 Please note that after deleting the element, the original end element becomes "meaningless", so we don't need to modify it specially.
 
-```zig
+```rust
 // delete the element at index
 fn remove(nums: []i32, index: usize) void {
     // Move all elements after the index forward by one
@@ -1621,11 +1812,11 @@ In general, the insertion and deletion operations of arrays have the following d
 - **Losing elements**: Since the length of the array is immutable, after inserting elements, elements that exceed the length of the array are lost.
 - **Memory waste**: We can initialize a relatively long array and only use the first part, so that when inserting data, the missing elements at the end are "meaningless", but doing so will also cause a waste of part of the memory space.
 
-5. Iterating over an array
+##### 5. Iterating over an array
 
 In most programming languages, we can either traverse the array by index, or directly traverse to get each element in the array.
 
-```zig
+```rust
 // iterating over an array
 fn traverse(nums: []i32) void {
     var count: i32 = 0;
@@ -1642,13 +1833,13 @@ fn traverse(nums: []i32) void {
 }
 ```
 
-6. Finding an element
+##### 6. Finding an element
 
 Finding the specified element in the array requires traversing the array, and each round estimates whether the element value matches, and outputs the corresponding index if it matches.
 
 Because arrays are linear data structures, the above lookup operations are called "linear lookups".
 
-```zig
+```rust
 // finding the specified element in the array
 fn find(nums: []i32, target: i32) i32 {
     for (nums, 0..) |num, i| {
@@ -1658,13 +1849,13 @@ fn find(nums: []i32, target: i32) i32 {
 }
 ```
 
-7. Expanding an array
+##### 7. Expanding an array
 
 In a complex system environment, it is difficult for the program to ensure that the memory space behind the array is available, so that the capacity of the array cannot be expanded safely. So in most programming languages, **the length of the array is immutable**.
 
 If we want to expand the array, we need to re-create a larger array, and then copy the elements of the original array to the new array in turn. This is an $O(n)$ operation, which is very time-consuming when the array is large.'
 
-```zig
+```rust
 // extending array length
 fn extend(mem_allocator: std.mem.Allocator, nums: []i32, enlarge: usize) ![]i32 {
     // initializing an array with extended length
@@ -1719,7 +1910,7 @@ In the previous picture, the "Node" in the linked list contains two pieces of da
 
 As shown in the following code, the linked list node `ListNode` contains an additional reference (pointer) in addition to the value. Therefore, for the same amount of data, **a linked list takes up more memory space than an array**.
 
-```zig
+```rust
 // linked list node class
 pub fn ListNode(comptime T: type) type {
     return struct {
@@ -1739,11 +1930,11 @@ pub fn ListNode(comptime T: type) type {
 
 #### 4.2.1 Common operations for linked lists
 
-1. initializing the linked list
+##### 1. initializing the linked list
 
 Building a linked list is a two-step process, the first step is to initialize the individual node objects, and the second step is to build a reference pointing relationship. After initialization, we can start from the head node of the linked list and access all nodes sequentially by pointing to `next` by reference.
 
-```zig
+```rust
 // initializing the linked list
 // initializing the nodes
 var n0 = inc.ListNode(i32){.val = 1};
@@ -1760,7 +1951,7 @@ n3.next = &n4;
 
 The array as a whole is a variable, for example, the array `nums` contains the elements `nums[0]` and `nums[1]`, etc., while a linked list is composed of multiple independent node objects. **We usually think of the head node as a synonym for a linked list**, for example, the linked list in the above code can be denoted as the linked list `n0`.
 
-2. inserting a node
+##### 2. inserting a node
 
 Inserting nodes in a linked list is very easy. As shown in the following picture, suppose we want to insert a new node `P` between two adjacent nodes `n0` and `n1`, **we only need to change the two node references (pointers)** with a time complexity of $O(1)$.
 
@@ -1768,7 +1959,7 @@ In contrast, inserting elements into an array has a time complexity of $O(n)$ an
 
 ![图 4-6   链表插入节点示例](./pictures/4.2.1.2.png)
 
-```zig
+```rust
 // inserting node P after node n0 in the linked list
 fn insert(n0: ?*inc.ListNode(i32), P: ?*inc.ListNode(i32)) void {
     var n1 = n0.?.next;
@@ -1777,7 +1968,7 @@ fn insert(n0: ?*inc.ListNode(i32), P: ?*inc.ListNode(i32)) void {
 }
 ```
 
-3. deleting a node
+##### 3. deleting a node
 
 As shown in the following picture, it is also very convenient to delete nodes in the linked list, **just change the reference (pointer) of a node**.
 
@@ -1785,7 +1976,7 @@ Please note that although the node `P` still points to `n1` after the delete ope
 
 ![图 4-7   链表删除节点](./pictures/4.2.1.3.png)
 
-```zig
+```rust
 // deleting the first node after node n0 of the linked list
 fn remove(n0: ?*inc.ListNode(i32)) void {
     if (n0.?.next == null) return;
@@ -1796,11 +1987,11 @@ fn remove(n0: ?*inc.ListNode(i32)) void {
 }
 ```
 
-4. accessing a node
+##### 4. accessing a node
 
 **Accessing nodes in a linked list is less efficient**. As mentioned in the previous section, we can access any element in the array in $O(1)$ time. For the linked list it is not the case. The program needs to start from the head node and traverse backwards one by one until the target node is found. That is to say, to visit the $ith$ node of the linked list it needs to cycle $i-1$ rounds, and the time complexity is $O(n)$.
 
-```zig
+```rust
 // accessing the node at index in the linked list
 fn access(node: ?*inc.ListNode(i32), index: i32) ?*inc.ListNode(i32) {
     var head = node;
@@ -1813,11 +2004,11 @@ fn access(node: ?*inc.ListNode(i32), index: i32) ?*inc.ListNode(i32) {
 }
 ```
 
-5. finding a node
+##### 5. finding a node
 
 Traverse the linked list, find the node whose value is `target` in the linked list, and output the index of the node in the linked list. This process is also a linear search.
 
-```zig
+```rust
 // finding the first node whose value is target in the linked lis
 fn find(node: ?*inc.ListNode(i32), target: i32) i32 {
     var head = node;
@@ -1853,7 +2044,7 @@ As shown in the following picture, there are three common linked list types.
 - **Circular linked list**: If we make the tail node of the singly linked list point to the head node (that is, end to end), we get a circular linked list. In a circular linked list, any node can be regarded as the head node.
 - **Doubly linked list**: Compared with a singly linked list, a doubly linked list records pointers (references) in both directions. The node definition of the doubly linked list contains pointers to both the successor node (next node) and the predecessor node (previous node). Compared with the singly linked list, the doubly linked list is more flexible and can traverse the linked list in two directions, but correspondingly requires more memory space.
 
-```zig
+```rust
 // doubly linked list node class
 pub fn ListNode(comptime T: type) type {
     return struct {
@@ -1902,22 +2093,22 @@ To solve this problem, a data structure called a "dynamic array" has emerged, th
 
 #### 4.3.1 List common operations
 
-1. initializing the list.
+##### 1. initializing the list
 
 Usually we use two initialization methods of "no initial value" and "with initial value".
 
-```zig
+```rust
 // initializing the list
 var list = std.ArrayList(i32).init(std.heap.page_allocator);
 defer list.deinit();
 try list.appendSlice(&[_]i32{ 1, 3, 2, 5, 4 });
 ```
 
-2. accessing an element
+##### 2. accessing an element
 
 Lists are arrays in nature, so elements can be accessed and updated in $O(1)$ time, which is efficient.
 
-```zig
+```rust
 // accessing an element
 var num = list.items[1]; // accessing the element at index 1
 
@@ -1925,11 +2116,11 @@ var num = list.items[1]; // accessing the element at index 1
 list.items[1] = 0; // updating the element at index 1 to 0
 ```
 
-3. inserting and deleting elements
+##### 3. inserting and deleting elements
 
 In contrast to arrays, lists can add and remove elements freely. Adding elements at the end of the list has a time complexity of $O(1)$, but inserting and deleting elements is still the same as an array with a time complexity of $O(n)$.
 
-```zig
+```rust
 // emptying the list
 list.clearRetainingCapacity();
 
@@ -1947,11 +2138,11 @@ try list.insert(3, 6); // inserting the number 3 at index 6
 _ = list.orderedRemove(3); // deleting the element at index 3
 ```
 
-4. iterating over the list
+##### 4. iterating over the list
 
 Like arrays, lists can be traversed based on indexes or directly through elements.
 
-```zig
+```rust
 // traversing the list by index
 var count: i32 = 0;
 var i: i32 = 0;
@@ -1966,11 +2157,11 @@ for (list.items) |_| {
 }
 ```
 
-5. concatenating two lists
+##### 5. concatenating two lists
 
 Given a new list `list1` , we can concatenate that list to the end of the original list.
 
-```zig
+```rust
 // concatenating two lists
 var list1 = std.ArrayList(i32).init(std.heap.page_allocator);
 defer list1.deinit();
@@ -1978,11 +2169,11 @@ try list1.appendSlice(&[_]i32{ 6, 8, 7, 10, 9 });
 try list.insertSlice(list.items.len, list1.items); // joining list list1 after list
 ```
 
-6. sorting a list
+##### 6. sorting a list
 
 After sorting the list, we can use the "binary search" and "double pointer" algorithms that are often investigated in array algorithm problems.
 
-```zig
+```rust
 // sorting a list
 std.sort.sort(i32, list.items, {}, comptime std.sort.asc(i32));
 ```
@@ -1997,7 +2188,7 @@ In order to deepen the understanding of the working principle of the list, we tr
 - **Quantity record**: Declare a variable size to record the current number of elements in the list, and update it in real time as elements are inserted and deleted. According to this variable, we can locate the end of the list and determine whether expansion is required.
 - **Expansion mechanism**: The capacity of the list may be exceeded when inserting elements, and the list needs to be expanded at this time. The expansion method is to create a larger array according to the expansion multiple, and move all elements of the current array to the new array in turn. In this example, we specify that the array be expanded by a factor of 2 each time.
 
-```zig
+```rust
 // simple implementation of list class
 fn MyList(comptime T: type) type {
     return struct {
@@ -2118,14 +2309,14 @@ fn MyList(comptime T: type) type {
 
 ### 4.4 summary
 
-1. key review
+#### 1. key review
 
 - Arrays and linked lists are two basic data structures, which respectively represent the continuous space storage and discrete space storage methods of data in computer memory. The advantages and disadvantages of the two are complementary.
 - Arrays support random access and occupy less memory; however, inserting and deleting elements is inefficient, and the length is immutable after initialization.
 - The linked list achieves efficient node insertion and deletion by changing references (pointers), and can flexibly adjust the length; however, node access is inefficient and takes up more memory. Common linked list types include singly linked list, circular linked list, and doubly linked list.
 - A dynamic array, also known as a list, is a data structure based on an array. It retains the advantages of arrays, while being flexible to adjust the length. The appearance of the list greatly improves the ease of use of the array, but may cause some memory space to be wasted.
 
-2. Q & A
+#### 2. Q & A
 
 >**Does array storage on the stack and storage on the heap have any impact on time efficiency and space efficiency?**
 >Stack memory allocation is automatically done by the compiler, while heap memory is allocated by the programmer in the code (note that the stack and heap here are not the same concept as the stack and heap in the data structure).
@@ -2138,7 +2329,7 @@ fn MyList(comptime T: type) type {
 >The linked list is composed of nodes, and the nodes are connected by references (pointers). Each node can store different types of data, such as int, double, string, object, etc.
 >
 >In contrast, array elements must be of the same type, so that the corresponding element position can be obtained by calculating the offset. For example, if the array contains both int and long types, and a single element occupies 4 bytes and 8 bytes respectively, then the following formula cannot be used to calculate the offset at this time, because the array contains elements of two lengths.
-
+>
 >`// element memory address = array memory address + element length * element index`
 >`elementAddr = firtstElementAddr + elementLength * elementIndex`
 
@@ -2204,7 +2395,28 @@ The common operations of the stack are shown in the following table, and the spe
 
 Usually, we can directly use the built-in stack class of the programming language. However, some languages may not specifically provide a stack class. At this time, we can use the "array" or "linked list" of the language as a stack, and ignore operations that have nothing to do with the stack.
 
-```zig
+```rust
+// Initialization stack
+const Stack = @import("stack.zig").Stack(u32);
+
+// push elements onto stack
+try stack.push(1);
+try stack.push(2);
+try stack.push(3);
+try stack.push(5);
+try stack.push(4);
+
+// access the top element of the stack
+const peek = stack.top();
+
+// element pop
+const pop = stack.pop();
+
+// get the length of the stack
+const size = stack.count();
+
+// determine whether it is empty
+const isEmpty = stack.count() == 0;
 ```
 
 #### 5.1.2 Implementation of the stack
@@ -2213,7 +2425,7 @@ In order to gain a deeper understanding of the operating mechanism of the stack,
 
 The stack follows the principle of first in, last out, so we can only add or remove elements at the top of the stack. However, both arrays and linked lists can add and remove elements at arbitrary positions, **so a stack can be viewed as a sort of restricted array or linked list**. In other words, we can "mask" some irrelevant operations of the array or linked list, so that the logic of its external appearance conforms to the characteristics of the stack.
 
-1. implementation based on linked list
+##### 1. implementation based on linked list
 
 When using a linked list to implement a stack, we can regard the head node of the linked list as the top of the stack and the tail node as the bottom of the stack.
 
@@ -2223,7 +2435,7 @@ for the push operation, we only need to insert elements into the head of the lin
 
 The following is a sample code for implementing a stack based on a linked list.
 
-```zig
+```rust
 // stack based on linked list
 fn LinkedListStack(comptime T: type) type {
     return struct {
@@ -2299,7 +2511,7 @@ fn LinkedListStack(comptime T: type) type {
 }
 ```
 
-2. Array-based implementation
+##### 2. Array-based implementation
 
 When using an array to implement a stack, we can use the end of the array as the top of the stack. As shown in the following picture, the operations of pushing and popping correspond to adding and deleting elements at the end of the array respectively, and the time complexity is $O(1)$.
 
@@ -2307,7 +2519,7 @@ When using an array to implement a stack, we can use the end of the array as the
 
 Since the elements pushed onto the stack may increase continuously, we can use dynamic arrays, so that we don't need to deal with the problem of array expansion by ourselves. Below is the sample code.
 
-```zig
+```rust
 // array based stack
 fn ArrayStack(comptime T: type) type {
     return struct {
@@ -2413,14 +2625,36 @@ Common operations on queues are shown in the following table. It is important to
 
 We can directly use the ready-made queue class in the programming language.
 
-```zig
+```rust
+// Initializing queue
+var queue = Queue.init(std.heap.page_allocator);
+
+// element enqueue
+try queue.enqueue(1);
+try queue.enqueue(2);
+try queue.enqueue(3);
+try queue.enqueue(5);
+try queue.enqueue(4);
+
+// ccess the leader element
+const peek = queue.start;
+
+// element dequeue
+const pop = queue.dequeue();
+
+// get the length of the queue
+const size = queue.size;
+
+
+// determine whether the queue is empty
+const isEmpty = queue.size == 0;
 ```
 
 #### 5.2.2 queue implementation
 
 To implement a queue, we need a data structure that can add elements at one end and remove elements at the other end. Therefore, both linked lists and arrays can be used to implement queues.
 
-1. Implementation based on linked list
+##### 1. Implementation based on linked list
 
 As shown in the following picture, we can regard the "head node" and "tail node" of the linked list as the front and end of the line respectively, and stipulate that only nodes can be added at the end of the line, and nodes can only be deleted at the front of the line.
 
@@ -2428,7 +2662,7 @@ As shown in the following picture, we can regard the "head node" and "tail node"
 
 The following is a sample code to implement a queue with a linked list.
 
-```zig
+```rust
 // queue based on linked list
 fn LinkedListQueue(comptime T: type) type {
     return struct {
@@ -2515,7 +2749,7 @@ fn LinkedListQueue(comptime T: type) type {
 }
 ```
 
-2. Array-based implementation
+##### 2. Array-based implementation
 
 Since the time complexity of deleting the first element of the array is $O(n)$, this will result in low efficiency of the dequeue operation. However, we can avoid this problem with the following clever method.
 
@@ -2534,7 +2768,7 @@ You may find a problem: both `front` and `rear` are moving to the right during t
 
 For circular arrays, we need to let `front` or `rear` directly return to the head of the array to continue traversing when it crosses the end of the array. This periodic law can be realized by "remainder operation", the code is as follows.
 
-```zig
+```rust
 // queue based on circular array
 fn ArrayQueue(comptime T: type) type {
     return struct {
@@ -2656,14 +2890,14 @@ The common operations of the bidirectional queue are shown in the table below, a
 
 Similarly, we can directly use the bidirectional queue class implemented in the programming language.
 
-```zig
+```rust
 ```
 
 #### 5.3.2 bidirectional queue implementation $*$
 
 The implementation of a bidirectional queue is similar to a queue, and a linked list or an array can be selected as the underlying data structure.
 
-1. Implementation based on doubly linked list
+##### 1. Implementation based on doubly linked list
 
 Looking back at the previous section, we use an ordinary one-way linked list to implement the queue, because it can easily delete the head node (corresponding to the dequeue operation) and add a new node after the tail node (corresponding to the enqueue operation).
 
@@ -2675,7 +2909,7 @@ We regard the head node and tail node of the doubly linked list as the head and 
 
 The implementation code is shown below.
 
-```zig
+```rust
 // doubly linked list node
 fn ListNode(comptime T: type) type {
     return struct {
@@ -2833,7 +3067,7 @@ fn LinkedListDeque(comptime T: type) type {
 }
 ```
 
-2. Array-based implementation
+##### 2. Array-based implementation
 
 As shown in the following pcture, similar to implementing a queue based on an array, we can also use a circular array to implement a bidirectional queue.
 
@@ -2841,7 +3075,7 @@ As shown in the following pcture, similar to implementing a queue based on an ar
 
 On the basis of the implementation of the queue, it is only necessary to add the methods of "enqueue at the head of the queue" and "dequeue at the end of the queue".
 
-```zig
+```rust
 [class]{ArrayDeque}-[func]{}
 ```
 
@@ -2853,7 +3087,7 @@ We know that the "undo" function of software is usually implemented using a stac
 
 ### 5.4 summary
 
-1. key review
+#### 1. key review
 
 - A stack is a data structure that follows the principle of first-in, first-out, and can be implemented by an array or a linked list.
 - From the perspective of time efficiency, the array implementation of the stack has a higher average efficiency, but in the process of expansion, the time complexity of a single push operation will be reduced to $O(n)$. In contrast, the stack based on linked list has more stable efficiency performance.
@@ -2861,7 +3095,7 @@ We know that the "undo" function of software is usually implemented using a stac
 - A queue is a data structure that follows the first-in-first-out principle, and can also be implemented by an array or a linked list. In the comparison of time efficiency and space efficiency, the conclusion of the queue is similar to the conclusion of the aforementioned stack.
 - A bidirectional queue is a queue with a higher degree of freedom, which allows adding and removing elements at both ends.
 
-2. Q & A
+#### 2. Q & A
 
 >**Is the forward and backward of the browser implemented as a doubly linked list?**
 >The forward and backward function of the browser is essentially the embodiment of the "stack". When the user visits a new page, the page is added to the top of the stack; when the user clicks the back button, the page is popped from the top of the stack. Using a bidirectional queue can facilitate some additional operations, which are mentioned in the bidirectional queue section.
@@ -2912,12 +3146,51 @@ It is observed that **the time complexity of adding, deleting, checking and modi
 
 Common operations of hash tables include: initialization, query operations, adding key-value pairs, and deleting key-value pairs.
 
-```zig
+```rust
+const ally = std.heap.page_allocator;
+const memory = try ally.alloc(u8, 50);
+defer ally.free(memory);
+// Initialize hash table
+var map = std.AutoHashMap(usize, []const u8).init(ally);
+defer map.deinit();
+// Add action
+// Add key-value pairs (key, value) to the hash table
+try map.put(12836, "小哈");
+try map.put(15937, "小啰");
+try map.put(16750, "小算");
+try map.put(13276, "小法");
+try map.put(10583, "小鸭");
+
+// Query operation
+// Enter the key into the hash table and get the value
+var string1: ?[]const u8 = map.get(15937);
+
+// Delete operation
+// Delete the key-value pair (key, value) in the hash table
+var string2: ?[]const u8 = map.fetchRemove(10583).?.value;
 ```
 
 There are three common traversal methods for hash tables: traversing key-value pairs, traversing keys, and traversing values.
 
-```zig
+```rust
+// Traverse the hash table
+// Traverse key-value pairs Key->Value
+var iterator = map.iterator();
+while (iterator.next()) |e| {
+    std.debug.print("{d} -> {s}\n", .{ e.key_ptr.*, e.value_ptr.* });
+}
+
+// Traverse the keys individually
+var key_iterator = map.keyIterator();
+while (key_iterator.next()) |e| {
+    std.debug.print("Key: {d}!\n", .{e.*});
+}
+
+// Iterate over the values individually
+var value_iterator = map.valueIterator();
+while (value_iterator.next()) |e| {
+    std.debug.print("Value: {s}!\n", .{e.*});
+}
 ```
 
 #### 6.1.2 Simple implementation of hash table
@@ -2941,7 +3214,7 @@ Let the array length `capacity = 100`, the hash algorithm `hash(key) = key`, and
 
 The following code implements a simple hash table. Here, we encapsulate `key` and `value` into a class `Pair` to represent key-value pairs.
 
-```zig
+```rust
 // key value pair
 const Pair = struct {
     key: usize = undefined,
@@ -3104,17 +3377,17 @@ A simple implementation of a chained address hash table is given below, two poin
 - In order to keep the code as short as possible, we use lists (dynamic arrays) instead of linked lists. In this setting, the hash table (array) contains multiple buckets, and each bucket is a list.
 - The following code implements the hash table expansion method. Specifically, when the load factor exceeds $0.75$, we double the size of the hash table.
 
-```zig
+```rust
 [class]{HashMapChaining}-[func]{}
 ```
 
-It is worth noting that when the linked list is very long, the query efficiency $O(n)$ is very poor. **At this point, the linked list can be converted into an "AVL tree" or "red-black tree"**, thereby optimizing the time complexity of the query operation to $O(log\,n)$.
+It is worth noting that when the linked list is very long, the query efficiency $O(n)$ is very poor. **At this point, the linked list can be converted into an "AVL tree" or "red-black tree"**, thereby optimizing the time complexity of the query operation to $O(log\ n)$.
 
 #### 6.2.2 open addressing
 
 "Open Addressing" does not introduce additional data structures, but handles hash conflicts through "multiple detection". The detection methods mainly include linear detection, square detection, multiple hashing, etc.
 
-1. linear detection
+##### 1. linear detection
 
 Linear detection uses a linear search with a fixed step size for detection, and its operation method is different from that of ordinary hash tables.
 
@@ -3135,11 +3408,11 @@ The following code implements a simple open addressable (linear probing) hash ta
 - We use a fixed key-value pair instance `removed` to mark removed elements. That is to say, when the element in a bucket is $None$ or `removed`, it means that the bucket is empty and can be used to place key-value pairs.
 - When probing linearly, we traverse backward from the current `index`; when we cross the end of the array, we need to go back to the head to continue traversing.
 
-```zig
+```rust
 [class]{HashMapOpenAddressing}-[func]{}
 ```
 
-2. multiple hashes
+##### 2. multiple hashes
 
 As the name suggests, multiple hashing methods use multiple hash functions $f1(x),f2(x),f3(x),...$ for detection.
 
@@ -3201,7 +3474,7 @@ The design of a hash algorithm is a complex issue that requires consideration of
 - **XOR hashing**: accumulate each element of the input data into a hash value through XOR operation.
 - **Rotation hashing**: accumulate the ASCII code of each character into a hash value, and rotate the hash value before each accumulation.
 
-```zig
+```rust
 [class]{}-[func]{addHash}
 
 [class]{}-[func]{mulHash}
@@ -3216,17 +3489,21 @@ It is observed that the last step of each hash algorithm is to take the modulus 
 Let’s draw the conclusion first: **when we use a large prime number as the modulus, we can maximize the uniform distribution of the hash value**. Because prime numbers do not have common divisors with other numbers, periodic patterns due to modulo operations can be reduced, thereby avoiding hash collisions.
 
 As an example, suppose we choose the composite number $9$ as the modulus, which is divisible by $3$. Then all `key`s that are divisible by $3$ will be mapped to the three hash values of $0$, $3$ and $6$.
+
 $$\begin{align*}
 modulus&=9\\
 key&=\{0,3,6,9,12,15,18,21,24,27,30,33,...\}\\
 hash&=\{0,3,6,0,3,6,0,3,6,0,3,6,...\}
 \end{align*}$$
+
 If the input `key` just satisfies the data distribution of this arithmetic sequence, then the hash value will be piled up, which will aggravate the hash collision. Now, assuming that `modulus` is replaced by the prime number 13, since there is no common divisor between `key` and `modulus`, the uniformity of the output hash value will be significantly improved.
+
 $$\begin{align*}
 modulus&=13\\
 key&=\{0,3,6,9,12,15,18,21,24,27,30,33,...\}\\
 hash&=\{0,3,6,9,12,2,5,8,11,1,4,7,...\}
 \end{align*}$$
+
 It is worth noting that if the `key` can be guaranteed to be randomly and uniformly distributed, then it is possible to choose a prime number or a composite number as the modulus, and they can both output uniformly distributed hash values. And when the `key` distribution has some periodicity, it is easier to aggregate when taking the modulus of the composite number.
 
 All in all, we usually choose a prime number as the modulus, and this prime number is preferably large enough to eliminate periodic patterns as much as possible and improve the robustness of the hash algorithm.
@@ -3263,7 +3540,40 @@ We know that the `key` of the hash table can be a data type such as an integer, 
 >**Tip**
 >Note that different programming languages have different definitions and methods of built-in hash calculation functions.
 
-```zig
+```rust
+fn testHash(key: anytype) u64 {
+    var hasher = std.hash.XxHash32.init(0);
+    std.hash.autoHashStrat(&hasher, key, .Deep);
+    return hasher.final();
+}
+
+const num: u32 = 3;
+const numHash = testHash(num);
+
+const boolean: bool = true;
+const boolHash = testHash(boolean);
+
+// need to provide own hash function for floats
+// const float: f64 = 3.14159;
+// const floatHash = testHash(float);
+
+const string: []const u8 = "Hello 算法";
+const stringHash = testHash(string);
+
+const myStruct = struct { key: u32, value: []const u8 };
+const array = myStruct{
+    .key = 12836,
+    .value = "小哈",
+};
+const arrayHash = testHash(array);
+
+const List = std.SinglyLinkedList(u32);
+var list = List{};
+var zero = List.Node{ .data = 0 };
+list.prepend(&zero);
+const listHash = testHash(list);
+
+// std.debug.print("{d}", .{listHash});
 ```
 
 In many programming languages, **only immutable objects can be used as hash table `keys`**. If we use a list (dynamic array) as the `key`, when the content of the list changes, its hash value will also change, and we will not be able to query the original `value` in the hash table.
@@ -3274,7 +3584,7 @@ If you are careful, you may find that when you run the program in different cons
 
 ### 6.4 summary
 
-1. key review
+#### 1. key review
 
 - Given a `key`, one can query the `value` in the hash table in $O(1)$ time, which is very efficient.
 - Common hash table operations include querying, adding key-value pairs, deleting key-value pairs, and traversing hash tables, etc.
@@ -3290,7 +3600,7 @@ If you are careful, you may find that when you run the program in different cons
 - Common hash algorithms include MD5, SHA-1, SHA-2, SHA3, etc. MD5 is often used to check file integrity, and SHA-2 is often used in security applications and protocols.
 - Programming languages usually provide a built-in hash algorithm for data types, which is used to calculate the bucket index in the hash table. Typically, only immutable objects are hashable.
 
-2. Q & A
+#### 2. Q & A
 
 >**Why is the time complexity of the hash table not $O(n)$?**
 >When the hash collision is serious, the time complexity of the hash table will degenerate to $O(n)$. When the hash function is well designed, the capacity setting is reasonable, and the collisions are average, the time complexity is $O(1)$. When we use the hash table built into the programming language, we usually think that the time complexity is $O(1)$.
@@ -3325,7 +3635,25 @@ If you are careful, you may find that when you run the program in different cons
 
 A "Binary Tree" is a non-linear data structure that represents the derivation relationship between ancestors and descendants, and embodies the divide-and-conquer logic of "one divides into two". Similar to a linked list, the basic unit of a binary tree is a node, and each node contains a "value" and two "pointers": a reference to a left child node, and a reference to a right child node.
 
-```zig
+```rust
+pub fn TreeNode(comptime T: type) type {
+    return struct {
+        const Self = @This();
+
+        val: T = undefined,         // node value
+        height: i32 = undefined;    // node height
+        left: ?*Self = null;        // left child node pointer
+        right: ?*Self = null;       // right child node pointer
+
+        // Initialize a tree node with specific value
+        pub fn init(self: *Self, x: i32) void {
+            self.val = x;
+            self.height = 0;
+            self.left = null;
+            self.right = null;
+        }
+    }
+}
 ```
 
 The two pointers of the node point to the "left child node" and "right child node" respectively, and the node is called the "parent node" of these two child nodes. Given a node of a binary tree, we call the tree formed by the left child node of the node and its following nodes the "left subtree" of the node, and the "right subtree" can be obtained similarly.
@@ -3354,20 +3682,39 @@ Common terminology for binary trees is shown in the following picture.
 
 #### 7.1.2 Basic operation of binary tree
 
-1. Initializing the binary tree.
+##### 1. Initializing the binary tree
 
 Similar to a linked list, the nodes are initialized first, and then the reference points (i.e. pointers) are built.
 
-```zig
+```rust
+// Initialize binary tree
+// Initialize node
+var n1 = TreeNode(i32){ .val = 1 };
+var n2 = TreeNode(i32){ .val = 2 };
+var n3 = TreeNode(i32){ .val = 3 };
+var n4 = TreeNode(i32){ .val = 4 };
+var n5 = TreeNode(i32){ .val = 5 };
+// Construct a reference (i.e. pointer)
+n1.left = &n2;
+n1.right = &n3;
+n2.left = &n4;
+n2.right = &n5;
 ```
 
-2. Inserting and deleting nodes.
+##### 2. Inserting and deleting nodes
 
 Similar to a linked list, inserting and deleting nodes in a binary tree can be achieved by modifying pointers. The following picture shows an example.
 
 ![Fig. 在二叉树中插入与删除节点](./pictures/7.1.2.png)
 
-```zig
+```rust
+// Inserting and deleting nodes
+var p = TreeNode(i32){ .val = 0 };
+// Insert node P between n1 and n2
+n1.left = &p;
+p.left = &n2;
+// Delete node P
+n1.left = &n2;
 ```
 
 >**Note**
@@ -3375,7 +3722,7 @@ Similar to a linked list, inserting and deleting nodes in a binary tree can be a
 
 #### 7.1.3 Common Binary Tree Types
 
-1. perfect binary tree
+##### 1. perfect binary tree
 
 The "perfect binary tree" is completely filled with nodes in all but the bottom layer. In a perfect binary tree, the degree of the leaf nodes is $0$, and the degree of all other nodes is $2$; if the height of the tree is $h$, the total number of nodes is $2^{h+1}-1$, presenting a standard exponential relationship, reflecting the common phenomenon of cell division in nature.
 
@@ -3384,19 +3731,19 @@ The "perfect binary tree" is completely filled with nodes in all but the bottom 
 
 ![Fig. 完美二叉树](./pictures/7.1.3.1.png)
 
-2. complete binary tree
+##### 2. complete binary tree
 
 As shown in the following picture, only the lowest node of the "complete binary tree" is not filled, and the lowest node is filled as far as possible to the left.
 
 ![Fig. 完全二叉树](./pictures/7.1.3.2.png)
 
-3. full binary tree
+##### 3. full binary tree
 
 As shown in the following picture, the "full binary tree" all nodes have two child nodes except for the leaf node.
 
 ![Fig. 完满二叉树](./pictures/7.1.3.3.png)
 
-4. balanced binary tree
+##### 4. balanced binary tree
 
 As shown in the following picture, the absolute value of the difference between the heights of the left subtree and the right subtree of any node in the "balanced binary tree" does not exceed 1.
 
@@ -3434,11 +3781,11 @@ Level-order traversal essentially belongs to "Breadth-First Traversal", which em
 
 ![Fig. 二叉树的层序遍历](./pictures/7.2.1.png)
 
-1. code
+##### 1. code
 
 Breadth-first traversal is usually implemented with the help of a "queue". The queue follows the "first in, first out" rule, while the breadth-first traversal follows the "layer-by-layer advance" rule, and the ideas behind the two are the same.
 
-```zig
+```rust
 // level-order traversal
 fn levelOrder(comptime T: type, mem_allocator: std.mem.Allocator, root: *inc.TreeNode(T)) !std.ArrayList(T) {
     // initializes the queue and join the root node
@@ -3468,7 +3815,7 @@ fn levelOrder(comptime T: type, mem_allocator: std.mem.Allocator, root: *inc.Tre
 }
 ```
 
-2. complexity analysis
+##### 2. complexity analysis
 
 - **Time complexity $O(n)$**: All nodes are visited once, using $O(n)$ time, where $n$ is the number of nodes.
 - **Space complexity $O(n)$**: In the worst case, that is, when the binary tree is full, before traversing to the bottom layer, there are at most $(n+1)/2$ nodes in the queue at the same time, occupying $O(n)$ space.
@@ -3481,11 +3828,11 @@ The following picture shows how depth-first traversal of a binary tree works. **
 
 ![Fig. 二叉搜索树的前、中、后序遍历](./pictures/7.2.2.0.png)
 
-1. code
+##### 1. code
 
 Depth-first search is usually implemented based on recursion:
 
-```zig
+```rust
 // pre-order traversal
 fn preOrder(comptime T: type, root: ?*inc.TreeNode(T)) !void {
     if (root == null) return;
@@ -3524,7 +3871,7 @@ The following picture shows the recursive process of traversing a binary tree in
 
 ![<1>](./pictures/7.2.2.1-1.png) ![<2>](./pictures/7.2.2.1-2.png) ![<3>](./pictures/7.2.2.1-3.png) ![<4>](./pictures/7.2.2.1-4.png) ![<5>](./pictures/7.2.2.1-5.png) ![<6>](./pictures/7.2.2.1-6.png) ![<7>](./pictures/7.2.2.1-7.png) ![<8>](./pictures/7.2.2.1-8.png) ![<9>](./pictures/7.2.2.1-9.png) ![<10>](./pictures/7.2.2.1-10.png) ![<11>](./pictures/7.2.2.1-11.png)
 
-2. complexity analysis
+##### 2. complexity analysis
 
 - **Time complexity $O(n)$**: All nodes are visited once, using $O(n)$ time.
 - **Space complexity $O(n)$**: In the worst case, when the tree degenerates into a linked list, the recursion depth reaches $n$, and the system occupies $O(n)$ stack frame space.
@@ -3555,7 +3902,10 @@ As shown in the following picture, given an imperfect binary tree, the above-men
 
 To solve this problem, **we can consider writing out all $None$ explicitly in the level-order traversal sequence**. As shown in the figure below, after this processing, the sequence traversal sequence can uniquely represent the binary tree.
 
-```zig
+```rust
+// Array representation of binary tree
+// You can use null to mark the empty positions
+const tree = []u8{ 1, 2, 3, 4, null, 6, 7, 8, 9, null, null, 12, null, null, 15 };
 ```
 
 ![Fig. 任意类型二叉树的数组表示](./pictures/7.3.2.2.png)
@@ -3571,7 +3921,7 @@ The following code implements a binary tree based on array representation, inclu
 - Given a node, get its value, left (right) child node, parent node.
 - Obtain pre-order traversal, in-order traversal, post-order traversal, and level-order traversal sequences.
 
-```zig
+```rust
 [class]{ArrayBinaryTree}-[func]{}
 ```
 
@@ -3602,7 +3952,7 @@ As shown in the following picture, the "Binary Search Tree" satisfies the follow
 
 We encapsulate the binary search tree as a class `ArrayBinaryTree`, and declare a member variable `root`, pointing to the root node of the tree.
 
-1. finding a node
+##### 1. finding a node
 
 Given the target node value `num`, it can be looked up based on the nature of the binary search tree. As shown in the following picture, we declare a node `cur` and compare the size relationship between the node values `cur.val` and `num` in a loop, starting from the `root` node of the binary tree.
 
@@ -3612,9 +3962,9 @@ Given the target node value `num`, it can be looked up based on the nature of th
 
 ![<1>](./pictures/7.4.1.1-1.png) ![<2>](./pictures/7.4.1.1-2.png) ![<3>](./pictures/7.4.1.1-3.png) ![<4>](./pictures/7.4.1.1-4.png)
 
-The search operation of the binary search tree is consistent with the working principle of the binary search algorithm, which excludes half of the cases in each round. The number of loops is at most the height of the binary tree, which takes $O(log\,n)$ time when the binary tree is balanced.
+The search operation of the binary search tree is consistent with the working principle of the binary search algorithm, which excludes half of the cases in each round. The number of loops is at most the height of the binary tree, which takes $O(log\ n)$ time when the binary tree is balanced.
 
-```zig
+```rust
 // find node
 fn search(self: *Self, num: T) ?*inc.TreeNode(T) {
     var cur = self.root;
@@ -3636,7 +3986,7 @@ fn search(self: *Self, num: T) ?*inc.TreeNode(T) {
 }
 ```
 
-2. inserting a node
+##### 2. inserting a node
 
 Given an element `num` to be inserted, in order to maintain the nature of the binary search tree "left subtree $<$ root node $<$ right subtree", the insertion operation is shown in the following picture.
 
@@ -3650,7 +4000,7 @@ In the code implementation, you need to pay attention to the following two point
 - A binary search tree does not allow duplicate nodes, otherwise it would violate its definition. Therefore, if the node to be inserted already exists in the tree, the insertion will not be performed, and the search will return immediately.
 - In order to insert nodes, we need to use the node `pre` to save the nodes of the previous cycle. In this way, when traversing to $None$, we can get its parent node to complete the node insertion operation.
 
-```zig
+```rust
 // insert node
 fn insert(self: *Self, num: T) !void {
     // if the tree is empty, immediately return early
@@ -3681,9 +4031,9 @@ fn insert(self: *Self, num: T) !void {
 }
 ```
 
-Same as looking up a node, inserting a node takes $O(log\,n)$ time.
+Same as looking up a node, inserting a node takes $O(log\ n)$ time.
 
-3. deleting a node
+##### 3. deleting a node
 
 First find the target node in the binary tree, and then delete it from the binary tree.
 
@@ -3708,9 +4058,9 @@ Assuming we choose the smallest node of the right subtree (that is, the next nod
 
 ![<1>](./pictures/7.4.1.3.3-1.png) ![<2>](./pictures/7.4.1.3.3-2.png) ![<3>](./pictures/7.4.1.3.3-3.png) ![<4>](./pictures/7.4.1.3.3-4.png)
 
-The operation of deleting a node also takes $O(log\,n)$ time. It takes $O(log\,n)$ time to find the node to be deleted, and $O(log\,n)$ time to obtain the successor node of the in-order traversal.
+The operation of deleting a node also takes $O(log\ n)$ time. It takes $O(log\ n)$ time to find the node to be deleted, and $O(log\ n)$ time to obtain the successor node of the in-order traversal.
 
-```zig
+```rust
 // delete node
 fn remove(self: *Self, num: T) void {
     // f the tree is empty, return immediately early
@@ -3758,7 +4108,7 @@ fn remove(self: *Self, num: T) void {
 }
 ```
 
-4. in-order traversal order
+##### 4. in-order traversal order
 
 As shown in the following picture the in-order traversal of a binary tree follows the traversal order of "left $\rightarrow$ root $\rightarrow$ right", while the binary search tree satisfies the size relationship of "left child $<$ root node $<$ right child".
 
@@ -3774,11 +4124,11 @@ Given a set of data, we consider using an array or binary search tree storage. O
 
 ||Unorderd array|Binary search tree|
 |---|---|---|
-|find element|$(n)$|$O(log\,n)$|
-|insert element|$O(1)$|$O(log\,n)$|
-|delete element|$O(n)$|$O(log\,n)$|
+|find element|$(n)$|$O(log\ n)$|
+|insert element|$O(1)$|$O(log\ n)$|
+|delete element|$O(n)$|$O(log\ n)$|
 
-Ideally, a binary search tree is "balanced" such that any node can be searched in $log\,n$ rounds.
+Ideally, a binary search tree is "balanced" such that any node can be searched in $log\ n$ rounds.
 
 However, if we continuously insert and delete nodes in the binary search tree, it may cause the binary tree to degenerate into a linked list as shown in the following picture, and the time complexity of various operations will also degenerate to $O(n)$.
 
@@ -3792,7 +4142,7 @@ However, if we continuously insert and delete nodes in the binary search tree, i
 
 ### 7.5 AVL tree $*$
 
-In the chapter on binary search tree, we mentioned that after multiple insertion and deletion operations, a binary search tree may degenerate into a linked list. In this case, the time complexity of all operations will deteriorate from $O(log\,n)$ to $O(n)$.
+In the chapter on binary search tree, we mentioned that after multiple insertion and deletion operations, a binary search tree may degenerate into a linked list. In this case, the time complexity of all operations will deteriorate from $O(log\ n)$ to $O(n)$.
 
 As shown in the following picture, after two node deletion operations, the binary search tree will degenerate into a linked list.
 
@@ -3802,22 +4152,22 @@ For another example, after inserting two nodes in the following perfect binary t
 
 ![Fig. AVL 树在插入节点后发生退化](./pictures/7.5.0.2.png)
 
-G. M. Adelson-Velsky and E. M. Landis proposed "AVL trees" in their 1962 paper "An algorithm for the organization of information". The paper describes a series of operations in detail to ensure that the AVL tree will not degenerate after continuous addition and deletion of nodes, thus keeping the time complexity of various operations at the $O(log\,n)$ level. In other words, in scenarios where frequent addition, deletion, query, and modification operations are required, the AVL tree can always maintain efficient data operation performance and has good application value.
+G. M. Adelson-Velsky and E. M. Landis proposed "AVL trees" in their 1962 paper "An algorithm for the organization of information". The paper describes a series of operations in detail to ensure that the AVL tree will not degenerate after continuous addition and deletion of nodes, thus keeping the time complexity of various operations at the $O(log\ n)$ level. In other words, in scenarios where frequent addition, deletion, query, and modification operations are required, the AVL tree can always maintain efficient data operation performance and has good application value.
 
 #### 7.5.1 AVL Tree Common Terms
 
 The "AVL tree" is both a binary search tree and a balanced binary tree, and it satisfies all the properties of these two types of binary trees at the same time, so it is also called "balanced binary search tree".
 
-1. node height
+##### 1. node height
 
 When operating the AVL tree, we need to get the height of the node, so we need to add the `height` variable to the node class of the AVL tree.
 
-```zig
+```rust
 ```
 
 "Node height" refers to the distance from the node to the furthest leaf node, that is, the number of "edges" traversed. It is important to note that leaf nodes have a height of 0 , while empty nodes have a height of -1 . We'll create two utility functions for getting and updating the height of a node, respectively.
 
-```zig
+```rust
 // get node height
 fn height(self: *Self, node: ?*inc.TreeNode(T)) i32 {
     _ = self;
@@ -3832,11 +4182,11 @@ fn updateHeight(self: *Self, node: ?*inc.TreeNode(T)) void {
 }
 ```
 
-2. node balance factor
+##### 2. node balance factor
 
 The "Balance Factor" of a node is defined as the height of the left subtree minus the height of the right subtree, and the balance factor of an empty node is 0. We also encapsulate the function of obtaining the node balance factor into a function for subsequent use.
 
-```zig
+```rust
 // get balance factor
 fn balanceFactor(self: *Self, node: ?*inc.TreeNode(T)) i32 {
     // empty node balance factor is 0
@@ -3855,7 +4205,7 @@ The feature of the AVL tree is the "rotation" operation, which can restore the b
 
 We refer to the nodes with an absolute value of balance factor $>1$ as "unbalanced nodes". Depending on the node imbalance, the rotation operation is divided into four types: right rotation, left rotation, right rotation first and then left rotation, first left rotation and then right rotation. Below we describe these rotation operations in detail.
 
-1. clockwise
+##### 1. clockwise
 
 As shown in the figure below, below the nodes is the balance factor. From bottom to top, the first unbalanced node in the binary tree is "Node 3". We consider the subtree with the unbalanced node as the root node, record this node as `node`, and record its left child node as `child`, and perform the "right rotation" operation. After the clockwise rotation is completed, the subtree has been restored to balance, and still maintains the characteristics of the binary search tree.
 
@@ -3867,7 +4217,7 @@ In addition, if the node `child` itself has a right child (denoted as `grandChil
 
 "Rotating clockwise" is a visual statement, in fact, it needs to be realized by modifying the node pointer, the code is as follows.
 
-```zig
+```rust
 // clockwise rotation
 fn rightRotate(self: *Self, node: ?*inc.TreeNode(T)) ?*inc.TreeNode(T) {
     var child = node.?.left;
@@ -3883,7 +4233,7 @@ fn rightRotate(self: *Self, node: ?*inc.TreeNode(T)) ?*inc.TreeNode(T) {
 }
 ```
 
-2. counter clockwise
+##### 2. counter clockwise
 
 Correspondingly, if the "mirror image" of the above-mentioned unbalanced binary tree is considered, the "left-rotation" operation shown in the following picture needs to be performed.
 
@@ -3895,7 +4245,7 @@ Similarly, as shown in the following picture, if the node `child` itself has a l
 
 It can be observed that **the clockwise and counter clockwise operations are logically mirror-symmetrical, and the two imbalances they respectively resolve are also symmetrical**. Based on symmetry, we can easily deduce the left-handed code from the right-handed one. Specifically, you only need to replace all `left` with `right` in the "clockwise" code, and replace all `right` with `left` to get the "counter clockwise" code.
 
-```zig
+```rust
 // counter clockwise operation
 fn leftRotate(self: *Self, node: ?*inc.TreeNode(T)) ?*inc.TreeNode(T) {
     var child = node.?.right;
@@ -3911,19 +4261,19 @@ fn leftRotate(self: *Self, node: ?*inc.TreeNode(T)) ?*inc.TreeNode(T) {
 }
 ```
 
-3. First counter clockwise and then clockwise
+##### 3. First counter clockwise and then clockwise
 
 For the unbalanced node 3 in the following picture, neither left nor right rotation alone can bring the subtree back into balance. At this time, it is necessary to rotate to the left and then to the right, that is, first perform "left rotation" on `child`, and then perform "right rotation" on `node`.
 
 ![Fig. 先左旋后右旋](./pictures/7.5.2.3.png)
 
-4. Clockwise and then counter clockwise
+##### 4. Clockwise and then counter clockwise
 
 As shown in the following picture, for the mirror image of the above-mentioned unbalanced binary tree, it is necessary to perform "right rotation" on `child` first, and then perform "left rotation" on `node`.
 
 ![Fig. 先右旋后左旋](./pictures/7.5.2.4.png)
 
-5. rotation options
+##### 5. rotation options
 
 The four unbalanced situations shown in the following picture correspond to the above cases one by one, requiring rotation operations of right rotation, left rotation, right first then left, first left then right respectively.
 
@@ -3940,7 +4290,7 @@ As shown in the following table, we determine which of the imbalance nodes falls
 
 For ease of use, we encapsulate the rotation operation into a function. **With this function, we can rotate various unbalanced situations to bring the unbalanced nodes back into balance**.
 
-```zig
+```rust
 // perform a rotation operation to bring the subtree back into balance
 fn rotate(self: *Self, node: ?*inc.TreeNode(T)) ?*inc.TreeNode(T) {
     // get the balance factor of node node
@@ -3974,11 +4324,11 @@ fn rotate(self: *Self, node: ?*inc.TreeNode(T)) ?*inc.TreeNode(T) {
 
 #### 7.5.3 AVL tree common operations
 
-1. inserting a node
+##### 1. inserting a node
 
 The node insertion operation of "AVL tree" is similar to that of "binary search tree" in principle. The only difference is that after a node is inserted in an AVL tree, there may be a series of unbalanced nodes on the path from that node to the root node. Therefore, **we need to start from this node and perform a rotation operation from the bottom up to bring all unbalanced nodes back into balance**.
 
-```zig
+```rust
 // insert node
 fn insert(self: *Self, val: T) !void {
     self.root = (try self.insertHelper(self.root, val)).?;
@@ -4008,11 +4358,11 @@ fn insertHelper(self: *Self, node_: ?*inc.TreeNode(T), val: T) !?*inc.TreeNode(T
 }
 ```
 
-2. deleting a node
+##### 2. deleting a node
 
 Similarly, on the basis of the delete node method of the binary search tree, the rotation operation needs to be performed from the bottom to the top to bring all unbalanced nodes back into balance.
 
-```zig
+```rust
 // delete node
 fn remove(self: *Self, val: T) void {
    self.root = self.removeHelper(self.root, val).?;
@@ -4056,7 +4406,7 @@ fn removeHelper(self: *Self, node_: ?*inc.TreeNode(T), val: T) ?*inc.TreeNode(T)
 }
 ```
 
-3. finding a node
+##### 3. finding a node
 
 The node lookup operation of the AVL tree is consistent with that of the binary search tree, and will not be repeated here.
 
@@ -4068,7 +4418,7 @@ The node lookup operation of the AVL tree is consistent with that of the binary 
 
 ### 7.6 summary
 
-1. key review
+#### 1. key review
 
 - A binary tree is a non-linear data structure that embodies the divide-and-conquer logic of "one divides into two". Each binary tree node contains a value and two pointers to its left and right child nodes.
 - For a node in a binary tree, its left (right) child node and the tree formed below it are called the left (right) subtree of the node.
@@ -4078,11 +4428,11 @@ The node lookup operation of the AVL tree is consistent with that of the binary 
 - A binary tree can be represented by an array, by arranging the node values and slots in the order of traversal, and implementing pointers according to the index mapping relationship between parent nodes and child nodes.
 - The layer-order traversal of the binary tree is a breadth-first search method, which embodies the hierarchical traversal method of "one circle and one circle outward", and is usually implemented through a queue.
 - Pre-order, in-order, and post-order traversals are all depth-first searches, which embody the backtracking traversal method of "going to the end, then going back and continuing", and are usually implemented using recursion.
-- A binary search tree is an efficient element lookup data structure, and its lookup, insertion, and deletion operations have a time complexity of $O(log\,n)$. When the binary search tree degenerates into a linked list, the time complexity will be degraded to $O(n)$.
+- A binary search tree is an efficient element lookup data structure, and its lookup, insertion, and deletion operations have a time complexity of $O(log\ n)$. When the binary search tree degenerates into a linked list, the time complexity will be degraded to $O(n)$.
 - An AVL tree, also known as a balanced binary search tree, uses a rotation operation to ensure that the tree remains balanced after repeated insertions and deletions of nodes.
 - The rotation operations of the AVL tree include right rotation, left rotation, right rotation first and then left rotation, first left rotation and then right rotation. After a node is inserted or deleted, the AVL tree is rotated from bottom to top to bring the tree back into balance.
 
-2. Q & A
+#### 2. Q & A
 
 >**For a binary tree with only one node, is the height of the tree and the depth of the root node both $0$?**
 >Yes, because height and depth are usually defined as "amount of edge traveled".
@@ -4145,8 +4495,8 @@ The common operations of the heap are shown in the following table, and the meth
 
 |Method name|Description|Time complexity|
 |---|---|---|
-|push()|elements into the heap|$O(log\,n)$|
-|pop()|heap top element out of heap|$O(log\,n)$|
+|push()|elements into the heap|$O(log\ n)$|
+|pop()|heap top element out of heap|$O(log\ n)$|
 |peek()|Access the top element of the heap<br>(the largest/smallest values for<br>large/small top heaps respectively)|$O(1)$|
 |size()|Get the number of elements in the heap|$O(1)$|
 |isEmpty()|Check if the heap is empty|$O(1)$|
@@ -4156,14 +4506,14 @@ In practical applications, we can directly use the heap class (or priority queue
 >**Tip**
 >Similar to "arrange from small to large" and "arrange from large to small" in the sorting algorithm, we can realize the conversion between "small top heap" and "big top heap" by modifying the Comparator.
 
-```zig
+```rust
 ```
 
 #### 8.1.2 implementation of the heap
 
 The following implements the big top heap. To convert it to a small top heap, just invert all size logic estimations (for example, replace $\ge$ with $\le$). Interested readers can do it on their own.
 
-1. Storage and representation of the heap
+##### 1. Storage and representation of the heap
 
 As we learned in the chapter on binary trees, complete binary trees are well suited to be represented by arrays. Since a heap is exactly a complete binary tree, **we will use an array to store the heap**.
 
@@ -4175,7 +4525,7 @@ As shown in the following picture, given an index $i$, its left child has index 
 
 We can encapsulate the index mapping formula into a function for subsequent use.
 
-```zig
+```rust
 // get the index of the left child node
 fn left(i: usize) usize {
     return 2 * i + 1;
@@ -4193,18 +4543,18 @@ fn parent(i: usize) usize {
 }
 ```
 
-2. Access the top element of the heap
+##### 2. Access the top element of the heap
 
 The top element of the heap is the root node of the binary tree, which is the first element of the list.
 
-```zig
+```rust
 // access the top element of the heap
 fn peek(self: *Self) T {
     return self.max_heap.?.items[0];
 }  
 ```
 
-3. Adding elements into the heap
+##### 3. Adding elements into the heap
 
 Given an element `val`, we first add it to the bottom of the heap. After the addition, since `val` may be larger than other elements in the heap, the condition of the heap may have been violated. Therefore, **each node on the path from the inserted node to the root node needs to be repaired**. This operation is called "Heapify".
 
@@ -4212,9 +4562,9 @@ Consider **performing heapization from the bottom to the top**, starting from th
 
 ![<1>](./pictures/8.1.2.3-1.png) ![<2>](./pictures/8.1.2.3-2.png) ![<3>](./pictures/8.1.2.3-3.png) ![<4>](./pictures/8.1.2.3-4.png) ![<5>](./pictures/8.1.2.3-5.png) ![<6>](./pictures/8.1.2.3-6.png) ![<7>](./pictures/8.1.2.3-7.png) ![<8>](./pictures/8.1.2.3-8.png) ![<9>](./pictures/8.1.2.3-9.png)
 
-If the total number of nodes is $n$, the height of the tree is $log\,n$. It can be seen from this that the maximum number of rounds of heap operations is $O(log\,n)$, and **the time complexity of elements into the heap is $O(log\,n)$**.
+If the total number of nodes is $n$, the height of the tree is $log\ n$. It can be seen from this that the maximum number of rounds of heap operations is $O(log\ n)$, and **the time complexity of elements into the heap is $O(log\ n)$**.
 
-```zig
+```rust
 // add element to the heap
 fn push(self: *Self, val: T) !void {
     // add node
@@ -4239,7 +4589,7 @@ fn siftUp(self: *Self, i_: usize) !void {
 }
 ```
 
-4. Taking heap top element out of heap
+##### 4. Taking heap top element out of heap
 
 The top element of the heap is the root node of the binary tree, which is the first element of the list. If we directly remove the first element from the list, then the index of all nodes in the binary tree will change, which will make it difficult to do heap repair later. In order to minimize the change of element index, we take the following steps.
 
@@ -4251,9 +4601,9 @@ As shown in the following picture, **top-to-bottom heaping operates in the oppos
 
 ![<1>](./pictures/8.1.2.4-1.png) ![<2>](./pictures/8.1.2.4-2.png) ![<3>](./pictures/8.1.2.4-3.png) ![<4>](./pictures/8.1.2.4-4.png) ![<5>](./pictures/8.1.2.4-5.png) ![<6>](./pictures/8.1.2.4-6.png) ![<7>](./pictures/8.1.2.4-7.png) ![<8>](./pictures/8.1.2.4-8.png) ![<9>](./pictures/8.1.2.4-9.png) ![<10>](./pictures/8.1.2.4-10.png)
 
-Similar to the operation of adding elements to the heap, the time complexity of the operation of removing elements from the top of the heap is also $O(log\,n)$.
+Similar to the operation of adding elements to the heap, the time complexity of the operation of removing elements from the top of the heap is also $O(log\ n)$.
 
-```zig
+```rust
 // take an element out of the heap
 fn pop(self: *Self) !T {
     // process decision
@@ -4291,7 +4641,7 @@ fn siftDown(self: *Self, i_: usize) !void {
 
 #### 8.1.3 Heap common applications
 
-- **Priority queue**: The heap is usually used as the preferred data structure to implement the priority queue. The time complexity of its enqueue and dequeue operations is $O(log\,n)$, while the queue building operation is $O(log\,n)$. These operations are very efficient .
+- **Priority queue**: The heap is usually used as the preferred data structure to implement the priority queue. The time complexity of its enqueue and dequeue operations is $O(log\ n)$, while the queue building operation is $O(log\ n)$. These operations are very efficient .
 - **Heap sorting**: Given a set of data, we can use that to build a heap, and then continuously take elements out of the heap to obtain ordered data. However, we usually use a more elegant way to implement heap sorting, see the subsequent heap sorting chapter for details.
 - **Obtaining the largest $k$ elements**: This is a classic algorithm problem, and it is also a typical application, such as selecting the top 10 news as Weibo hot searches, selecting the top 10 sales items, etc.
 
@@ -4305,7 +4655,7 @@ We first create an empty heap, then traverse the list, and perform a "heap opera
 
 Whenever an element is put into the heap, the length of the heap is increased by one, so the heap is built "top-down".
 
-Assuming that the number of elements is $n$, the heap operation of each element takes $O(log\,n)$ time, so the time complexity of this heap building method is $O(n\,log\,n)$.
+Assuming that the number of elements is $n$, the heap operation of each element takes $O(log\ n)$ time, so the time complexity of this heap building method is $O(n\ log\ n)$.
 
 #### 8.2.2 Building from the bottom up
 
@@ -4320,7 +4670,7 @@ The reason why we choose to traverse in reverse order is because it can ensure t
 
 It is worth noting that **leaf nodes have no child nodes and are naturally legal sub-heaps, so heapization is not required**. As shown in the following code, the last non-leaf node is the parent node of the last node, and we traverse from it in reverse order and perform heapification.
 
-```zig
+```rust
 // construction method, build a heap according to the input list
 fn init(self: *Self, allocator: std.mem.Allocator, nums: []const T) !void {
     if (self.max_heap != null) return;
@@ -4342,24 +4692,32 @@ Next, let's try to calculate the time complexity of the second heap building met
 - Assuming that the number of nodes in a complete binary tree is $n$, the number of leaf nodes is $(n+1)/2$, where $/$ is a downward integer division. Thus the number of nodes to be heaped is $(n-1)/2$.
 - In the process of heaping from top to bottom, each node is at most heaped to the leaf node, so the maximum number of iterations is the height $log n$ of the binary tree.
 
-By multiplying the above two, the time complexity of the heap building process can be obtained as $O(log\,n)$. **However, this estimate is not accurate because we do not take into account the fact that the number of nodes at the bottom of a binary tree is much greater than that at the top**.
+By multiplying the above two, the time complexity of the heap building process can be obtained as $O(log\ n)$. **However, this estimate is not accurate because we do not take into account the fact that the number of nodes at the bottom of a binary tree is much greater than that at the top**.
 
 Let's do a more accurate calculation next. In order to reduce the difficulty of calculation, it is assumed that a "perfect binary tree" with $n$ nodes and height $h$ is given, and this assumption will not affect the correctness of the calculation results.
 
 ![Fig. 完美二叉树的各层节点数量](./pictures/8.2.3.png)
 
 As shown in the previous picture, the maximum number of iterations of a node "top-to-bottom heaping" is equal to the distance from the node to the leaf node, which is exactly the "node height". Therefore, we can sum the "number of nodes $\times$ node height" of each layer to get **the sum of the heaping iterations of all nodes**.
+
 $$T(h)=2^0h+2^1(h-1)+2^2(h-2)+...+2^{(h-1)}\times1$$
+
 To simplify the above formula, we need to rely on the knowledge of sequence from middle school. First multiply $T(h)$ by $2$ to get:
+
 $$2T(h)=2^1h+2^2(h-1)+2^3(h-2)+...+ 2^h\times1$$
+
 Subtract the above equation $T(h)$ from the next equation $2T(h)$, and get:
+
 $$2T(h)-T(h)=T(h)=-2^0h+2^1+2^2+...+2^{(h-1)}+2^h$$
+
 Observing the above formula, it is found that $T(h)$ is a geometric sequence, and the summation formula can be directly used to obtain the time complexity as:
+
 $$\begin{align*}
 T(h)&=2\frac{1-2^h}{1-2}-h\\
 &=2^{(h+1)}-h-2\\
 &=O(2^h)
 \end{align*}$$
+
 Furthermore, the number of nodes of a perfect binary tree with height $h$ is $n=2^{h+1}-1$, and the easy complexity is $O(2^h)=O(n)$. The above calculation shows that **the time complexity of inputting a list and building a heap is $O(n)$, which is very efficient**.
 
 ### 8.3 Top-K problems
@@ -4382,7 +4740,7 @@ This method is only applicable to the case of $k \ll n$, because when $k$ is clo
 
 #### 8.3.2 Method 2: Sorting
 
-As shown in the following picture, we can sort the array `nums` and return the rightmost $k$ elements in $O(n\,log\,n)$ time complexity.
+As shown in the following picture, we can sort the array `nums` and return the rightmost $k$ elements in $O(n\ log\ n)$ time complexity.
 
 Obviously, this method "exceeds" the task, because we only need to find the largest $k$ elements without sorting other elements.
 
@@ -4399,27 +4757,27 @@ We can solve the Top-K problem more efficiently based on the heap, as shown in t
 
 ![<1>](./pictures/8.3.3-1.png) ![<2>](./pictures/8.3.3-2.png) ![<3>](./pictures/8.3.3-3.png) ![<4>](./pictures/8.3.3-4.png) ![<5>](./pictures/8.3.3-5.png) ![<6>](./pictures/8.3.3-6.png) ![<7>](./pictures/8.3.3-7.png) ![<8>](./pictures/8.3.3-8.png) ![<9>](./pictures/8.3.3-9.png)
 
-A total of $n$ rounds of entering and exiting the heap are performed, and the maximum length of the heap is $k$, so the time complexity is $O(n\,log\,k)$. The efficiency of this method is very high. When $k$ is small, the time complexity tends to $O(n)$; when k is large, the time complexity will not exceed $O(n\,log\,n)$.
+A total of $n$ rounds of entering and exiting the heap are performed, and the maximum length of the heap is $k$, so the time complexity is $O(n\ log\ k)$. The efficiency of this method is very high. When $k$ is small, the time complexity tends to $O(n)$; when k is large, the time complexity will not exceed $O(n\ log\ n)$.
 
 In addition, the method is suitable for usage scenarios of dynamic data streams. When continuously adding data, we can continuously maintain the elements in the heap, so as to realize the dynamic update of the maximum $k$ elements.
 
-```zig
+```rust
 [class]{}-[func]{topKHeap}
 ```
 
 ### 8.4 summary
 
-1. key review
+#### 1. key review
 
 - The heap is a complete binary tree, which can be divided into a large top heap and a small top heap according to the establishment conditions. The top element of the big (small) top heap is the largest (smallest).
 - The definition of a priority queue is a queue with dequeue priority, usually implemented using a heap.
-- Common operations on the heap and their corresponding time complexities include: $O(log\,n)$ for elements entering the heap, $O(log\,n)$ for removing the top element from the heap, and $O(1)$ for accessing the top element of the heap.
+- Common operations on the heap and their corresponding time complexities include: $O(log\ n)$ for elements entering the heap, $O(log\ n)$ for removing the top element from the heap, and $O(1)$ for accessing the top element of the heap.
 - Complete binary trees are well suited to be represented by arrays, so we usually use arrays to store heaps.
 - The heap operation is used to maintain the properties of the heap, and it is used in both heap entry and heap exit operations.
 - The time complexity of inputting $n$ elements and building a heap can be optimized to $O(n)$, which is very efficient.
-- Top-K is a classical algorithm problem that can be efficiently solved using a heap data structure with a time complexity of $O(n\,log\,k)$.
+- Top-K is a classical algorithm problem that can be efficiently solved using a heap data structure with a time complexity of $O(n\ log\ k)$.
 
-2. Q & A
+#### 2. Q & A
 
 >**Is the "heap" of data structure and the "heap" of memory management the same concept?**
 >The two are not the same concept, they just happen to be called heaps. The heap in computer system memory is part of the dynamic memory allocation that programs can use to store data while they are running. Programs can request a certain amount of heap memory for storing complex structures such as objects and arrays. When the data is no longer needed, the program needs to release the memory to prevent memory leaks. Compared with stack memory, the management and use of heap memory needs to be more cautious. Improper use may lead to problems such as memory leaks and wild pointers.
@@ -4475,7 +4833,7 @@ Graph data structures contain the following common terms.
 
 Common representations of graphs include "adjacency matrix" and "adjacency list". The following uses an undirected graph as an example.
 
-1. adjacency matrix
+##### 1. adjacency matrix
 
 Assuming that the number of vertices in the graph is $n$, the "Adjacency Matrix" uses a matrix of $n \times n$ size to represent the graph, each row (column) represents a vertex, the matrix element represents an edge, and $1$ or $0$ represents whether there is an edge between two vertices.
 
@@ -4491,7 +4849,7 @@ An adjacency matrix has the following properties.
 
 When using an adjacency matrix to represent a graph, we can directly access matrix elements to obtain edges, so the efficiency of adding, deleting, and checking operations is very high, and the time complexity is $O(1)$. However, the space complexity of the matrix is $O(n^2)$, and the memory usage is high.
 
-2. adjacency list
+##### 2. adjacency list
 
 An "Adjacency list" uses $n$ linked lists to represent graphs, and linked list nodes represent vertices. The $ith$ linked list corresponds to the vertex $i$, which stores all the adjacent vertices of the vertex (that is, the vertices connected to the vertex). The following picture shows an example of a graph stored using an adjacency list.
 
@@ -4499,7 +4857,7 @@ An "Adjacency list" uses $n$ linked lists to represent graphs, and linked list n
 
 The adjacency list only stores the edges that actually exist, and the total number of edges is usually much smaller than $n^2$, so it is more space efficient. However, in the adjacency list, the edge needs to be found by traversing the linked list, so its time efficiency is not as good as that of the adjacency matrix.
 
-Looking at the previous picture, **the adjacency list structure is very similar to the "chained addressing" in the hash table, so we can also use similar methods to optimize efficiency**. For example, when the linked list is long, the linked list can be converted into an AVL tree or a red-black tree, thereby optimizing the time efficiency from $O(n)$ to $O(log\,n)$; the linked list can also be converted into a hash table, thereby reducing the time complexity speed down to $O(1)$.
+Looking at the previous picture, **the adjacency list structure is very similar to the "chained addressing" in the hash table, so we can also use similar methods to optimize efficiency**. For example, when the linked list is long, the linked list can be converted into an AVL tree or a red-black tree, thereby optimizing the time efficiency from $O(n)$ to $O(log\ n)$; the linked list can also be converted into a hash table, thereby reducing the time complexity speed down to $O(1)$.
 
 #### 9.1.3 Graph common application
 
@@ -4515,7 +4873,7 @@ As shown in the following table, many real systems can be modeled by graphs, and
 
 The basic operations of graphs can be divided into operations on "edges" and operations on "vertexes". Under the two representation methods of "adjacency matrix" and "adjacency list", the implementation methods are different.
 
-9.2.1. Implementation based on adjacency matrix
+#### 9.2.1 Implementation based on adjacency matrix
 
 Given an undirected graph with $n$ vertices, the implementation of various operations is shown in the following picture.
 
@@ -4528,7 +4886,7 @@ Given an undirected graph with $n$ vertices, the implementation of various opera
 
 The following is the implementation code based on the adjacency matrix representation graph.
 
-```zig
+```rust
 ```
 
 #### 9.2.2 Implementation based on adjacency list
@@ -4549,7 +4907,7 @@ The following is a code example for implementing a graph based on an adjacency l
 2. If, as in the case adjacency matrix, we use vertex list index to distinguish different vertices. Then, suppose we want to delete the vertex with index $i$, we need to traverse the entire adjacency list, and subtract $1$ from all the indexes $>i$, which is inefficient.
 3. Therefore, we consider introducing the vertex class `Vertex` to make each vertex a unique object. At this time, when deleting a vertex, there is no need to change other vertices.
 
-```zig
+```rust
 [class]{GraphAdjList}-[func]{}
 ```
 
@@ -4580,7 +4938,7 @@ Both "graph" and "tree" are nonlinear data structures, and both need to use "sea
 
 ![Fig. 图的广度优先遍历](./pictures/9.3.1.0.png)
 
-1. Algorithm implementation
+##### 1. Algorithm implementation
 
 BFS is usually implemented with the help of "queues". The queue has the property of "first in, first out", which is similar to the idea of "near to far" of BFS.
 
@@ -4590,7 +4948,7 @@ BFS is usually implemented with the help of "queues". The queue has the property
 
 In order to prevent repeated traversal of vertices, we need to use a hash table `visited` to record which nodes have been visited.
 
-```zig
+```rust
 [class]{}-[func]{graphBFS}
 ```
 
@@ -4601,7 +4959,7 @@ The code is relatively abstract, it is recommended to refer to the following pic
 >**Is the sequence of breadth-first traversal unique?**
 >Not unique. Breadth-first traversal only requires traversal in the order of "from near to far", and **the traversal order of multiple vertices with the same distance is allowed to be arbitrarily disrupted**. Taking the above picture as an example, the access order of vertices $1$ and $3$ can be exchanged, and the access order of vertices $2$, $4$ and $6$ can also be exchanged arbitrarily.
 
-2. Complexity Analysis
+##### 2. Complexity Analysis
 
 **Time complexity**: All vertices will be queued and dequeued once, using $O(|V|)$ time; in the process of traversing adjacent vertices, since it is an undirected graph, all edges will be visited twice, using $O(2|E|)$ time; overall takes $O(|V|+|E|)$ time.
 
@@ -4613,11 +4971,11 @@ The code is relatively abstract, it is recommended to refer to the following pic
 
 ![Fig. 图的深度优先遍历](./pictures/9.3.2.0.png)
 
-1. Algorithm implementation
+##### 1. Algorithm implementation
 
 This "go to the end + backtrack" algorithmic form is usually implemented based on recursion. Similar to BFS, in DFS we also need to use a hash table `visited` to record the visited vertices to avoid repeated visits to vertices.
 
-```zig
+```rust
 [class]{}-[func]{dfs}
 
 [class]{}-[func]{graphDFS}
@@ -4637,7 +4995,7 @@ In order to deepen the understanding, it is recommended to combine the diagram w
 >
 >Taking tree traversal as an example, "root $\rightarrow$ left $\rightarrow$ right", "left $\rightarrow$ root $\rightarrow$ right", and "left $\rightarrow$ right $\rightarrow$ root" correspond to pre-order, in-order, and post-order traversal respectively. They show There are three different traversal priorities, but all three belong to depth-first traversal.
 
-2. Complexity Analysis
+##### 2. Complexity Analysis
 
 **Time complexity**: All vertices will be visited once, using $O(|V|)$ time; all edges will be visited twice, using $O(2|E|)$ time; overall use $O(|V|+|E|)$ time.
 
@@ -4645,7 +5003,7 @@ In order to deepen the understanding, it is recommended to combine the diagram w
 
 ### 9.4 summary
 
-1. key review
+#### 1. key review
 
 - A graph consists of vertices and edges and can be represented as a collection of vertices and edges.
 - Compared with linear relationship (linked list) and divide-and-conquer relationship (tree), network relationship (graph) has a higher degree of freedom and is therefore more complex.
@@ -4659,7 +5017,7 @@ In order to deepen the understanding, it is recommended to combine the diagram w
 - The breadth-first traversal of the graph is a search method that expands from near to far, layer by layer, and is usually implemented with the help of queues.
 - The depth-first traversal of the graph is a search method that goes to the bottom first and backtracks when there is no way to go, and is often implemented based on recursion.
 
-2. Q & A
+#### 2. Q & A
 
 >**Is a path defined as a sequence of vertices or a sequence of edges?**
 >The definitions of different language versions on Wikipedia are inconsistent: the English version is "a path is a sequence of edges", while the Chinese version is "a path is a sequence of vertices". The following is the original English version: In graph theory, a path in a graph is a finite or infinite sequence of edges which joins a sequence of vertices. In this paper, a path is considered as a sequence of edges, not a sequence of vertices. This is because there may be multiple edge connections between two vertices, and each edge corresponds to a path.
@@ -4691,10 +5049,10 @@ As shown in the following picture, we first initialize the pointers $i=0$ and $j
 Next, loop through the following two steps:
 
 1. Calculate the midpoint index $m=\lfloor(i+k)/2\rfloor$, where $\lfloor\rfloor$ represent the rounding down operation.
-2. The size relationship between `nums[m]` and `target` is divided into three situations:
-    a. When `nums[m] < target`, it means that `target` is in the interval `[m+1, j]`, so execute $i=m+1$.
-    b. When `nums[m] > target`, it means that `target` is in the interval `[i, m-1]`, so execute $j=m-1$.
-    c. When `nums[m] = target`, it means that `target` is found, so the index $m$ is returned.
+1. The size relationship between `nums[m]` and `target` is divided into three situations:
+    1. When `nums[m] < target`, it means that `target` is in the interval `[m+1, j]`, so execute $i=m+1$.
+    1. When `nums[m] > target`, it means that `target` is in the interval `[i, m-1]`, so execute $j=m-1$.
+    1. When `nums[m] = target`, it means that `target` is found, so the index $m$ is returned.
 
 If the array does not contain the target element, the search range will eventually be reduced to empty. In this case $-1$ is returned.
 
@@ -4702,7 +5060,7 @@ If the array does not contain the target element, the search range will eventual
 
 It is worth noting that since both $i$ and $j$ are of type `int`, **$i+j$ may exceed the value range of type `int`**. In order to avoid large numbers out of bounds, we usually use the formula $m=\lfloor i+(j-i)/2 \rfloor$ to calculate the midpoint.
 
-```zig
+```rust
 // dichotomy search (double closed interval)
 fn binarySearch(comptime T: type, nums: std.ArrayList(T), target: T) T {
     // initialize the double-closed interval [0, n-1], that is,
@@ -4735,7 +5093,7 @@ In addition to the above-mentioned double-closed intervals, common interval repr
 
 We can implement a binary search algorithm with the same functionality based on this representation.
 
-```zig
+```rust
 // binary search (left closed, right open)
 fn binarySearchLCRO(comptime T: type, nums: std.ArrayList(T), target: T) T {
     // initialize left closed and right open [0, n), that is,
@@ -4773,7 +5131,7 @@ Binary search has better performance in both time and space.
 
 However, binary search is not suitable for all situations, mainly for the following reasons.
 
-- Binary search only works on ordered data. If the input data is out of order, sorting it specifically in order to use binary search is not worth the gain. Because the time complexity of the sorting algorithm is usually $O(n\,log\,n)$, which is higher than both linear search and binary search. For scenarios where elements are frequently inserted, in order to maintain the order of the array, elements need to be inserted at specific positions, and the time complexity is $O(n)$, which is also very expensive.
+- Binary search only works on ordered data. If the input data is out of order, sorting it specifically in order to use binary search is not worth the gain. Because the time complexity of the sorting algorithm is usually $O(n\ log\ n)$, which is higher than both linear search and binary search. For scenarios where elements are frequently inserted, in order to maintain the order of the array, elements need to be inserted at specific positions, and the time complexity is $O(n)$, which is also very expensive.
 - Binary search only works on arrays. Binary search requires skippin (non-continuous) access to elements, and the efficiency of skipping access in linked lists is low, so it is not suitable for applications in linked lists or data structures based on linked lists.
 - Under small data volumes, the performance of linear search is better. In linear search, only 1 estimation operation is required per round; while in binary search, 1 addition, 1 division, 1 to 3 validation operations, and 1 addition (subtraction) are required, totaling 4 to 6 unit operations; therefore, when the amount of data $n$ is small, linear search is faster than binary search.
 
@@ -4800,7 +5158,7 @@ Think further about the binary search process: $i$ moves when `nums[m] < target`
 
 Therefore, at the end of the binary division, there must be: $i$ points to the first element greater than `target`, and $j$ points to the first element smaller than `target`. **It is easy to insert index $i$ when the array does not contain `target`**.
 
-```zig
+```rust
 [class]{}-[func]{binarySearchInsertionSimple}
 ```
 
@@ -4833,7 +5191,7 @@ Observe the following code, it is verified that the operations of branches `nums
 
 Even so, we can still keep the verification condition expanded, because its logic is clearer and more readable.
 
-```zig
+```rust
 [class]{}-[func]{binarySearchInsertion}
 ```
 
@@ -4860,7 +5218,7 @@ Consider finding the left boundary implemented by a function that finds the inse
 
 When encountering the above two situations, just return $-1$ directly.
 
-```zig
+```rust
 [class]{}-[func]{binarySearchLeftEdge}
 ```
 
@@ -4870,7 +5228,7 @@ So how to find the rightmost `target`? The most straightforward way is to modify
 
 Below we introduce two more clever methods.
 
-1. Reuse Find Left Boundary
+##### 1. Reuse Find Left Boundary
 
 In fact, we can use the function of finding the leftmost element to find the rightmost element **by converting finding the rightmost `target` to finding the leftmost `target + 1`**.
 
@@ -4880,11 +5238,11 @@ As shown in the following picture, after the search is complete, the pointer $i$
 
 Note that the returned insertion point is $i$, so you need to subtract $1$ from it to get $j$.
 
-```zig
+```rust
 [class]{}-[func]{binarySearchRightEdge}
 ```
 
-2. Convert to lookup element
+##### 2. Convert to lookup element
 
 We know that when the array does not contain `target`, $i$ and $j$ will point to the first element greater than and less than `target` respectively.
 
@@ -4913,7 +5271,7 @@ Consider iterating over all possible combinations directly. As shown in the foll
 
 ![Fig. 线性查找求解两数之和](./pictures/10.4.1.png)
 
-```zig
+```rust
 // method 1: brute force enumeration
 fn twoSumBruteForce(nums: []i32, target: i32) ?[2]i32 {
     var size: usize = nums.len;
@@ -4944,7 +5302,7 @@ Consider a hash table, where the key-value pairs are array elements and element 
 
 The implementation code is as follows, only a single layer of loop is required.
 
-```zig
+```rust
 // method 2: auxiliary hash table
 fn twoSumHashTable(nums: []i32, target: i32) !?[2]i32 {
     var size: usize = nums.len;
@@ -4997,7 +5355,7 @@ Adaptive search takes advantage of unique properties of the data, such as order,
 - "Hash lookup" uses a hash table to establish a key-value pair mapping between search data and target data and implement query operations.
 - "Tree Search" quickly excludes nodes based on comparing node values in a specific tree structure (such as a binary search tree) to locating the target element.
 
-The advantage of this type of algorithm is high efficiency, and **the time complexity can reach $O(log\,n)$ or even $O(1)$**.
+The advantage of this type of algorithm is high efficiency, and **the time complexity can reach $O(log\ n)$ or even $O(1)$**.
 
 However, **using these algorithms often requires preprocessing of the data**. For example, binary search requires the array to be sorted in advance, hash search and tree search both require additional data structures, and maintaining these data structures also requires additional time and space expenses.
 
@@ -5014,11 +5372,11 @@ The operational efficiency and characteristics of the above methods are shown in
 
 ||Linear Search|Binary Search|Tree Search|Hash Search|
 |---|---|---|---|---|
-|find element|$O(n)$|$O(log\,n)$|$O(log\,n)$|$O(1)$|
-|insert element|$O(1)$|$O(n)$|$O(log\,n)$|$O(1)$|
-|delete element|$O(n)$|$O(n)$|$O(log\,n)$|$O(1)$|
+|find element|$O(n)$|$O(log\ n)$|$O(log\ n)$|$O(1)$|
+|insert element|$O(1)$|$O(n)$|$O(log\ n)$|$O(1)$|
+|delete element|$O(n)$|$O(n)$|$O(log\ n)$|$O(1)$|
 |extra space|$O(1)$|$O(1)$|$O(n)$|$O(n)$|
-|data preprocessing|$/$|to sort $O(n\,log\,n)$|build a tree $O(n\,log\,n)$|build hash table $O(n)$|
+|data preprocessing|$/$|to sort $O(n\ log\ n)$|build a tree $O(n\ log\ n)$|build hash table $O(n)$|
 |is the data in order|disorderd|ordered|ordered|disorderd|
 
 The choice of search algorithm also depends on the data volume, search performance requirements, data query and update frequency, etc.
@@ -5031,7 +5389,7 @@ The choice of search algorithm also depends on the data volume, search performan
 
 **binary search**
 
-- Applicable to the situation of large amount of data, the efficiency performance is stable, and the worst time complexity is $O(log\,n)$.
+- Applicable to the situation of large amount of data, the efficiency performance is stable, and the worst time complexity is $O(log\ n)$.
 - The amount of data cannot be too large, because storing an array requires continuous memory space.
 - It is not suitable for scenarios where data is added or deleted frequently, because the overhead of maintaining an ordered array is high.
 
@@ -5047,13 +5405,13 @@ The choice of search algorithm also depends on the data volume, search performan
 - Suitable for massive data, because tree nodes are stored discretely in memory.
 - Suitable for scenarios where you need to maintain ordered data or range lookups.
 - In the process of continuously adding and deleting nodes, the binary search tree may become skewed, and the time complexity is degraded to $O(n)$.
-- If an AVL tree or red-black tree is used, each operation can run stably with $O(log\,n)$ efficiency, but the operation of maintaining tree balance will increase additional overhead.
+- If an AVL tree or red-black tree is used, each operation can run stably with $O(log\ n)$ efficiency, but the operation of maintaining tree balance will increase additional overhead.
 
 ### 10.6 Summary
 
 - Binary search relies ipon the orderliness of the data, and searches by gradually reducing the search interval by half through a loop. It requires that the input data is ordered and is only applicable to arrays or data structures implemented based on arrays.
 - Brute force searches locate data by traversing data structures. Linear search works on arrays and linked lists, and breadth-first and depth-first searches work on graphs and trees. This type of algorithm has good versatility and does not need to preprocess the data, but the time complexity is $O(n)$.
-- Hash search, tree search, and binary search are efficient search methods for quickly locating a target element in a specific data structure. This type of algorithm is efficient, and the time complexity can reach $O(log\,n)$ or even $O(1)$, but usually requires the help of additional data structures.
+- Hash search, tree search, and binary search are efficient search methods for quickly locating a target element in a specific data structure. This type of algorithm is efficient, and the time complexity can reach $O(log\ n)$ or even $O(1)$, but usually requires the help of additional data structures.
 - In practice, we need to conduct a specific analysis of factors such as data volume, search performance requirements, data query and update frequency, so as to choose an appropriate search method.
 - Linear search is suitable for small or frequently updated data; binary search is suitable for large, sorted data; hash search is suitable for data that requires high query efficiency and does not require range queries; tree search is suitable for large dynamic data that needs to maintain order and support range queries.
 - Replacing linear lookups with hash lookups is a commonly used strategy to optimize runtime, which can reduce the time complexity from $O(n)$ to $O(1)$.
@@ -5106,7 +5464,7 @@ Stable sorting is a necessary condition for multi-level sorting scenarios. Suppo
 
 Adaptability needs to be assessed on a case-by-case basis. If the worst time complexity is worse than the average time complexity, it means that the performance of the sorting algorithm may be degraded under some data, so it is regarded as a negative attribute; and if the best time complexity is better than the average time complexity, it is regarded as positive attributes.
 
-**Whether it is based on comparison**: "Comparison-based sorting" relies on comparison operators ($<$, $=$, $>$) to determine the relative order of elements to sort the entire array. The theoretical optimal time complexity is $O(n\,log\,n)$. The "non-comparative sorting" does not use comparison operators, and the time complexity can reach $O(n)$, but its versatility is relatively poor.
+**Whether it is based on comparison**: "Comparison-based sorting" relies on comparison operators ($<$, $=$, $>$) to determine the relative order of elements to sort the entire array. The theoretical optimal time complexity is $O(n\ log\ n)$. The "non-comparative sorting" does not use comparison operators, and the time complexity can reach $O(n)$, but its versatility is relatively poor.
 
 ### 11.1.2 ideal sorting algorithm
 
@@ -5130,7 +5488,7 @@ Assuming the length of the array is $n$, the algorithm flow of the selection sor
 
 In the code, we use $k$ to record the smallest element in the unsorted interval.
 
-```zig
+```rust
 [class]{}-[func]{selectionSort}
 ```
 
@@ -5161,7 +5519,7 @@ Assuming the length of the array is $n$, the steps of bubble sorting are shown i
 
 ![Fig. 冒泡排序流程](./pictures/11.3.1.png)
 
-```zig
+```rust
 // bubble sort
 fn bubbleSort(nums: []i32) void {
     // outer loop: the unsorted interval is [0, i]
@@ -5188,7 +5546,7 @@ We found that if no swap operation is performed in a certain round of "bubbling"
 
 After optimization, the worst and average time complexities of bubble sorting are still $O(n^2)$; but when the input array is completely ordered, the best time complexity $O(n)$ can be achieved.
 
-```zig
+```rust
 // bubble sort (flag optimization)
 fn bubbleSortWithFlag(nums: []i32) void {
     // outer loop: the unsorted interval is [0, i]
@@ -5238,7 +5596,7 @@ The overall process of insertion sort is shown in the following picture.
 
 ![Fig. 插入排序流程](./pictures/11.4.1.png)
 
-```zig
+```rust
 // insertion sort
 fn insertionSort(nums: []i32) void {
     // outer loop: the number of sorted elements is 1, 2, ..., n
@@ -5263,9 +5621,9 @@ fn insertionSort(nums: []i32) void {
 
 #### 11.4.3 Insertion sort advantage
 
-The time complexity of insertion sort is $O(n^2)$, and the time complexity of quick sort, which we are about to learn, is $O(n\,log\,n)$. Although the time complexity of insertion sort is higher than that of quick sort, **insertion sort is usually faster when the amount of data is small**.
+The time complexity of insertion sort is $O(n^2)$, and the time complexity of quick sort, which we are about to learn, is $O(n\ log\ n)$. Although the time complexity of insertion sort is higher than that of quick sort, **insertion sort is usually faster when the amount of data is small**.
 
-This conclusion is similar to the conclusion for the applicable cases of linear search and binary search. $O(n\,log\,n)$ algorithms such as quick sort are divide-and-conquer-based sorting algorithms, which often include more unit calculation operations. When the amount of data is small, the values ​​of $n^2$ and $n\,log\,n$ are relatively close, and the complexity does not play a dominant role; the number of unit calculation operations in each round plays a decisive factor.
+This conclusion is similar to the conclusion for the applicable cases of linear search and binary search. $O(n\ log\ n)$ algorithms such as quick sort are divide-and-conquer-based sorting algorithms, which often include more unit calculation operations. When the amount of data is small, the values ​​of $n^2$ and $n\ log\ n$ are relatively close, and the complexity does not play a dominant role; the number of unit calculation operations in each round plays a decisive factor.
 
 In fact, the built-in sorting functions of many programming languages ​​(such as Java) use insertion sorting. The general idea is: for long arrays, use a sorting algorithm based on divide and conquer, such as quick sort; for short arrays, use insertion sorting directly.
 
@@ -5292,7 +5650,7 @@ After the pivot division is completed, the original array is divided into three 
 >**Divide and conquer idea of quick sort**
 >The essence of pivot partition is to simplify the sorting problem of one longer array into the sorting problem of two shorter arrays.
 
-```zig
+```rust
 // element swap
 fn swap(nums: []i32, i: usize, j: usize) void {
     var tmp = nums[i];
@@ -5327,7 +5685,7 @@ The overall flow of quicksort is shown in the following picture
 
 ![Fig. 快速排序流程](./pictures/11.5.1.0.png)
 
-```zig
+```rust
 // quicksort
 fn quickSort(nums: []i32, left: usize, right: usize) void {
     // end recursion when the subarray length is 1
@@ -5342,7 +5700,7 @@ fn quickSort(nums: []i32, left: usize, right: usize) void {
 
 #### 11.5.2 Algorithm characteristics
 
-- **Time complexity $O(n\,log\,n)$, adaptive sorting**: In the average case, the number of recursive layers of the pivot partition is $log\,n$, and the total number of cycles in each layer is $n$, and the overall time is $O(n\,log\,n)$. In the worst case, each round of pivot division divides an array of length $n$ into two sub-arrays of length $0$ and $n-1$. At this time, the number of recursive layers reaches $n$ layers, and the number of cycles in each layer is $n$. Overall using $O(n^2)$ time.
+- **Time complexity $O(n\ log\ n)$, adaptive sorting**: In the average case, the number of recursive layers of the pivot partition is $log\ n$, and the total number of cycles in each layer is $n$, and the overall time is $O(n\ log\ n)$. In the worst case, each round of pivot division divides an array of length $n$ into two sub-arrays of length $0$ and $n-1$. At this time, the number of recursive layers reaches $n$ layers, and the number of cycles in each layer is $n$. Overall using $O(n^2)$ time.
 - **Space complexity $O(n)$, in-place sorting**: When the input array is completely reversed, the worst recursion depth $n$ is reached, using $O(n)$ stack frame space. The sorting operation is performed on the original array without the help of an additional array.
 - **Unstable sort**: In the last step of pivot division, the base numbers may be swapped to the right of equal elements.
 
@@ -5350,7 +5708,7 @@ fn quickSort(nums: []i32, left: usize, right: usize) void {
 
 As can be seen from the name, quick sort should have certain advantages in terms of efficiency. Although the average time complexity of quick sort is the same as that of "merge sort" and "heap sort", it is usually more efficient for the following reasons.
 
-- **The probability of the worst case is very low**: although the worst time complexity of quick sort is $O(n^2)$ and it is not as stable as merge sort, in most cases, quick sort can run at time complexity $O(n\,log\,n)$.
+- **The probability of the worst case is very low**: although the worst time complexity of quick sort is $O(n^2)$ and it is not as stable as merge sort, in most cases, quick sort can run at time complexity $O(n\ log\ n)$.
 - **High cache usage efficiency**: when performing pivot division operations, the system can load the entire sub-array to the cache, so the efficiency of accessing elements is high. Algorithms like "heap sort" need to jump to access elements, thus lacking this feature.
 - **The constant coefficient of complexity is low**: among the above three algorithms, the total number of operations such as comparison, assignment, and exchange of quick sort is the lowest. This is similar to why Insertion Sort is faster than Bubble Sort.
 
@@ -5364,7 +5722,7 @@ It should be noted that programming languages usually generate "pseudo-random nu
 
 In order to further improve, we can select three candidate elements in the array (usually the first, last, and midpoint elements of the array), **and use the median of these three candidate elements as the reference number**. In this way, the probability that the benchmark number is "neither too small nor too large" will be greatly improved. Of course, we can also select more candidate elements to further improve the robustness of the algorithm. After adopting this method, the probability of time complexity degradation to $O(n^2)$ is greatly reduced.
 
-```zig
+```rust
 // select the median of three elements
 fn medianThree(nums: []i32, left: usize, mid: usize, right: usize) usize {
     // XOR operation is used here to simplify the code
@@ -5403,9 +5761,9 @@ fn partition(nums: []i32, left: usize, right: usize) usize {
 
 **With some inputs, quicksort can take up a lot of space**. Take the completely reversed input array as an example. Since the length of the right sub-array is $0$ after each round of pivot division, the height of the recursive tree will reach $n-1$. At this time, a stack frame space of $O(n)$ size needs to be occupied.
 
-In order to prevent the accumulation of stack frame space, we can compare the lengths of the two sub-arrays after each round of pivot sorting, **and only recurse on the shorter sub-arrays**. Since the length of the shorter subarray does not exceed $n/2$, this approach ensures that the recursion depth does not exceed $log\,n$, thus optimizing the worst-case space complexity to $O(log\,n)$.
+In order to prevent the accumulation of stack frame space, we can compare the lengths of the two sub-arrays after each round of pivot sorting, **and only recurse on the shorter sub-arrays**. Since the length of the shorter subarray does not exceed $n/2$, this approach ensures that the recursion depth does not exceed $log\ n$, thus optimizing the worst-case space complexity to $O(log\ n)$.
 
-```zig
+```rust
 // quicksort (tail recursive optimization)
 fn quickSort(nums: []i32, left_: usize, right_: usize) void {
     var left = left_;
@@ -5451,7 +5809,7 @@ It is observed that the recursive order of merge sort is the same as the post-or
 - **Post-order traversal**: first recurse the left subtree, then recurse the right subtree, and finally process the root node.
 - **Merge sort**: first recurse the left sub-array, then recurse the right sub-array, and finally process the merge.
 
-```zig
+```rust
 // merge left subarray and right subarray
 // left sub-array interval [left, mid]
 // right subarray interval [mid + 1, right]
@@ -5518,8 +5876,8 @@ Implementing the merge function `merge()` presents the following difficulties.
 
 #### 11.6.2 Algorithmic characteristics
 
-- **Time complexity $O(n\,log\,n)$, non-adaptive sorting**: partitioning produces a recursive tree with a height of $log\,n$, and the total number of merged operations at each level is $n$, so the overall time complexity is $O(n,log,n)$.
-- **Space complexity $O(n)$, not-in-place sorting**: the recursion depth is $log\,n$, and the stack frame space of $O(log\,n)$ size is used. The merge operation needs to be implemented with the aid of an auxiliary array, using $O(n)$ additional space.
+- **Time complexity $O(n\ log\ n)$, non-adaptive sorting**: partitioning produces a recursive tree with a height of $log\ n$, and the total number of merged operations at each level is $n$, so the overall time complexity is $O(n,log,n)$.
+- **Space complexity $O(n)$, not-in-place sorting**: the recursion depth is $log\ n$, and the stack frame space of $O(log\ n)$ size is used. The merge operation needs to be implemented with the aid of an auxiliary array, using $O(n)$ additional space.
 - **Stable sorting**: During the merge process, the order of equal elements remains unchanged.
 
 #### 11.6.3 Sorting linked lists $*$
@@ -5559,7 +5917,7 @@ Assuming the length of the array is $n$, the process of heap sorting shown in th
 
 In the code implementation, we use the same top-down heap `sift_down()` function as in the heap chapter. It is worth noting that since the length of the heap will decrease as the largest element is extracted, we need to add a length parameter $n$ to the `sift_down()` function to specify the current effective length of the heap.
 
-```zig
+```rust
 [class]{}-[func]{siftDown}
 
 [class]{}-[func]{heapSort}
@@ -5567,13 +5925,13 @@ In the code implementation, we use the same top-down heap `sift_down()` function
 
 #### 11.7.2 Algorithmic characteristics
 
-- **Time complexity $O(n\,log\,n)$, non-adaptive sorting**: the heap operation uses $O(n)$ time. The time complexity of extracting the largest element from the heap is $O(log\,n)$, with a total of $n-1$ rounds.
+- **Time complexity $O(n\ log\ n)$, non-adaptive sorting**: the heap operation uses $O(n)$ time. The time complexity of extracting the largest element from the heap is $O(log\ n)$, with a total of $n-1$ rounds.
 - **Space complexity $O(1)$, in-place sorting**: Several pointer variables use $O(1)$ space. Element swap and heap operations are performed on the original array.
 - **Unstable sorting**: When swapping the top and bottom elements of the heap, the relative positions of equal elements may change.
 
 ### 11.8 bucket sort
 
-The aforementioned sorting algorithms all belong to the "comparison-based sorting algorithms", which implements sorting by comparing the size of elements. The time complexity of such sorting algorithms cannot exceed $O(n\,log\,n)$. Next, we explore several "non-comparison sorting algorithms" whose time complexity can reach linear order.
+The aforementioned sorting algorithms all belong to the "comparison-based sorting algorithms", which implements sorting by comparing the size of elements. The time complexity of such sorting algorithms cannot exceed $O(n\ log\ n)$. Next, we explore several "non-comparison sorting algorithms" whose time complexity can reach linear order.
 
 "Bucket Sort" is a typical application of the divide-and-conquer strategy. It sets some buckets with order of size, each bucket corresponds to a data range, and distributes the data evenly into each bucket; then, performs sorting in each bucket; finally merges all the data according to the order of the buckets.
 
@@ -5587,7 +5945,7 @@ Consider an array of length n whose elements are floating point numbers in the r
 
 ![Fig. 桶排序算法流程](./pictures/11.8.1.png)
 
-```zig
+```rust
 [class]{}-[func]{bucketSort}
 ```
 
@@ -5595,7 +5953,7 @@ Consider an array of length n whose elements are floating point numbers in the r
 
 Bucket sorting is suitable for processing large volumes of data. For example, the input data contains 1 million elements, and the system memory cannot load all the data at once due to space constraints. At this point, you can divide the data into 1000 buckets, sort each bucket separately, and finally combine the results.
 
-- **Time complexity $O(n+k)$**: Assuming that the elements are evenly distributed in each bucket, then the number of elements in each bucket is $\frac{n}{k}$. Assuming sorting a single bucket takes $O(\frac{n}{k}log\,\frac{n}{k})$ time, sorting all buckets takes $O(n\,log\,\frac{n}{k})$ time. When the number of buckets $k$ is relatively large, the time complexity tends to be $O(n)$. When merging results, it is necessary to traverse all buckets and elements, which takes $O(n+k)$ time.
+- **Time complexity $O(n+k)$**: Assuming that the elements are evenly distributed in each bucket, then the number of elements in each bucket is $\frac{n}{k}$. Assuming sorting a single bucket takes $O(\frac{n}{k}log\ \frac{n}{k})$ time, sorting all buckets takes $O(n\ log\ \frac{n}{k})$ time. When the number of buckets $k$ is relatively large, the time complexity tends to be $O(n)$. When merging results, it is necessary to traverse all buckets and elements, which takes $O(n+k)$ time.
 - **Adaptive sorting**: In the worst case, all data is allocated into one bucket, and sorting the bucket takes $O(n^2)$ time.
 - **Space complexity $O(n+k)$, not-in-place sorting**: additional space for $k$ buckets and a total of $n$ elements is required.
 - Whether the bucket sort is stable depends on whether the algorithm for sorting the elements in the bucket is stable.
@@ -5630,7 +5988,7 @@ Let's look at a simple example first. Given an array `nums` of length $n$ whose 
 
 ![Fig. 计数排序流程](./pictures/11.9.1.png)
 
-```zig
+```rust
 [class]{}-[func]{countingSortNaive}
 ```
 
@@ -5656,7 +6014,7 @@ After the traversal is completed, the sorted results are in the array `res`, and
 
 The implementation code of counting sort is as follows.
 
-```zig
+```rust
 [class]{}-[func]{countingSort}
 ```
 
@@ -5672,7 +6030,7 @@ Seeing this, you may feel that counting sorting is very ingenious, and efficient
 
 **Counting sort only works with non-negative integers**. If you want to use it for other types of data, you need to ensure that these data can be converted into non-negative integers, and the relative size relationship between the elements cannot be changed during the conversion process. For example, for an integer array containing negative numbers, you can first add a constant to all numbers, convert all numbers into positive numbers, and convert them back after sorting.
 
-**Counting sort is suitable for situations where the amount of data is large but the range of data is small**. For example, $m$ cannot be too large in the above example, otherwise it would take up too much space. And when $n \ll m$, counting sort uses $O(m)$ time, which may be slower than the $O(n\,log\,n)$ sorting algorithm.
+**Counting sort is suitable for situations where the amount of data is large but the range of data is small**. For example, $m$ cannot be too large in the above example, otherwise it would take up too much space. And when $n \ll m$, counting sort uses $O(m)$ time, which may be slower than the $O(n\ log\ n)$ sorting algorithm.
 
 ### 11.10 radix sort
 
@@ -5691,12 +6049,12 @@ Taking the student number data as an example, assuming that the lowest digit of 
 ![Fig. 基数排序算法流程](./pictures/11.10.1.png)
 
 Let's analyze the code implementation. For a number $x$ in base $d$, to obtain its $kth$ digit $x_k$, the following calculation formula can be used:
-$$x_k=\lfloor\frac{x}{d^{k-1}}\rfloor mod\,d$$
-In which $\lfloor a \rfloor$ means to round down the floating-point number $a$, and $mod\,d$ means to take the remainder of $d$. For student ID data, $d=10$ and $k\in[1,8]$.
+$$x_k=\lfloor\frac{x}{d^{k-1}}\rfloor mod\ d$$
+In which $\lfloor a \rfloor$ means to round down the floating-point number $a$, and $mod\ d$ means to take the remainder of $d$. For student ID data, $d=10$ and $k\in[1,8]$.
 
 In addition, we need to slightly change the counting sort code so that it can sort according to the $kth$ digit of the number.
 
-```zig
+```rust
 // get the kth bit of element num, where exp = 10^(k-1)
 fn digit(num: i32, exp: i32) i32 {
     // Passing exp instead of k avoids expensive calculations here
@@ -5774,11 +6132,11 @@ Compared with counting sorting, radix sorting is suitable for situations with a 
 
 ### 11.11 summary
 
-1. key review
+#### 1. key review
 
 - Bubble sort achieves sorting by swapping adjacent elements. By adding a flag to achieve early return, we can optimize the best time complexity of bubble sort to $O(n)$.
 - Insertion sort inserts the elements in the unsorted interval into the correct position of the sorted interval in each round, thus completing the sorting. Although the time complexity of insertion sort is $O(n^2)$, it is very popular in sorting tasks with small data volumes due to relatively few unit operations.
-- Quicksort implements sorting based on the pivot partition operation. In pivot division, it is possible to select the worst benchmark number every time, resulting in time complexity degraded to $O(n^2)$. Introducing a median base or a random base reduces the probability of this degradation. The tail recursion method can effectively reduce the recursion depth and optimize the space complexity to $O(log\,n)$.
+- Quicksort implements sorting based on the pivot partition operation. In pivot division, it is possible to select the worst benchmark number every time, resulting in time complexity degraded to $O(n^2)$. Introducing a median base or a random base reduces the probability of this degradation. The tail recursion method can effectively reduce the recursion depth and optimize the space complexity to $O(log\ n)$.
 - Merge sort includes two stages of partitioning and merging, which typically embodies the divide and conquer strategy. In merge sorting, the sorting array needs to create an auxiliary array, and the space complexity is $O(n)$; however, the space complexity of sorting linked lists can be optimized to $O(1)$.
 - Bucket sorting consists of three steps: data bucketing, sorting within buckets, and merging results. It also embodies the divide-and-conquer strategy and is suitable for situations with large data volumes. The key to bucket sorting is to evenly distribute data.
 - Counting sort is a special case of bucket sorting, which implements sorting by counting the number of occurrences of data. Counting sort is suitable for situations where the amount of data is large but the data range is limited, and the data is required to be converted into positive integers.
@@ -5789,7 +6147,7 @@ The following picture compares the efficiency, stability, in-place and adaptabil
 
 ![Fig. 排序算法对比](./pictures/11.11.png)
 
-2. Q & A
+#### 2. Q & A
 
 >**When is sorting algorithm stability necessary?**
 >In reality, we may be sorting on a certain property of the object. For example, students have two attributes of name and height, we want to implement a multi-level sort/
@@ -5807,8 +6165,8 @@ The following picture compares the efficiency, stability, in-place and adaptabil
 >
 >Thinking about it further, if we choose `nums[right]` as the reference number, then just the opposite, we must first "search from left to right".
 
->**Regarding tail recursion optimization, why does choosing a short array ensure that the recursion depth does not exceed $log\,n$?**
->The recursion depth is the number of recursive methods that are not currently returning. Each round of pivot division we divide the original array into two sub-arrays. After tail recursion optimization, the length of the recursive sub-array is at most half the length of the original array. Assuming the worst case, it is always half the length, then the final recursion depth is $log\,n$.
+>**Regarding tail recursion optimization, why does choosing a short array ensure that the recursion depth does not exceed $log\ n$?**
+>The recursion depth is the number of recursive methods that are not currently returning. Each round of pivot division we divide the original array into two sub-arrays. After tail recursion optimization, the length of the recursive sub-array is at most half the length of the original array. Assuming the worst case, it is always half the length, then the final recursion depth is $log\ n$.
 >
 >Looking back at the original quick sort, we may continuously recurse arrays with larger lengths, in the worst case $n$, $n-1$, $n-2$, $...$, $2$, $1$, so the recursion depth is $n$. Tail recursion optimization can avoid this situation.
 
@@ -5859,7 +6217,7 @@ Divide and conquer can not only effectively solve algorithm problems, **but also
 
 Then, we can't help but ask: **why can divide and conquer improve the efficiency of the algorithm, and what is its underlying logic**? In other words, decomposing a large problem into multiple sub-problems, solving the sub-problems, and merging the solutions of the sub-problems into the solution of the original problem, why are these steps more efficient than directly solving the original problem? This problem can be discussed from two aspects: the number of operations and parallel computing.
 
-1. Operation Quantity Optimization
+##### 1. Operation Quantity Optimization
 
 Taking "bubble sort" as an example, it takes $O(n^2)$ time to process an array of length $n$. Suppose that we divide the array into two sub-arrays from the midpoint as shown in the following picture, it takes $O(n)$ time to divide, $O((n/2)^2)$ time to sort each sub-array, and $O(n)$ time to merge two sub-arrays.The overall time complexity is:
 
@@ -5877,11 +6235,11 @@ n(n-4)&>0
 
 **This means that when $n>4$, the number of operations after division is less, and the sorting efficiency should be higher**. Please note that the time complexity after division is still square order $O(n^2)$, but the constant term in the complexity becomes smaller.
 
-Thinking further, what **if we divide the sub-array into two sub-arrays continuously from the midpoint** until there is only one element left in the sub-array? This idea is actually "merge sorting", and the time complexity is $O(n\,log\,n)$.
+Thinking further, what **if we divide the sub-array into two sub-arrays continuously from the midpoint** until there is only one element left in the sub-array? This idea is actually "merge sorting", and the time complexity is $O(n\ log\ n)$.
 
 Think again, what **if we set a few more division points** to divide the original array into $k$ sub-arrays on average? This situation is very similar to "bucket sorting", which is very suitable for sorting massive data, and the theoretical time complexity can reach $O(n+k)$.
 
-2. Parallel Computing Optimization
+##### 2. Parallel Computing Optimization
 
 We know that the subproblems generated by divide and conquer are independent of each other, **so they can usually be solved in parallel**. That is to say, divide and conquer can not only reduce the time complexity of the algorithm, **but also facilitate the parallel optimization of the operating system**.
 
@@ -5918,12 +6276,12 @@ It can be seen that **divide and conquer is an algorithmic idea** which is impli
 We have already learned that search algorithms fall into two broad categories:
 
 - **Brute Force Search**: It is implemented by traversing the data structure with a time complexity of $O(n)$.
-- **Adaptive search**: It utilizes unique data organization form or prior information, and can achieve $O(log\,n)$ or even $O(1)$ time complexity.
+- **Adaptive search**: It utilizes unique data organization form or prior information, and can achieve $O(log\ n)$ or even $O(1)$ time complexity.
 
-In fact, **search algorithms with a time complexity of $O(log\,n)$ are usually implemented based on a divide-and-conquer strategy**, such as binary search and trees.
+In fact, **search algorithms with a time complexity of $O(log\ n)$ are usually implemented based on a divide-and-conquer strategy**, such as binary search and trees.
 
 - Each step of binary search breaks down the problem (search for the target element in the array) into a smaller problem (search for the target element in half of the array), and this process continues until the array is empty or the target element is found.
-- Trees represent divide-and-conquer relationships. In data structures such as binary search trees, AVL trees, and heaps, the time complexity of various operations is $O(log\,n)$.
+- Trees represent divide-and-conquer relationships. In data structures such as binary search trees, AVL trees, and heaps, the time complexity of various operations is $O(log\ n)$.
 
 The divide and conquer strategy for binary search is as follows.
 
@@ -5933,7 +6291,7 @@ The divide and conquer strategy for binary search is as follows.
 
 Divide and conquer can improve search efficiency, essentially because brute force search can only exclude one option in each round, while **divide and conquer search can exclude half of the options in each round**.
 
-1. Realize dichotomy based on divide and conquer
+#### 1. Realize dichotomy based on divide and conquer
 
 In the previous chapters, binary search was implemented based on recursion (iteration). Now we implement it based on divide and conquer (recursion).
 
@@ -5954,7 +6312,7 @@ The following picture shows the divide and conquer process of binary search for 
 
 In the implementation code, we declare a recursive function `dfs()` to solve the problem $f(i,j)$.
 
-```zig
+```rust
 [class]{}-[func]{dfs}
 
 [class]{}-[func]{binarySearch}
@@ -5967,7 +6325,7 @@ In the implementation code, we declare a recursive function `dfs()` to solve the
 
 ![Fig. 构建二叉树的示例数据](./pictures/12.3.0.png)
 
-1. estimating whether it is a divide-and-conquer problem
+#### 1. estimating whether it is a divide-and-conquer problem
 
 The original problem is defined as building a binary tree from `preorder` and `inorder`, which is a typical divide and conquer problem.
 
@@ -5975,7 +6333,7 @@ The original problem is defined as building a binary tree from `preorder` and `i
 - **The subproblems are independent**: the left subtree and the right subtree are independent of each other, there is no intersection between them. When constructing the left subtree, we only need to pay attention to the part corresponding to the left subtree in the in-order traversal and pre-order traversal. The same is true for the right subtree.
 - **Solutions to subproblems can be merged**: once we have the left and right subtrees (solutions to subproblems), we can link them to the root node to get the solution to the original problem.
 
-2. How to divide the subtree
+#### 2. How to divide the subtree
 
 According to the above analysis, this problem can be solved by divide and conquer, **but the question is: how to divide the left subtree and right subtree by `preorder` traversal and `inorder` traversal**?
 
@@ -5992,7 +6350,7 @@ Taking the data in the previous picture as an example, we can obtain the divisio
 
 ![Fig. 在前序和中序遍历中划分子树](./pictures/12.3.2.png)
 
-3. Describe subtree intervals based on variables
+#### 3. Describe subtree intervals based on variables
 
 According to the above division method, **we have obtained the index intervals of the root node, left subtree, and right subtree in `preorder` and `inorder`**. In order to describe these index intervals, we need to use several pointer variables:
 
@@ -6012,11 +6370,11 @@ Please note that the meaning of $(m-l)$ in the index of the root node of the rig
 
 ![Fig. 根节点和左右子树的索引区间表示](./pictures/12.3.3.png)
 
-4. Code
+#### 4. Code
 
 In order to improve the efficiency of querying $m$, we use a hash table `hmap` to store the mapping from the elements in the array `inorder` to the index.
 
-```zig
+```rust
 [class]{}-[func]{dfs}
 
 [class]{}-[func]{buildTree}
@@ -6049,7 +6407,7 @@ In both merge sort and building a binary tree, we decompose the original problem
 
 **We denote the Tower of Hanoi problem of size $i$ as $f(i)$**. For example $f(3)$ represents the Tower of Hanoi problem of moving $3$ disks from `A` to `C`.
 
-1. Consider the base case
+#### 1. Consider the base case
 
 As shown in the following picture, for problem $f(1)$, that is, when there is only one disk, it is sufficient to move it directly from `A` to `C`.
 
@@ -6065,7 +6423,7 @@ For problem $f(2)$, that is, when there are two disks, since the small disk must
 
 The process of solving problem $f(2)$ can be summarized as: **Move two discs from `A` to `C` with the aid of `B`**. Among them, `C` is called the target column, and `B` is called the buffer column.
 
-2. subproblem decomposition
+#### 2. subproblem decomposition
 
 For problem $f(3)$, when there are three disks, the situation becomes slightly more complicated.
 
@@ -6089,11 +6447,11 @@ For these two sub-problems $f(n-1)$, **recursive division can be performed in th
 
 ![Fig. 汉诺塔问题的分治策略](./pictures/12.4.2.2.png)
 
-3. Code
+#### 3. Code
 
 In the code, we declare a recursive function `dfs(i, src, buf, tar)` whose effect is to move $i$ disks on top of the column `src` to the target column `tar` with the help of the buffer column `buf`.
 
-```zig
+```rust
 [class]{}-[func]{move}
 
 [class]{}-[func]{dfs}
@@ -6110,14 +6468,14 @@ As shown in the following picture, the Tower of Hanoi problem forms a recursive 
 >
 >However, according to the above analysis, even if the monks move once per second, it will take a total of about $2^{64}\approx1.84\times10^{19}$ seconds, which is about $585$ billion years, far exceeding the current estimate of the age of the universe. So, if this legend is true, we should not need to worry about the end of the world.
 
-12.5. Summary
+### 12.5 Summary
 
 - Divide and conquer algorithm is a common algorithm design strategy, including two stages of divide (divide) and conquer (merge), usually based on recursive implementation.
 - The basis for estimating whether it is a divide-and-conquer algorithm problem includes: whether the problem can be decomposed, whether the sub-problems are independent, and whether the sub-problems can be combined.
 - Merge sort is a typical application of the divide-and-conquer strategy, which recursively divides the array into two sub-arrays of equal length, and starts merging layer by layer until there is only one element left, thereby completing the sorting.
 - The introduction of a divide-and-conquer strategy can often improve the efficiency of the algorithm. On the one hand, the divide-and-conquer strategy reduces the number of computing operations; on the other hand, it is beneficial to the parallel optimization of the system after divide-and-conquer.
 - Divide and conquer can not only solve many algorithm problems, but also is widely used in data structure and algorithm design, and can be seen everywhere.
-- Compared with brute force search, adaptive search is more efficient. Search algorithms with a time complexity of $O(log\,n)$ are usually implemented based on a divide-and-conquer strategy.
+- Compared with brute force search, adaptive search is more efficient. Search algorithms with a time complexity of $O(log\ n)$ are usually implemented based on a divide-and-conquer strategy.
 - Binary search is another typical application of the divide-and-conquer strategy, which does not include the step of merging the solutions of the subproblems. We can implement binary search by recursive divide and conquer.
 - In the problem of building a binary tree, building the tree (the original problem) can be divided into building the left subtree and the right subtree (subproblems), which can be realized by dividing the index intervals of the pre-order traversal and the in-order traversal.
 - In the Tower of Hanoi problem, a problem of size $n$ can be divided into two subproblems of size $n-1$ and one subproblem of size $1$. After solving these three sub-problems in sequence, the original problem is solved.
@@ -6141,7 +6499,7 @@ Backtracking algorithms usually use a "depth-first search" to traverse the solut
 
 For this question, we traverse the tree in preorder and estimate whether the value of the current node is $7$, and if so, add the value of the node to the result list `res`. The relevant process implementation is shown in the following picture and code.
 
-```zig
+```rust
 [class]{}-[func]{preOrder}
 ```
 
@@ -6161,7 +6519,7 @@ It's worth noting that **fallbacks don't just involve function returns**. To exp
 
 Based on the code of Example 1, we need to use a list `path` to record the path of the visited nodes. When the node whose value is 7 is visited, `path` is copied and added to the result list `res`. After the traversal is completed, all solutions are saved in `res`.
 
-```zig
+```rust
 [class]{}-[func]{preOrder}
 ```
 
@@ -6181,7 +6539,7 @@ Complex backtracking problems often contain one or more constraints, **which can
 
 In order to meet the above constraints, **we need to add a pruning operation**: during the search process, if a node with a value of $3$ is encountered, it will return in advance and stop continuing to search.
 
-```zig
+```rust
 [class]{}-[func]{preOrder}
 ```
 
@@ -6195,13 +6553,12 @@ Next, we try to extract the main framework of the backtracking "try, rollback, a
 
 In the following framework code, `state` represents the current state of the problem, and `choices` represent the choices that can be made in the current state.
 
-```zig
-
+```rust
 ```
 
 Next, we solve Example 3 based on the framework code. The state `state` is the node traversal path, the `choices` are the left child node and the right child node of the current node, and the result `res` is the path list.
 
-```zig
+```rust
 [class]{}-[func]{isSolution}
 
 [class]{}-[func]{recordSolution}
@@ -6304,7 +6661,7 @@ As shown in the following picture, we can expand the search process into a recur
 
 ![Fig. 全排列的递归树](./pictures/13.2.1.0.png)
 
-1. Repeat selection pruning
+##### 1. Repeat selection pruning
 
 In order to realize that each element is only selected once, we consider introducing a Boolean array `selected`, where `selected[i]` indicates whether `choices[i]` has been selected, and implement the following pruning operations based on it.
 
@@ -6317,11 +6674,11 @@ As shown in the following picture, suppose we choose 1 in the first round, 3 in 
 
 Looking at the previous picture, this pruning operation reduces the search space size from $O(n^n)$ to $O(n!)$.
 
-2. Code
+##### 2. Code
 
 After thinking about the above information, we can perfrom "cloze" in the framework code. In order to shorten the number of lines of code, we do not implement each function in the framework code separately, but expand them in the `backtrack()` function.
 
-```zig
+```rust
 [class]{}-[func]{backtrack}
 
 [class]{}-[func]{permutationsI}
@@ -6340,7 +6697,7 @@ As shown in the following picture, half of the permutations generated by the abo
 
 So how do you remove duplicate alignments? Most directly, consider de-duplicating the alignments directly with the help of a hash table. However, this is not elegant enough, **as the search branch that generates the duplicate alignments is unnecessary and should be identified and pruned in advance**, which further improves the efficiency of the algorithm.
 
-1. equal element pruning
+##### 1. equal element pruning
 
 Looking at the following picture, in the first round, choice $1$ or choice $\^1$ are equivalent, and all permutations generated under these two choices are duplicates. Therefore $\^1$ should be pruned away.
 
@@ -6350,11 +6707,11 @@ Essentially, **our goal is to ensure that multiple equal elements are selected o
 
 ![Fig. 重复排列剪枝](./pictures/13.2.2.1.png)
 
-2. Code
+##### 2. Code
 
 Based on the code of the previous question, we consider opening a hash table `duplicated` in each round of selection to record the elements that have been tried in this round, and to prune the duplicated elements.
 
-```zig
+```rust
 [class]{}-[func]{backtrack}
 
 [class]{}-[func]{permutationsII}
@@ -6364,7 +6721,7 @@ Assuming that the elements are different from each other, there are $n!$ types o
 
 The maximum recursion depth is $n$, using $O(n)$ stack frame space. `selected` uses $O(n)$ space. There are at most $n$ duplicated at the same time, using $O(n^2)$ space. **So the space complexity is $O(n^2)$**.
 
-3. Comparison of two kinds of pruning
+##### 3. Comparison of two kinds of pruning
 
 Note that while both `selected` and `duplicated` are used for pruning, they have different goals.
 
@@ -6387,13 +6744,13 @@ For example, given the input set $\{3,4,5\}$ and the target integer $9$, the sol
 - Elements in the input collection can be selected an infinite number of times.
 - Subsets do not distinguish the order of elements, such as $\{4,5\}$ and $\{5,4\}$ are the same subset.
 
-1. Refer to the full array solution
+##### 1. Refer to the full array solution
 
 Similar to the full permutation problem, we can think of the subset generation process as the result of a series of selections, and update the "element sum" in real time during the selection process. When the element sum is equal to `target`, the subset is recorded in the result list.
 
 Unlike the full permutation problem, **the elements in the set of this problem can be selected infinitely**, so there is no need to use the `selected` Boolean list to record whether the element has been selected. We can make minor modifications to the full permutation code, and initially obtain the problem-solving code.
 
-```zig
+```rust
 [class]{}-[func]{backtrack}
 
 [class]{}-[func]{subsetSumINaive}
@@ -6410,7 +6767,7 @@ In order to remove duplicate subsets, **a direct idea is to deduplicate the resu
 - When there are many elements in the array, especially when `target` is large, the search process will produce a large number of duplicate subsets.
 - Comparing the similarities and differences of subsets (arrays) is very time-consuming. It is necessary to sort the array first, and then compare the similarities and differences of each element in the array.
 
-2. Repeat Subset Pruning
+##### 2. Repeat Subset Pruning
 
 **We consider deduplication by pruning during search**. Observe the following picture, the repeated subsets are generated when the elements of the array are selected in different orders, such as the following case.
 
@@ -6427,7 +6784,7 @@ In the search, each layer of choices is attempted one by one from left to right,
 
 To sum up, given the input array $[x_1,x_2,...,x_n]$, if the selection sequence in the search process is $[x_{i_1},x_{i_2},...,x_{i_m}]$, then the selection sequence needs to satisfy $i_1 \le i_2 \le ... \le i_m$, **selection sequences that do not satisfy this condition will cause repetitions and should be pruned**.
 
-3. Code
+##### 3. Code
 
 To implement this pruning, we initialize the variable `start` to indicate the starting point of the traversal. **After selecting $x_i$, set the next round to traverse from index $i$**. In this way, the selection sequence can satisfy $i_1 \le i_2 \le ... \le i_m$, thus ensuring the uniqueness of the subset.
 
@@ -6436,7 +6793,7 @@ In addition, we also made two optimizations to the code:
 - Sort the array `nums` before starting the search. When traversing all selections, **when the subset sum exceeds `target`, the loop ends directly**, because the subsequent elements are larger, and the subset sum must exceed `target`.
 - Leave out the elements and the variable `total`, **count the element-wise sums by performing subtraction on `target`**, and record the solution when `target` equals $0$.
 
-```zig
+```rust
 [class]{}-[func]{backtrack}
 
 [class]{}-[func]{subsetSumI}
@@ -6457,15 +6814,15 @@ Compared with the previous question, **the input array of this question may cont
 
 ![Fig. 相等元素导致的重复子集](./pictures/13.3.2.0.png)
 
-1. equal element pruning
+##### 1. equal element pruning
 
 To solve this problem, **we need to restrict equal elements to be selected only once in each round**. The implementation is clever: since the array is sorted, equal elements are adjacent. This means that in a certain round of selection, if the current element is equal to the left element, it means that it has been selected, so the current element is skipped directly.
 
 At the same time, **each array element specified in this question can only be selected once**. Fortunately, we can also use the variable `start` to satisfy this constraint: when the selection $x_i$ is made, set the next round to traverse backwards from index $i+1$. In this way, duplicate subsets can be removed, and duplicate selection elements can also be avoided.
 
-2. Code
+##### 2. Code
 
-```zig
+```rust
 [class]{}-[func]{backtrack}
 
 [class]{}-[func]{subsetSumII}
@@ -6488,7 +6845,7 @@ The following picture shows the three constraints of this problem: **multiple qu
 
 ![Fig. n 皇后问题的约束条件](./pictures/13.4.0.2.png)
 
-1. row by row placement strategy
+#### 1. row by row placement strategy
 
 The number of queens and the number of rows of the chessboard are both $n$, so we can easily get an inference: **each row of the chessboard allows only one queen to be placed**.
 
@@ -6500,7 +6857,7 @@ As shown in the following picture, it is the row-by-row placement process of the
 
 Essentially, **the row-by-row placement strategy acts as pruning**, which avoids all search branches where multiple queens appear in the same row.
 
-2. Column and Diagonal Pruning
+#### 2. Column and Diagonal Pruning
 
 In order to satisfy column constraints, we can use a boolean array `cols` of length $n$ to record whether each column has a queen. Before each decision to place, we prune the columns that already have queens through `cols`, and dynamically update the state of `cols` in the backtracking.
 
@@ -6512,11 +6869,11 @@ Similarly, **$row+col$ of all squares on the sub-diagonal is a constant value**.
 
 ![Fig. 处理列约束和对角线约束](./pictures/13.4.2.png)
 
-3. Code
+#### 3. Code
 
 Please note that the range of $row-col$ in an $n$-dimensional square matrix is $[-n+1,n-1]$, and the range of $row+col$ is $[0,2n-2]$, so the number of main and secondary diagonals are both $2n-1$, that is, the lengths of the arrays `diag1` and `diag2` are both $2n-1$.
 
-```zig
+```rust
 [class]{}-[func]{backtrack}
 
 [class]{}-[func]{nQueens}
@@ -6528,7 +6885,7 @@ The array `state` uses $O(n^2)$ space, and the arrays `cols`, `diags1`, `diags2`
 
 ### 13.5 summary
 
-1. key review
+#### 1. key review
 
 - The essence of the backtracking algorithm is an exhaustive method, which searches for a solution that meets the conditions through a depth-first traversal of the solution space. During the search process, solutions that meet the conditions are recorded until all solutions are found or the traversal is completed.
 - The search process of the backtracking algorithm includes two parts: trying and backtracking. It tries various options through depth-first search, and when it encounters a situation that does not meet the constraints, it undoes the selection of the previous step, returns to the previous state, and continues to try other options. Trying and backtracking are two opposite operations.
@@ -6541,7 +6898,7 @@ The array `state` uses $O(n^2)$ space, and the arrays `cols`, `diags1`, `diags2`
 - $n$ Queens aims to find a solution to place $n$ queens on an $n \times n$ size chessboard, requiring that all queens cannot attack each other in pairs. The constraints of this problem include row constraints, column constraints, main diagonal and secondary diagonal constraints. In order to satisfy the row constraints, we adopt a row-by-row placement strategy to ensure that a queen is placed in each row.
 - Column constraints and diagonal constraints are handled similarly. For column constraints, we use an array to record whether each column has a queen, thus indicating whether the selected square is legal. For diagonal constraints, we use two arrays to record whether there are queens on the main and sub-diagonals; the difficulty lies in finding the row and column index rules that are satisfied by the square on the same main (sub-) diagonal.
 
-2. Q & A
+#### 2. Q & A
 
 >**How to understand the relationship between backtracking and recursion?**
 >In general, backtracking is an "algorithmic strategy", while recursion is more like a "tool".
@@ -6571,7 +6928,7 @@ As shown in the figure below, for a $3$-step staircase, there are $3$ ways to cl
 
 The goal of this problem is to solve the number of solutions. **We can consider exhaustively enumerating all possibilities by backtracking**. Specifically, think of climbing stairs as a process of multiple rounds of selection: starting from the ground, choosing $1$ or $2$ steps per round, increasing the number of solutions by $1$ each time you reach the top of the stairs, and pruning them when you cross the top of the stairs.
 
-```zig
+```rust
 // backtracking
 fn backtrack(choices: []i32, state: i32, n: i32, res: std.ArrayList(i32)) void {
     // when climbing to the nth level, the number of options increases by 1
@@ -6624,7 +6981,7 @@ We can get the brute force search solution according to the recursive formula. T
 
 Observe the following code, which is a depth-first search like the standard backtracking code, but more concise.
 
-```zig
+```rust
 // search
 fn dfs(i: usize) i32 {
     // return given dp[1] and dp[2] are known
@@ -6657,7 +7014,7 @@ In order to improve the efficiency of the algorithm, **we want that all overlapp
 1. When $dp[i]$ is first calculated, we record it to `mem[i]` for later use.
 2. When it is necessary to calculate $dp[i]$ again, we can directly obtain the result from `mem[i]`, thereby avoiding repeated calculation of this sub-problem.
 
-```zig
+```rust
 // memoized search
 fn dfs(i: usize, mem: []i32) i32 {
     // return given dp[1] and dp[2] are known
@@ -6696,7 +7053,7 @@ In contrast, **dynamic programming is a "bottom-up" approach**: starting with th
 
 Since dynamic programming does not include a backtracking process, it only needs to be implemented using loop iterations without using recursion. In the following code, we initialize an array `dp` to store the solutions of the subproblems, which plays the same recording role as the array `mem` in the memoized search.
 
-```zig
+```rust
 // climbing stairs: dynamic programming
 fn climbingStairsDP(comptime n: usize) i32 {
     // return given dp[1] and dp[2] are known
@@ -6732,7 +7089,7 @@ Based on the above, we can summarize the common terms of dynamic programming.
 
 If you are careful, you may find that **since $dp[i]$ is only related to $dp[i-1]$ and $dp[i-2]$, we do not need to use an array `dp` to store the solutions of all sub-problems**, but only need to roll two variables forward.
 
-```zig
+```rust
 // climbing stairs: dynamic planning after space optimization
 fn climbingStairsDPComp(comptime n: usize) i32 {
     if (n == 1 or n == 2) {
@@ -6786,7 +7143,7 @@ So, is there an optimal substructure for the stair climbing problem in the previ
 
 According to the state transition equation, and the initial state $dp[1]=cost[1]$, $dp[2]=cost[2]$, the dynamic programming code can be obtained.
 
-```zig
+```rust
 // minimum cost of climbing stairs: dynamic programming
 fn minCostClimbingStairsDP(comptime cost: []i32) i32 {
     comptime var n = cost.len - 1;
@@ -6812,7 +7169,7 @@ The following picture shows the dynamic programming process of the previous code
 
 This problem can also be space optimized, compressing one dimension to zero dimension, reducing the space complexity from $O(n)$ to $O(1)$.
 
-```zig
+```rust
 // minimum cost of climbing stairs: dynamic programming after space optimization
 fn minCostClimbingStairsDPComp(cost: []i32) i32 {
     var n = cost.len - 1;
@@ -6864,7 +7221,7 @@ dp[i,2]=dp[i-2,1]+dp[i-2,2]
 
 In the end, just return $dp[n,1]+dp[n,2]$, and the sum of the two represents the total number of solutions to climbed to the $nth$ step.
 
-```zig
+```rust
 // constrained stair climbing: dynamic programming
 fn climbingStairsConstraintDP(comptime n: usize) i32 {
     if (n == 1 or n == 2) {
@@ -6981,7 +7338,7 @@ As shown in the following picture, since each cell is transferred from the cell 
 
 According to the above analysis, we can already write the dynamic programming code directly. However, sub-problem decomposition is a top-down thinking, so it is more in line with thinking habits to implement in the order of "brute force search $\to$ memory search $\to$ dynamic programming".
 
-1. Method 1: Brute force search
+##### 1. Method 1: Brute force search
 
 Starting with the state $[i,j]$, the search is continuously broken down into smaller states $[i-1,j]$ and $[i,j-1]$, and the recursive function includes the following elements:
 
@@ -6990,7 +7347,7 @@ Starting with the state $[i,j]$, the search is continuously broken down into sma
 - **Termination condition**: when $i=0$ and $j=0$, return the cost $grid[0,0]$.
 - **Pruning**: When $i<0$ or $j<0$, the index is out of bounds, and the return cost $+\infty$ means it is not feasible.
 
-```zig
+```rust
 // minimum path sum: brute force search
 fn minPathSumDFS(grid: anytype, i: i32, j: i32) i32 {
     // if it is a cell in the upper left corner, the search is terminated
@@ -7017,11 +7374,11 @@ Essentially, the overlapping subproblem is caused by the fact that **there are m
 
 Each state has two choices: down and right. It takes $m+n-2$ steps to go from the upper left corner to the lower right corner, so the worst time complexity is $O(2^{m+n})$. Note that this calculation does not take into account the proximity to the grid boundary, leaving only one choice when reaching the network boundary. So the actual number of paths will be less.
 
-2. Method 2: Memory search
+##### 2. Method 2: Memory search
 
 We introduce a memory list `mem` of the same size as `grid` to record the solution of each sub-problem and prune overlapping sub-problems.
 
-```zig
+```rust
 // minimum path sum: memoized search
 fn minPathSumDFSMem(grid: anytype, mem: anytype, i: i32, j: i32) i32 {
     // if it is a cell in the upper left corner, the search is terminated
@@ -7050,11 +7407,11 @@ As shown in the following picture, after the introduction of memoization, the so
 
 ![Fig. 记忆化搜索递归树](./pictures/14.3.2.2.png)
 
-3. Method Three: Dynamic Programming
+##### 3. Method Three: Dynamic Programming
 
 Dynamic programming solution based on iteration.
 
-```zig
+```rust
 // minimum path sum: dynamic programming
 fn minPathSumDP(comptime grid: anytype) i32 {
     comptime var n = grid.len;
@@ -7086,13 +7443,13 @@ The array dp has size $n \times m$, so the space complexity is $O(nm)$.
 
 ![<1>](./pictures/14.3.2.3-1.png) ![<2>](./pictures/14.3.2.3-2.png) ![<3>](./pictures/14.3.2.3-3.png) ![<4>](./pictures/14.3.2.3-4.png) ![<5>](./pictures/14.3.2.3-5.png) ![<6>](./pictures/14.3.2.3-6.png) ![<7>](./pictures/14.3.2.3-7.png) ![<8>](./pictures/14.3.2.3-8.png) ![<9>](./pictures/14.3.2.3-9.png) ![<10>](./pictures/14.3.2.3-10.png) ![<11>](./pictures/14.3.2.3-11.png) ![<12>](./pictures/14.3.2.3-12.png)
 
-4. space optimization
+##### 4. space optimization
 
 Since each cell is only related to the cell on its left and above, we can implement the $dp$ table with only a single row array.
 
 Please note that because the array `dp` can only represent the state of one row, we cannot initialize the state of the first column in advance, but update it while traversing each row.
 
-```zig
+```rust
 // minimum path sum: dynamic programming after spatial optimization
 fn minPathSumDPComp(comptime grid: anytype) i32 {
     comptime var n = grid.len;
@@ -7160,7 +7517,7 @@ The current state $[i,c]$ is transitioned from the upper state $[i-1,c]$ and the
 
 According to the above analysis, we will implement brute force search, memory search, and dynamic programming solution in order.
 
-1. Method 1: Brute force search
+#### 1. Method 1: Brute force search
 
 The search code consists of the following elements:
 
@@ -7169,7 +7526,7 @@ The search code consists of the following elements:
 - **Termination condition**: when the item number exceeds $i=0$ or the remaining capacity of the bag is $0$, terminate the recursion and return a value of $0$.
 - **Pruning**: if the weight of the current item exceeds the remaining capacity of the bag, it must not be put into the bag.
 
-```zig
+```rust
 // 0-1 bag: brute force search
 fn knapsackDFS(wgt: []i32, val: []i32, i: usize, c: usize) i32 {
     // if all items have been selected or the bag has no capacity, the return value is 0
@@ -7194,13 +7551,13 @@ Observing the recursion tree, it is easy to find that there are overlapping sub-
 
 ![Fig. 0-1 背包的暴力搜索递归树](./pictures/14.4.1.png)
 
-2. Method 2: Memorized search
+#### 2. Method 2: Memorized search
 
 In order to ensure that the overlapping subproblems are only evaluated once, we record the solutions of the subproblems with the help of a memory list `mem`, where `mem[i][c]` corresponds to $dp[i,c]$.
 
 After the introduction of memoization, **the time complexity depends on the number of sub-problems**, which is $O(n\times cap)$.
 
-```zig
+```rust
 // 0-1 bag: memoized search
 fn knapsackDFSMem(wgt: []i32, val: []i32, mem: anytype, i: usize, c: usize) i32 {
     // if all items have been selected or the backpack has no capacity, the return value is 0
@@ -7228,11 +7585,11 @@ The following picture shows the pruned search branches in memoized recursion.
 
 ![Fig. 0-1 背包的记忆化搜索递归树](./pictures/14.4.2.png)
 
-3. Method 3: Dynamic Programming
+#### 3. Method 3: Dynamic Programming
 
 Dynamic programming is essentially the process of filling the $dp$ table in the state transition, the code is as follows.
 
-```zig
+```rust
 // 0-1 bag: dynamic programming
 fn bagDP(comptime wgt: []i32, val: []i32, comptime cap: usize) i32 {
     comptime var n = wgt.len;
@@ -7258,7 +7615,7 @@ As shown in the following picture, the time complexity and space complexity are 
 
 ![<1>](./pictures/14.4.3-1.png) ![<2>](./pictures/14.4.3-2.png) ![<3>](./pictures/14.4.3-3.png) ![<4>](./pictures/14.4.3-4.png) ![<5>](./pictures/14.4.3-5.png) ![<6>](./pictures/14.4.3-6.png) ![<7>](./pictures/14.4.3-7.png) ![<8>](./pictures/14.4.3-8.png) ![<9>](./pictures/14.4.3-9.png) ![<10>](./pictures/14.4.3-10.png) ![<11>](./pictures/14.4.3-11.png) ![<12>](./pictures/14.4.3-12.png) ![<13>](./pictures/14.4.3-13.png) ![<14>](./pictures/14.4.3-14.png)
 
-4. state compression
+#### 4. state compression
 
 Since each state is only related to the state of the row above it, we can use two arrays to roll forward, reducing the space complexity from $O(n^2)$ to $O(n)$.
 
@@ -7273,7 +7630,7 @@ The following picture shows the transition from row i=1 to row i=2 under a singl
 
 In the code implementation, we only need to delete the first dimension $i$ of the array `dp` directly, and change the inner loop to reverse order traversal.
 
-```zig
+```rust
 // 0-1 bag: dynamic programming after space optimization
 fn bagDPComp(wgt: []i32, val: []i32, comptime cap: usize) i32 {
     var n = wgt.len;
@@ -7305,7 +7662,7 @@ In this section, we first solve another common bag problem: the full bag problem
 
 ![Fig. 完全背包问题的示例数据](./pictures/14.5.1.0.png)
 
-1. dynamic programming ideas
+##### 1. dynamic programming ideas
 
 The full bag problem is very similar to the 0-1 bag problem, **except that it does not limit the number of item choices**.
 
@@ -7320,11 +7677,11 @@ Under the full bag rule, the change of state $[i,c]$ is divided into two cases.
 So the state transition equation becomes:
 $$dp[i,c]=max(dp[i-1,c],dp[i,c-wgt[i-1]]+val[i-1])$$
 
-2. Code
+##### 2. Code
 
 Comparing the codes of the two questions, one of the state transitions changes from $i-1$ to $i$, and the rest is exactly the same.
 
-```zig
+```rust
 // full bag: dynamic programming
 fn unboundedBagDP(comptime wgt: []i32, val: []i32, comptime cap: usize) i32 {
     comptime var n = wgt.len;
@@ -7346,7 +7703,7 @@ fn unboundedBagDP(comptime wgt: []i32, val: []i32, comptime cap: usize) i32 {
 }
 ```
 
-3. space optimization
+##### 3. space optimization
 
 Since the current state is transferred from the state on the left and above, **each row in the $dp$ table should be traversed in positive order after space optimization**.
 
@@ -7356,7 +7713,7 @@ This traversal order is the exact opposite of the 0-1 bag. Please use the follow
 
 The code implementation is relatively simple, only need to delete the first dimension of the array $dp$.
 
-```zig
+```rust
 // full bag: dynamic programming after space optimization
 fn unboundedKnapsackDPComp(comptime wgt: []i32, val: []i32, comptime cap: usize) i32 {
     comptime var n = wgt.len;
@@ -7387,7 +7744,7 @@ The bag problem is representative of a large class of dynamic programming proble
 
 ![Fig. 零钱兑换问题的示例数据](./pictures/14.5.2.0.png)
 
-1. dynamic programming ideas
+##### 1. dynamic programming ideas
 
 **Coin change can be regarded as a special case of full bag**, the two have the following connections and differences.
 
@@ -7415,7 +7772,7 @@ When the target amount is $0$, the minimum number of coins to collect is $0$, th
 
 When there is no coin, **it is impossible to make any target amount $>0$**, which is an invalid solution. In order for the $min()$ function in the state transition equation to identify and filter invalid solutions, we consider using $+\infty$ to represent them, that is, all $dp[0,a]$ in the first row are equal to $+\infty$.
 
-2. Code
+##### 2. Code
 
 Most programming languages do not provide a $+\infty$ variable, and can only use the maximum value of the integer type `int` instead. And this will lead to a large number out of bounds: the $+1$ operation in the state transition equation may overflow.
 
@@ -7423,7 +7780,7 @@ For this reason, we use the number $amt+1$ to represent an invalid solution, bec
 
 Before returning at the end, estimate whether $dp[n,amt]$ is equal to $amt+1$, if so, return $-1$, which means that the target amount cannot be collected.
 
-```zig
+```rust
 // coin change: dynamic programming
 fn coinChangeDP(comptime coins: []i32, comptime amt: usize) i32 {
     comptime var n = coins.len;
@@ -7458,11 +7815,11 @@ The following picture shows the dynamic programming process of coin change, whic
 
 ![<1>](./pictures/14.5.2.2-1.png) ![<2>](./pictures/14.5.2.2-2.png) ![<3>](./pictures/14.5.2.2-3.png) ![<4>](./pictures/14.5.2.2-4.png) ![<5>](./pictures/14.5.2.2-5.png) ![<6>](./pictures/14.5.2.2-6.png) ![<7>](./pictures/14.5.2.2-7.png) ![<8>](./pictures/14.5.2.2-8.png) ![<9>](./pictures/14.5.2.2-9.png) ![<10>](./pictures/14.5.2.2-10.png) ![<11>](./pictures/14.5.2.2-11.png) ![<12>](./pictures/14.5.2.2-12.png) ![<13>](./pictures/14.5.2.2-13.png) ![<14>](./pictures/14.5.2.2-14.png) ![<15>](./pictures/14.5.2.2-15.png)
 
-3. space optimization
+##### 3. space optimization
 
 The space optimization of the coin change is handled in the same way as the full bag.
 
-```zig
+```rust
 // coin change: dynamic programming after space optimization
 fn coinChangeDPComp(comptime coins: []i32, comptime amt: usize) i32 {
     comptime var n = coins.len;
@@ -7498,7 +7855,7 @@ fn coinChangeDPComp(comptime coins: []i32, comptime amt: usize) i32 {
 
 ![Fig. 零钱兑换问题 II 的示例数据](./pictures/14.5.3.0.png)
 
-1. dynamic programmin ideas
+##### 1. dynamic programmin ideas
 
 Compared with the previous question, the goal of this question is the number of combinations, so the sub-problem becomes: **the first $i$ coins that can make up the number of combinations of amount $amt$**. And the $dp$ table is still a two-dimensional matrix of size $(n+1)\times(amt+1)$.
 
@@ -7506,9 +7863,9 @@ The number of combinations for the current state is equal to the sum of the numb
 $$dp[i,a]=dp[i-1,a]+dp[i,a-coins[i-1]]$$
 When the target amount is $0$, the target amount can be collected without selecting any coin, so all $dp[i,0]$ in the first column should be initialized to $1$. When there are no coins, it is impossible to make any target amount $>0$, so all $dp[0,a]$ in the first line are equal to $0$.
 
-2. ode
+##### 2. code
 
-```zig
+```rust
 // coin change II: II: dynamic programming
 fn coinChangeIIDP(comptime coins: []i32, comptime amt: usize) i32 {
     comptime var n = coins.len;
@@ -7534,11 +7891,11 @@ fn coinChangeIIDP(comptime coins: []i32, comptime amt: usize) i32 {
 }
 ```
 
-3. space optimization
+##### 3. space optimization
 
 State compression is handled in the same way, just remove the coin dimension.
 
-```zig
+```rust
 // coin change II: dynamic programming after space optimization
 fn coinChangeIIDPComp(comptime coins: []i32, comptime amt: usize) i32 {
     comptime var n = coins.len;
@@ -7582,7 +7939,7 @@ From the perspective of decision tree, the goal of this problem is to find the s
 
 ![Fig. 基于决策树模型表示编辑距离问题](./pictures/14.6.0.2.png)
 
-1. dynamic programming ideas
+#### 1. dynamic programming ideas
 
 **Step 1: think about the decision-making of each round, define the state, and get the $dp$ table**
 
@@ -7620,9 +7977,9 @@ When both strings are empty, the number of edit steps is $0$, that is, $dp[0,0]=
 
 Observing the state transition equation, the solution of $dp[i,j]$ depends on the solutions on the left, upper, and upper left, so it is enough to traverse the entire $dp$ table in positive order through a two-layer loop.
 
-2. code
+#### 2. code
 
-```zig
+```rust
 // edit distance: dynamic programming
 fn editDistanceDP(comptime s: []const u8, comptime t: []const u8) i32 {
     comptime var n = s.len;
@@ -7657,13 +8014,13 @@ As shown in the following picture, the state transition process of the edit dist
 
 ![<1>](./pictures/14.6.2-1.png) ![<2>](./pictures/14.6.2-2.png) ![<3>](./pictures/14.6.2-3.png) ![<4>](./pictures/14.6.2-4.png) ![<5>](./pictures/14.6.2-5.png) ![<6>](./pictures/14.6.2-6.png) ![<7>](./pictures/14.6.2-7.png) ![<8>](./pictures/14.6.2-8.png) ![<9>](./pictures/14.6.2-9.png) ![<10>](./pictures/14.6.2-10.png) ![<11>](./pictures/14.6.2-11.png) ![<12>](./pictures/14.6.2-12.png) ![<13>](./pictures/14.6.2-13.png) ![<14>](./pictures/14.6.2-14.png) ![<15>](./pictures/14.6.2-15.png)
 
-3. space optimization
+#### 3. space optimization
 
 Since $dp[i,j]$ is transitoned to from the upper $dp[i-1,j]$, the left $dp[i,j-1]$, and the upper left state $dp[i-1,j-1]$, and the positive traversal will lose the upper left $dp[i-1,j-1]$, and the reverse order traversal cannot construct $dp[i,j-1]$ in advance, neither traversal orders are not desirable.
 
 To this end, we can use a variable `leftup` to temporarily store the upper left solution $dp[i-1,j-1]$, so that only the left and upper solutions are considered. The situation at this time is the same as the full bag problem, and positive order traversal can be used.
 
-```zig
+```rust
 // edit distance: dynamic programming after spatial optimization
 fn editDistanceDPComp(comptime s: []const u8, comptime t: []const u8) i32 {
     comptime var n = s.len;
@@ -7748,7 +8105,7 @@ The greedy strategy of this question is shown in the following picture. Given th
 
 The implementation code is shown below. You may not help but sigh: So Clean! The greedy algorithm solves the coin change problem with only ten lines of code.
 
-```zig
+```rust
 [class]{}-[func]{coinChangeGreedy}
 ```
 
@@ -7835,7 +8192,7 @@ The difference is that this problem allows only a part of the item to be selecte
 
 ![Fig. 物品在单位重量下的价值](./pictures/15.2.0.2.png)
 
-1. Greedy policy determination
+##### 1. Greedy policy determination
 
 Maximizing the total value of the items in the bag **essentially means maximizing the value of the items per unit weight**. From this, we can derive the greedy strategy shown in the following picture.
 
@@ -7845,11 +8202,11 @@ Maximizing the total value of the items in the bag **essentially means maximizin
 
 ![Fig. 分数背包的贪心策略](./pictures/15.2.1.png)
 
-2. code
+##### 2. code
 
 We created an item class `Item` to sort items by unit value. The loop makes a greedy selection and exits when the backpack is full and returns to the solution.
 
-```zig
+```rust
 [class]{Item}-[func]{}
 
 [class]{}-[func]{fractionalKnapsack}
@@ -7859,7 +8216,7 @@ In the worst case, the entire list of items needs to be traversed, **so the time
 
 Since a list of `Item` objects is initialized, **the space complexity is $O(n)$**.
 
-3. proof of correctness
+##### 3. proof of correctness
 
 Adopt counter-evidence. Assuming that item $x$ is the item with the highest unit value, use an algorithm to obtain the maximum value `res`, where the solution does not include item $x$.
 
@@ -7888,7 +8245,7 @@ According to the problem, the capacity is equal to the height multiplied by the 
 $$cap[i,j]=min(ht[i],ht[j])\times(j-i)$$
 Assuming that the length of the array is $n$, and the number of combinations of two partitions (that is, the total number of states) is $\binom{n}{2}=\frac{n(n-1)}{2}$. Most directly, **we can exhaustively enumerate all states** to obtain the maximum capacity, and the time complexity is $O(n^2)$.
 
-1. Greedy policy determination
+#### 1. Greedy policy determination
 
 There is a more efficient solution to this problem. As shown in the following picture, select a state $[i,j]$ which satisfies the index $i<j$ and the height $ht[i]<ht[j]$, that is, $i$ is a short board and $j$ is a long board.
 
@@ -7915,17 +8272,17 @@ The following picture shows the execution process of the greedy strategy.
 
 ![<1>](./pictures/15.3.1.4-1.png) ![<2>](./pictures/15.3.1.4-2.png) ![<3>](./pictures/15.3.1.4-3.png) ![<4>](./pictures/15.3.1.4-4.png) ![<5>](./pictures/15.3.1.4-5.png) ![<6>](./pictures/15.3.1.4-6.png) ![<7>](./pictures/15.3.1.4-7.png) ![<8>](./pictures/15.3.1.4-8.png) ![<9>](./pictures/15.3.1.4-9.png)
 
-2. Code
+#### 2. Code
 
 The code loops at most $n$ rounds, **so the time complexity is $O(n)$**.
 
 The variables $i$, $j$ and $res$ use constant size extra space, **so the space complexity is $O(1)$**.
 
-```zig
+```rust
 [class]{}-[func]{maxCapacity}
 ```
 
-3. proof of correctness
+#### 3. proof of correctness
 
 The reason why greedy is faster than exhaustive is because each round of greedy selection will "skip" some states.
 
@@ -7951,7 +8308,7 @@ The goal of this problem is to find the maximum product of all integer factors, 
 $$max(\prod_{i=1}^{m}n_i)$$
 What we need to think about is: how big should be the number of splits $m$, and how much should each $n_i$ be?
 
-1. Greedy policy determination
+#### 1. Greedy policy determination
 
 As a rule of thumb, the product of two integers is often greater than their sum. Suppose a factor $2$ is divided from $n$, then their product is $2(n-2)$. We compare this product with $n$:
 $$\begin{align*}
@@ -7980,14 +8337,14 @@ To sum up the above, the following greedy strategy can be derived.
 3. When the remainder is $2$, do not continue to divide and keep it.
 4. When the remainder is $1$, since $2\times2>1\times3$, the last $3$ should be replaced with $2$.
 
-2. Code
+#### 2. Code
 
 As shown in the following picture,  we do not need to use loops to divide the integers. Instead we can use the downward integer division operation to get the number $a$ of $3$, and use the modulo operation to get the remainder $b$. At this time we have:
 $$n=3a+b$$
 
 Note that for the edge case $n \le 3$, a $1$ must be split out, and the product is $1\times(n-1)$.
 
-```zig
+```rust
 [class]{}-[func]{maxProductCutting}
 ```
 
@@ -7995,12 +8352,12 @@ Note that for the edge case $n \le 3$, a $1$ must be split out, and the product 
 
 **The time complexity depends on how the programming language's exponentiation is implemented**. Taking Python as an example, there are three commonly used power calculation functions:
 
-- The time complexity of operator `**` and function `pow()` is $O(log\,a)$.
+- The time complexity of operator `**` and function `pow()` is $O(log\ a)$.
 - The function `math.pow()` internally calls the `pow()` function of the C language library, which performs floating-point exponentiation, and the time complexity is $O(1)$.
 
 The variables $a$ and $b$ use a constant amount of extra space, **so the space complexity is $O(1)$**.
 
-3. proof of correctness
+#### 3. proof of correctness
 
 Using the method of proof by contradiction, only analyzing the case where $n \ge 3$.
 
@@ -8008,7 +8365,7 @@ Using the method of proof by contradiction, only analyzing the case where $n \ge
 2. **The segmentation scheme does not contain $1$**: Assuming that there is a factor $1$ in the optimal segmentation scheme, then it must be merged into another factor to obtain a larger product. This contradicts the assumption.
 3. **The segmentation scheme contains at most two $2s$**: Assuming that the optimal segmentation scheme contains three $2s$, then it must be replaced by two 3s, and the product will be larger. This contradicts the assumption.
 
-15.5. summary
+### 15.5. summary
 
 - Greedy algorithms are usually used to solve optimization problems. The principle is to make locally optimal decisions at each decision-making stage in order to obtain a global optimal solution.
 - The greedy algorithm will iteratively make one greedy choice after another, transforming the problem into a smaller sub-problem each round until the problem is solved.
@@ -8019,7 +8376,7 @@ Using the method of proof by contradiction, only analyzing the case where $n \ge
 - Solving the greedy problem is mainly divided into three steps: problem analysis, greedy strategy determination, and correctness proof. Among them, the determination of the greedy strategy is the core step, and the correctness proof is often difficult.
 - The Fractional Bag Problem is based on the 0-1 bag, allowing the selection of a part of an item, so it can be solved using a greedy algorithm. The correctness of the greedy strategy can be proved by contradiction.
 - The maximum capacity problem can be solved using an exhaustive method with a time complexity of $O(n^2)$. By designing a greedy strategy and moving the short board inward each round, the time complexity can be optimized to $O(n)$.
-- In the maximum segmentation product problem, we deduced two greedy strategies successively: integers $\ge 4$ should continue to be divided, and the optimal division factor is $3$. The code contains exponentiation, and the time complexity depends on how the exponentiation is implemented, usually $O(1)$ or $O(log\,n)$.
+- In the maximum segmentation product problem, we deduced two greedy strategies successively: integers $\ge 4$ should continue to be divided, and the optimal division factor is $3$. The code contains exponentiation, and the time complexity depends on how the exponentiation is implemented, usually $O(1)$ or $O(log\ n)$.
 
 ## Chapter 16: appendix
 
@@ -8090,7 +8447,7 @@ The GitHub IDs of all [contributors](https://github.com/krahets/hello-algo/graph
 >
 >However, in this open source book, the time for content changes is shortened to days or even hours.
 
-1. content fine-tuning
+#### 1. content fine-tuning
 
 As shown in the following picture, there is an "Edit" icon in the upper right corner of each page, you can modify the text or code by following the steps below.
 
@@ -8102,7 +8459,7 @@ As shown in the following picture, there is an "Edit" icon in the upper right co
 
 The picture cannot be modified directly, you need to create a new [Issue](https://github.com/krahets/hello-algo/issues) or comment to describe the problem, we will redraw and replace the picture as soon as possible.
 
-2. content creation
+#### 2. content creation
 
 If you are interested in participating in this open source project, including translating code into other programming languages, expanding article content, etc., you need to implement the following Pull Request workflow:
 
@@ -8112,7 +8469,7 @@ If you are interested in participating in this open source project, including tr
 4. Commit the changes made locally, and then push to the remote repository.
 5. Refresh the repository webpage, click the "Create pull request" button to initiate a pull request.
 
-3. Docker deployment
+#### 3. Docker deployment
 
 Execute the following Docker script, and after a while, you can access this project on the webpage <http://localhost:8000>.
 
@@ -8131,19 +8488,11 @@ docker-compose down
 references
 
 [1] Thomas H. Cormen, et al. Introduction to Algorithms (3rd Edition).
-
 [2] Aditya Bhargava. Grokking Algorithms: An Illustrated Guide for Programmers and Other Curious People (1st Edition).
-
 [3] Yan Weimin. Data structure (C language version).
-
 [4] Deng Junhui. Data Structure (C++ Language Edition, Third Edition).
-
 [5] Mark Allen Weiss, translated by Chen Yue. Data Structure and Algorithm Analysis: Java Language Description (Third Edition).
-
 [6] Cheng Jie. Big Talk Data Structure.
-
 [7] Wang Zheng. The beauty of data structure and algorithm.
-
 [8] Gayle Laakmann McDowell. Cracking the Coding Interview: 189 Programming Questions and Solutions (6th Edition).
-
 [9] Aston Zhang, et al. Dive into Deep Learning.
